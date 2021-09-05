@@ -50,8 +50,7 @@ const hashBrowser = val => // takes in string and returns has promise
             return hexes.join( '' );
         } );
 
-const parseCookie = str => /
-str
+const parseCookie = str => str
     .split( ';' )
     .map( v => v.split( '=' ) )
     .reduce( ( acc, v ) => {
@@ -59,7 +58,7 @@ str
         return acc;
     }, {} );
 
-const copyToClipboard = str => { //takes in raw string
+const copyToClipboard = str => {
     const el = document.createElement( 'textarea' );
     el.value = str;
     el.setAttribute( 'readonly', '' );
