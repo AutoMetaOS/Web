@@ -4,7 +4,8 @@
 		"dev": "svelte-kit dev",
 		"build": "rm -rf build .svelte-kit && svelte-kit build",
 		"deploy": "npx gh-pages -d build -t true",
-		"start": "php -q -S ronin.host:1873"
+		"start": "php -q -S ronin.host:1873",
+		"commit": "git add . && git commit -m 'Go' && git push"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "next",

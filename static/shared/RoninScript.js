@@ -50,14 +50,14 @@ const hashBrowser = val => // takes in string and returns has promise
             return hexes.join( '' );
         } );
 
-const parseCookie = str => //takes in cookie string (value of cookie)
-    str
-        .split( ';' )
-        .map( v => v.split( '=' ) )
-        .reduce( ( acc, v ) => {
-            acc[ decodeURIComponent( v[ 0 ].trim() ) ] = decodeURIComponent( v[ 1 ].trim() );
-            return acc;
-        }, {} );
+const parseCookie = str => /
+str
+    .split( ';' )
+    .map( v => v.split( '=' ) )
+    .reduce( ( acc, v ) => {
+        acc[ decodeURIComponent( v[ 0 ].trim() ) ] = decodeURIComponent( v[ 1 ].trim() );
+        return acc;
+    }, {} );
 
 const copyToClipboard = str => { //takes in raw string
     const el = document.createElement( 'textarea' );
