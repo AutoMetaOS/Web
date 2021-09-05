@@ -1,5 +1,7 @@
 .DS_Store
 **/.DS_Store
 
+.svelte*
+
 node_modules/
 build/
