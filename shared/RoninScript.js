@@ -2,7 +2,6 @@ const ƒ = ( x ) => document.querySelector( x );
 const ƒA = ( x ) => [ ...document.querySelectorAll( x ) ];
 
 window.onerror = function ( msg, url, lineNo, columnNo, error ) {
-    console.log( msg, url, lineNo, columnNo, error );
     fetch( 'https://ronin.host:1872/error/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
