@@ -1,11 +1,11 @@
 <script>
     import { TextInput, Tile } from "$hakama";
-    import { getMetadata } from "./functions";
+    import { getMetadata, setStack, full_stack } from "./functions";
 
     let data = {
         title: "",
         type: "",
-        url: "https://github.com/IndiQ-Meetups/Events/tree/main/collaborations/IISc-IEEE-ComSoc/qComm-workshop-2021",
+        url: "",
         image: "",
         from: "",
     };
@@ -27,7 +27,11 @@
     };
 
     const preprocess = (e) => {
+        data.id = uuid();
+        data.date = Date.now();
         console.log(data, data.url);
+        console.log($full_stack);
+        // setStack(data);
     };
 </script>
 

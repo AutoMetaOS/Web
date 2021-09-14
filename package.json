@@ -2,8 +2,8 @@
 	"name": "rurouni",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "rm -rf build .svelte-kit && svelte-kit build",
-		"deploy": "npx gh-pages -d build -t true",
+		"build": "svelte-kit build",
+		"deploy": "npx gh-pages -d build -t true && rm -rf build .svelte-kit",
 		"start": "php -q -S ronin.host:1873",
 		"commit": "git add . && git commit -m 'Go' && git push"
 	},

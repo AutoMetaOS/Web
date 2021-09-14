@@ -1,6 +1,6 @@
 "use strict";
 
-export const serverURL = 'https://ronin.host:1872';
+export const serverURL = 'https://ronin.host:1872/';
 export const cloudURL = 'https://api.nukes.in';
 
 export class Kron extends Date {

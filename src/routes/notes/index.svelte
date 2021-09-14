@@ -7,7 +7,7 @@
     import { serverURL } from "$lib/shared/molecular";
 
     import { updateNote, getNotes, getNote } from "./components/api";
-    import { editorData, notesList } from "./components/store";
+    import { notesList } from "./components/store";
 
     let //
         tools,
@@ -15,16 +15,7 @@
         saveButton = "ghost",
         selectedIndex;
 
-    const onSelect = (e) => {
-        getNote(e.detail.selectedId);
-    };
-
-    const noteFilter = (e) => {
-        return {
-            text: e.title,
-            id: e.id,
-        };
-    };
+    const onSelect = (e) => getNote(e.detail.selectedId);
 
     const saver = async () => {
         const outputData = await editor.save();
@@ -46,7 +37,6 @@
 
     onMount(() => {
         getNotes().then((r) => (selectedIndex = 0));
-
         window.mainEditor = ƒ("#editorOfNotes");
         tools = {
             header: Header,
@@ -66,7 +56,12 @@
         window.editor = new EditorJS({
             holder: "editorOfNotes",
             tools,
-            data: $editorData,
+            data: {
+                blocks: [
+                    { type: "header", data: { text: "New Note", level: 1 } },
+                    { type: "paragraph", data: { text: "Save Something" } },
+                ],
+            },
         });
     });
 
@@ -79,7 +74,7 @@
 </script>
 
 <svelte:head>
-    <title>Terrelysium</title>
+    <title>Notes</title>
     <style>
         body {
             color: #fff;
@@ -103,7 +98,7 @@
             type="inline"
             on:select={onSelect}
             bind:selectedIndex
-            items={$notesList.map(noteFilter)}
+            items={$notesList}
             style="grid-gap:unset;"
         />
     </div>

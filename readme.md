@@ -64,9 +64,7 @@ M,P For 0px, 5px, 20px
 ```css
 .pX{ padding:Xpx; }
 .mX{ margin:Xpx; }
-```
-and
-```css
+<!-- and -->
 .m-h-auto{ margin: 0 auto; }
 ```
 

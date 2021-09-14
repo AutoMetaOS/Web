@@ -1,21 +1,20 @@
 import { get } from 'svelte/store'
 import { notesList, updateEditor } from "./store";
-import { Riquest, serverURL } from "$lib/shared/molecular.js";
-
-const reqr = new Riquest( serverURL, 'text' );
+import { serverURL } from "$lib/shared/molecular.js";
 
 export const getNotes = async () => {
-    console.log( '[Terrelysium] Initialising...' );
-    const text = await reqr.get( '/notes/' );
+    const text = await fetch( serverURL + 'notes/' );
+    const json = await text.json();
     console.log( '[Terrelysium] Initialised.' );
-    notesList.set( decrypt( text ) );
+    notesList.set( json );
     return 0;
 }
 
 export const getNote = async ( id ) => {
-    const text = await reqr.get( '/notes/' + id );
-    updateEditor( id, decrypt( text ) );
-    return text;
+    const text = await fetch( serverURL + 'notes/' + id );
+    const json = await text.json();
+    updateEditor( id, json );
+    return json;
 };
 
 export const updateNote = async ( id, data = null ) => {
@@ -27,25 +26,23 @@ export const updateNote = async ( id, data = null ) => {
             found.title = data.blocks[ 0 ].data.text;
             found.date = data.time;
         }
-        else {
-            list.push( { title: data.blocks[ 0 ].data.text, id, date: data.time } )
-        }
+        else list.push( { title: data.blocks[ 0 ].data.text, id, date: data.time } )
     } else {
         delete list[ found ];
         list = list.filter( Boolean );
     }
 
     notesList.set( list );
-    const json = await reqr.patch( '/notes/' + id,
-        { note: data ? JSON.stringify( data ) : null, list: JSON.stringify( get( notesList ) ) }
-    );
+
+    const text = await fetch( serverURL + 'notes/' + id, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify( {
+            note: data ? JSON.stringify( data ) : null,
+            list: JSON.stringify( get( notesList ) )
+        } )
+    } );
+    const json = await text.json();
+    console.log( json )
     return json;
 };
-
-import AES from "crypto-js/aes.js";
-import ENC_UTF8 from "crypto-js/enc-utf8.js";
-
-import keys from '../../../../../config/keys/client_keys';
-
-export const encrypt = ( obj, key = keys.AES_KEY ) => AES.encrypt( JSON.stringify( obj ), key ).toString();
-export const decrypt = ( str, key = keys.AES_KEY ) => JSON.parse( AES.decrypt( str, key ).toString( ENC_UTF8 ) );

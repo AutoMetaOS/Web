@@ -14,13 +14,13 @@
             .then((r) => {
                 const fetched = r.data.children[0].data;
                 reddit = {
-                    image:
-                        fetched?.preview.images[0].source.url.replaceAll(
-                            "&amp;",
-                            "&"
-                        ) ||
-                        fetched?.thumbnail ||
-                        reddit.image,
+                    // image:
+                    //     fetched?.preview.images[0].source.url.replaceAll(
+                    //         "&amp;",
+                    //         "&"
+                    //     ) ||
+                    //     fetched?.thumbnail ||
+                    //     reddit.image,
                     title: fetched.title,
                     href: fetched.url,
                 };

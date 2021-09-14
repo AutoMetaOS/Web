@@ -2,7 +2,6 @@ const ƒ = ( x ) => document.querySelector( x );
 const ƒA = ( x ) => [ ...document.querySelectorAll( x ) ];
 
 window.onerror = function ( msg, url, lineNo, columnNo, error ) {
-    console.log( msg, url, lineNo, columnNo, error );
     fetch( 'https://ronin.host:1872/error/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -50,8 +49,7 @@ const hashBrowser = val => // takes in string and returns has promise
             return hexes.join( '' );
         } );
 
-const parseCookie = str => /
-str
+const parseCookie = str => str
     .split( ';' )
     .map( v => v.split( '=' ) )
     .reduce( ( acc, v ) => {
@@ -59,7 +57,7 @@ str
         return acc;
     }, {} );
 
-const copyToClipboard = str => { //takes in raw string
+const copyToClipboard = str => {
     const el = document.createElement( 'textarea' );
     el.value = str;
     el.setAttribute( 'readonly', '' );
