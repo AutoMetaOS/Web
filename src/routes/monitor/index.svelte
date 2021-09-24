@@ -6,7 +6,6 @@
     import { ExpandableTile, Tile } from "$hakama";
     import metadata from "$lib/meta.json";
     import Shows from "./show.svelte";
-    import Checks from "./chkdsk.svelte";
     import EnvSummary from "./summary.svelte";
 </script>
 
@@ -15,7 +14,7 @@
         <EnvSummary />
     </Tile>
     <Tile class="m20" style="width: calc(50% - 40px);">
-        <!-- <Shows /> -->
+        <Shows />
         ok
     </Tile>
     <ExpandableTile class="m20" style="width: calc(50% - 40px);">
@@ -23,9 +22,6 @@
             <code>{metadata.name}</code> build:
             <code>{metadata.build.version}::{metadata.build.current}</code>
             <br />Compiled: {new Date(metadata.time).toLocaleString("en-GB")}
-        </div>
-        <div slot="below">
-            <Checks />
         </div>
     </ExpandableTile>
 </main>

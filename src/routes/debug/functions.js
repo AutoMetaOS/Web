@@ -1,21 +1,17 @@
-export const w3 = `<style>
-body{
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+export { default as Editor } from './editor.svelte';
+export { default as Iframe } from './frame.svelte';
+
+export const w3 = `<svg>
+const h1 = document.querySelector('h1');
+const number = [ 1 || "One" ];
+</svg>
+<style>
+svg{
+    width: 700px;
+    height: 700px;
+    border: 1px solid green;
 }
-h1{
-    font: lighter 32px Helvetica;
-    color: #f42;
-}
-</style>
-<h1>This is a REPL!</h1>
-<script>
-    h1 = document.querySelector('h1');
-    number = [ 1 || "One" ];
-</script>`;
+</style>`;
 
 export const debounce = function ( func, wait, immediate ) {
     let timeout;
@@ -33,10 +29,9 @@ export const debounce = function ( func, wait, immediate ) {
     };
 };
 
-export const wordCount = ( str ) => str.replace( /(^\s*)|(\s*$)/gi, "" ).replace( /[ ]{2,}/gi, " " ).replace( /\n /, "\n" ).split( ' ' ).length;
-
-export const initialize = () => {
-    let scrip = document.createElement( "script" );
-    scrip.innerText = `editor = CodeMirror.fromTextArea(document.getElementById("code"), {lineNumbers: true,mode: "htmlmixed",lineWrapping: true,matchBrackets: true});editor.setSize("h-50", "100%");editor.setOption("theme", "cobalt");`;
-    document.head.appendChild( scrip );
-};
+export const wordCount = ( str ) =>
+    str
+        .replace( /(^\s*)|(\s*$)/gi, "" )
+        .replace( /[ ]{2,}/gi, " " )
+        .replace( /\n /, "\n" )
+        .split( ' ' ).length;

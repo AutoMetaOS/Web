@@ -3,7 +3,7 @@
     import { Tile } from "$hakama";
 </script>
 
-<ul id="autoComplete" class="m-h-auto">
+<ul id="autoComplete" class="mx-a">
     {#each $recommendations as rec}
         <Tile style="display:flex;">
             <img src={rec[3]?.zs || "https://i.imgur.com/drIqvV8.jpg"} alt="" />

@@ -31,7 +31,7 @@
     return send;
   };
 
-  onMount(() => setInterval(ƒ("#rsc").focus(), 1e3));
+  onMount(() => setInterval(ƒ("#rsc").focus(), 1e2));
 </script>
 
 <svelte:head>
@@ -50,6 +50,7 @@
   <form class="ƒ p5" on:submit|preventDefault>
     <img class="m5" id="engineImage" src="{base}/icons/Basic.svg" alt="" />
     <TextInput
+      class="b0"
       on:keyup={go}
       bind:value
       id="rsc"

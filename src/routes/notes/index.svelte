@@ -40,7 +40,6 @@
         window.mainEditor = ƒ("#editorOfNotes");
         tools = {
             header: Header,
-            alert: Alert,
             image: SimpleImage,
             list: List,
             link: {
@@ -50,7 +49,6 @@
                 },
             },
             embed: Embed,
-            table: Table,
             checklist: Checklist,
         };
         window.editor = new EditorJS({
@@ -77,11 +75,11 @@
     <title>Notes</title>
     <style>
         body {
-            color: #fff;
+            background: #fff;
             min-height: 100vh;
         }
     </style>
-    {#each ["editorjs", "header+embed", "table+alert", "checklist+list", "simple-image+link"] as js}
+    {#each ["editorjs", "header+embed", "checklist+list", "simple-image+link"] as js}
         <script src="{base}/helpers/notes/{js}.js"></script>
     {/each}
 </svelte:head>

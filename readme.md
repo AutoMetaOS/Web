@@ -65,7 +65,7 @@ M,P For 0px, 5px, 20px
 .pX{ padding:Xpx; }
 .mX{ margin:Xpx; }
 <!-- and -->
-.m-h-auto{ margin: 0 auto; }
+.mx-a{ margin: 0 auto; }
 ```
 
 ### Font
