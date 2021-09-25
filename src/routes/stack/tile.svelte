@@ -36,7 +36,7 @@
             </svg>
         </div>
         <h1>{data?.title}</h1>
-        <div class="tile-rec">
+        <div class="tile-rec p-abs">
             <span>{holders.time}</span>
             (<span>{data?.from}</span>)
         </div>
@@ -45,7 +45,6 @@
 
 <style>
     .tile-rec {
-        position: absolute;
         bottom: 1em;
     }
     .clearfix {

@@ -11,7 +11,7 @@
         image;
 </script>
 
-<div class="recom m5 p0 ƒ-col" on:click={videoSet}>
+<div class="recom p-rel m5 p0 ƒ-col" on:click={videoSet}>
     <a
         href="#wrapper"
         data-type={type}
@@ -20,7 +20,7 @@
         data-slug={slug}
     >
         <ImageLoader class="w-100" ratio="16x9" src={image} />
-        <div class="†c w-100 deets p5">
+        <div class="†c w-100 deets p-abs p5">
             <div style="padding-bottom:5px;">
                 {@html title.slice(0, 60)}
                 {title.length > 60 ? "..." : ""}
@@ -38,12 +38,10 @@
         width: calc(20% - 10px);
         z-index: 1;
         transition: all 0.2s ease;
-        position: relative;
         .deets {
             background: #222;
             pointer-events: none;
 
-            position: absolute;
             z-index: 0;
             opacity: 0;
             top: 50%;

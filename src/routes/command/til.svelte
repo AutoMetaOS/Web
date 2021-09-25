@@ -30,8 +30,8 @@
 
 <ClickableTile
     href={reddit.href}
-    class="p0 ƒ-col †j"
-    style="position: absolute;bottom: 1em;right: 11%;z-index: 10;width:350px;"
+    class="p0 ƒ-col †j p-abs"
+    style="bottom:1em;right:11%;z-index:10;width:350px;"
 >
     <!-- <img height="150px" src={reddit.image} alt="" /> -->
     <p>

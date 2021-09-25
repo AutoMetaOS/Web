@@ -66,12 +66,12 @@
             </svg>
             <TextInput size="sm" placeholder="Image" bind:value={data.image} />
         </div>
-        <span class="rec">
+        <span class="rec p-abs">
             <TextInput size="sm" placeholder="Rec" bind:value={data.from} />
         </span>
         <input class="o-0" type="submit" value="Go" />
     </form>
-    <div class="add">Add More...</div>
+    <div class="add p-abs">Add More...</div>
 </Tile>
 
 <style type="text/scss">
@@ -85,7 +85,6 @@
             }
         }
         .rec {
-            position: absolute;
             bottom: 1em;
         }
     }
@@ -108,7 +107,6 @@
     }
     .add {
         color: #000;
-        position: absolute;
         bottom: 1em;
         right: 1em;
     }

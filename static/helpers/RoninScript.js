@@ -1,21 +1,6 @@
 const ƒ = ( x ) => document.querySelector( x );
 const ƒA = ( x ) => [ ...document.querySelectorAll( x ) ];
 
-window.onerror = function ( msg, url, lineNo, columnNo, error ) {
-    fetch( 'https://ronin.host:1872/error/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify( {
-            msg,    // error message
-            url,    // url of error
-            line: lineNo, // line number of error
-            column: columnNo, // column number of error
-            error   // error object
-        } )
-    } );
-    return false;
-}
-
 const time = {
     since: function ( val ) {
         val = 0 | ( Date.now() - new Date( val ) ) / 1000;

@@ -6,7 +6,11 @@
 <ul id="autoComplete" class="mx-a">
     {#each $recommendations as rec}
         <Tile style="display:flex;">
-            <img src={rec[3]?.zs || "https://i.imgur.com/drIqvV8.jpg"} alt="" />
+            <img
+                class="rx2"
+                src={rec[3]?.zs || "https://i.imgur.com/drIqvV8.jpg"}
+                alt=""
+            />
             <div class="ƒ-col ∆-ct">
                 {#if rec[3]}
                     <div class="fw7">{@html rec[3]?.zh || rec[0]}</div>
@@ -28,7 +32,6 @@
         }
     }
     img {
-        border-radius: 2px;
         width: 44px;
         height: 44px;
         object-fit: contain;

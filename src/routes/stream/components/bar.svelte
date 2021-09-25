@@ -18,14 +18,17 @@
   });
 </script>
 
-<form class="o-0 w-100 p5 ƒ 🥃" on:submit|preventDefault={searcher}>
+<form
+  class="o-0 w-100 p5 ƒ blur p-fix ∆-bw"
+  on:submit|preventDefault={searcher}
+>
   <TextInput
-    class="p5"
+    class="p5 b0"
     hideLabel
     size="40"
     placeholder="Search"
     value={searchText}
-    style="border:none;background:transparent;outline:none;"
+    style="background:transparent;outline:none;"
   />
   <SvgIcon size="22">
     <circle stroke="#fff" cx="14" cy="14" r="12" />
@@ -35,13 +38,10 @@
 
 <style type="text/scss">
   form {
-    justify-content: space-between;
     z-index: 9;
     font-size: 1.1em;
     padding: 0 30%;
-    position: fixed;
     top: 0;
-    justify-content: space-between;
     transition: all 0.3s ease;
     align-items: center;
     &:hover,

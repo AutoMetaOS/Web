@@ -66,7 +66,7 @@
 </svelte:head>
 
 <section class="h-1vh ƒ-col ƒ∑">
-    <div class="w-100" id="top">
+    <div class="w-100 p-fix" id="top">
         <input
             type="checkbox"
             name="v2"
@@ -83,6 +83,7 @@
             </svg>
             <input
                 id="looptime"
+                class="p-rel"
                 type="text"
                 disabled={!loop}
                 bind:value={loopable}
@@ -140,7 +141,6 @@
         }
     }
     #looptime {
-        position: relative;
         top: -0.85em;
         color: #fff;
         &[disabled] {
@@ -154,7 +154,6 @@
         outline: none;
     }
     #top {
-        position: fixed;
         left: 0;
         right: 0;
         top: 0;

@@ -30,12 +30,12 @@
         <div class="card">
             <img src={show.image} alt={show.name} />
             <div class="card-body ƒ">
-                <div class="card-text">
+                <div class="card-text p-rel">
                     <h3>{show.name}</h3>
                     <h5>{show.ep}</h5>
                     {@html show.abt}
                 </div>
-                <div class="button">
+                <div class="button rx2">
                     Released: {cleanDate(show.airstamp)} <br />
                     Last Seen: {cleanDate(show.last_seen)}
                 </div>
@@ -70,12 +70,10 @@
             margin-top: auto;
             font-size: 0.9em;
             color: #aaa;
-            border-radius: 2px;
         }
     }
 
     .card-text {
-        position: relative;
         flex: 1;
         overflow: hidden;
         text-overflow: ellipsis;

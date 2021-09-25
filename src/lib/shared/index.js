@@ -1,1 +1,0 @@
-export { default as UniNav } from './navigator.svelte';

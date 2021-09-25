@@ -45,7 +45,7 @@
     </div>
   </nav>
   <article class="ƒ w-100">
-    <div class="w-50 h-100 code"><Editor on:code={handleCode} /></div>
+    <div class="w-50 h-100 p-rel"><Editor on:code={handleCode} /></div>
     <hr />
     <div class="w-50 h-100"><Iframe /></div>
   </article>
@@ -61,9 +61,6 @@
   }
   hr {
     border: 1px solid #eee;
-  }
-  .code {
-    position: relative;
   }
   section {
     height: 100vh;

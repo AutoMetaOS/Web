@@ -46,9 +46,9 @@
 
 <TIL />
 
-<section class="ƒ-col">
+<section class="ƒ-col p-rel">
   <form class="ƒ p5" on:submit|preventDefault>
-    <img class="m5" id="engineImage" src="{base}/icons/Basic.svg" alt="" />
+    <img class="m5 rx5" id="engineImage" src="{base}/icons/Basic.svg" alt="" />
     <TextInput
       class="b0"
       on:keyup={go}
@@ -70,7 +70,6 @@
     align-items: center;
     background: url(https://api.nukes.in/data/NASA/img) center center no-repeat;
     background-size: cover;
-    position: relative;
     height: 100vh;
     z-index: 1;
   }
@@ -82,7 +81,6 @@
     img {
       width: 1.5em;
       height: 1.5em;
-      border-radius: 5px;
       color: #fff;
     }
   }
