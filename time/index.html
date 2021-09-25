@@ -3,11 +3,11 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="icon" href="/favicon.ico" />
+	<link rel="icon" href="/assets/Amos.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel='stylesheet' href='/shared/global.css'>
-	<link rel='stylesheet' href='/shared/g100.css'>
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/AutoMetaOS/UI@latest/css/global.css'>
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/AutoMetaOS/UI@latest/css/g100.css'>
 
 	<style data-svelte="svelte-17qyo1u">body {
             background: #f52;
@@ -16,17 +16,17 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-51670cec.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-20995007.js">
+		<link rel="modulepreload" href="/_app/start-8bf76721.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-5e790510.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/_app/layout.svelte-fa4a5c17.js">
-		<link rel="modulepreload" href="/_app/pages/time.svelte-f44cd2bf.js">
-		<link rel="modulepreload" href="/_app/chunks/molecular-fb8f2536.js">
+		<link rel="modulepreload" href="/_app/layout.svelte-93f7d649.js">
+		<link rel="modulepreload" href="/_app/pages/time.svelte-e671450b.js">
+		<link rel="modulepreload" href="/_app/chunks/molecular-e392fe60.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/_app/assets/pages/time.svelte-482426ad.css">
+		<link rel="stylesheet" href="/_app/assets/pages/time.svelte-2491b484.css">
 
 		<script type="module">
-			import { start } from "/_app/start-51670cec.js";
+			import { start } from "/_app/start-8bf76721.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -39,8 +39,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/layout.svelte-fa4a5c17.js"),
-						import("/_app/pages/time.svelte-f44cd2bf.js")
+						import("/_app/layout.svelte-93f7d649.js"),
+						import("/_app/pages/time.svelte-e671450b.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -52,34 +52,21 @@
 			});
 		</script>
 
-	<script src="/shared/RoninScript.js"></script>
-
-	<style>
-		:root {
-			--primary: #18f;
-			--primary-hl: #07f;
-			--secondary: #7f7f7f;
-			--secondary-hl: #bbb8;
-			--disabled: #999;
-			--disabled-text: #ccc;
-			--danger: #f22;
-			--danger-hl: #f00;
-		}
-	</style>
+	<script src="/helpers/RoninScript.js"></script>
 </head>
 
-<body xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:relative;">
+<body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	
 
 
 
 
-<section class="h-1vh ƒ-col ƒ∑ svelte-sdzu2w"><div class="w-100 svelte-sdzu2w" id="top"><input type="checkbox" name="v2" id="v2" style="display:none;">
-        <label for="v2" class="svelte-sdzu2w"><svg id="loop" viewBox="0 0 32 32" class="svelte-sdzu2w"><path fill="none" d="M29 16 C29 22 24 29 16 29 8 29 3 22 3 16 3 10 8 3 16 3 21 3 25 6 27 9 M20 10 L27 9 28 2"></path></svg>
-            <input id="looptime" type="text" disabled class="svelte-sdzu2w" value="00:00:10"></label></div>
-    <div class="†c svelte-sdzu2w" contenteditable id="timer">00:00:10</div>
-    <div class="†c o-75" id="controls"><svg id="playpause" viewBox="0 0 32 32" class="svelte-sdzu2w"><path d="M23 2 L23 28 M9 2 L9 28" fill="none"></path></svg>
-        <svg id="fullstop" viewBox="0 0 32 32" fill="var(--primary)" class="svelte-sdzu2w"><rect x="0" y="0" width="32" height="32"></rect></svg></div>
+<section class="h-1vh ƒ-col ƒ∑ svelte-fc7yva"><div class="w-100 p-fix svelte-fc7yva" id="top"><input type="checkbox" name="v2" id="v2" style="display:none;">
+        <label for="v2" class="svelte-fc7yva"><svg id="loop" viewBox="0 0 32 32" class="svelte-fc7yva"><path fill="none" d="M29 16 C29 22 24 29 16 29 8 29 3 22 3 16 3 10 8 3 16 3 21 3 25 6 27 9 M20 10 L27 9 28 2"></path></svg>
+            <input id="looptime" class="p-rel svelte-fc7yva" type="text" disabled value="00:00:10"></label></div>
+    <div class="†c svelte-fc7yva" contenteditable id="timer">00:00:10</div>
+    <div class="†c o-75" id="controls"><svg id="playpause" viewBox="0 0 32 32" class="svelte-fc7yva"><path d="M23 2 L23 28 M9 2 L9 28" fill="none"></path></svg>
+        <svg id="fullstop" viewBox="0 0 32 32" fill="var(--primary)" class="svelte-fc7yva"><rect x="0" y="0" width="32" height="32"></rect></svg></div>
 </section>
 
 
