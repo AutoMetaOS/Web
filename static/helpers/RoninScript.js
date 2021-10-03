@@ -23,16 +23,25 @@ function uuid () {
     );
 }
 
-const hashBrowser = val => // takes in string and returns has promise
-    crypto.subtle
-        .digest( 'SHA-256', new TextEncoder( 'utf-8' ).encode( val ) )
-        .then( h => {
-            let hexes = [],
-                view = new DataView( h );
-            for ( let i = 0;i < view.byteLength;i += 4 )
-                hexes.push( ( '00000000' + view.getUint32( i ).toString( 16 ) ).slice( -8 ) );
-            return hexes.join( '' );
-        } );
+const xor_str = function ( a, b ) {
+    let c = "";
+    for ( i = 0;i < a.length;i++ ) {
+        c += String.fromCharCode(
+            a[ i ].charCodeAt( 0 ).toString() ^ b.charCodeAt( 0 ).toString()
+        );
+    }
+    return c;
+};
+
+const hashBrowser = val => crypto.subtle
+    .digest( 'SHA-256', new TextEncoder( 'utf-8' ).encode( val ) )
+    .then( h => {
+        let hexes = [],
+            view = new DataView( h );
+        for ( let i = 0;i < view.byteLength;i += 4 )
+            hexes.push( ( '00000000' + view.getUint32( i ).toString( 16 ) ).slice( -8 ) );
+        return hexes.join( '' );
+    } );
 
 const parseCookie = str => str
     .split( ';' )

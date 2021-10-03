@@ -13,6 +13,7 @@ export default {
 				alias: {
 					$routes: path.resolve( 'src/routes' ),
 					$hakama: path.resolve( '../UI/src' ),
+					$db: path.resolve( '../db' ),
 				}
 			}
 		}

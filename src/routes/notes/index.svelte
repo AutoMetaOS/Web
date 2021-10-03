@@ -6,8 +6,13 @@
     import { Button, Dropdown } from "$hakama";
     import { serverURL } from "$lib/shared/molecular";
 
-    import { updateNote, getNotes, getNote } from "./components/api";
-    import { notesList } from "./components/store";
+    import {
+        updateNote,
+        getNotes,
+        getNote,
+        notesList,
+        deleteNote,
+    } from "./components/api";
 
     let //
         tools,
@@ -30,8 +35,8 @@
     };
 
     const deleter = () => {
-        const len = $notesList.length;
-        selectedIndex = (selectedIndex + 1) % len;
+        deleteNote(id);
+        selectedIndex = (selectedIndex + 1) % $notesList.length;
         updateNote(mainEditor.dataset.id);
     };
 
@@ -75,7 +80,7 @@
     <title>Notes</title>
     <style>
         body {
-            background: #fff;
+            color: #fff;
             min-height: 100vh;
         }
     </style>

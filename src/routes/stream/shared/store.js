@@ -22,7 +22,7 @@ export const nebula = async () => {
     return 0;
 }
 
-export const videoProcessor = ( type, slug, tok ) => {
+export const videoProcessor = ( type, slug, tok = null ) => {
     if ( !getµ().id ) {
         setµ( "id", slug );
         setµ( "type", type );
@@ -30,7 +30,7 @@ export const videoProcessor = ( type, slug, tok ) => {
     }
 
     const [ ext, yt ] = [
-        "?autoplay=1&enablejsapi=1",
+        "?autoplay=1",
         "www.youtube-nocookie.com/embed/",
     ];
     const [ prefix, suffix ] = [

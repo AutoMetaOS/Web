@@ -46,8 +46,8 @@
 
 <TIL />
 
-<section class="ƒ-col p-rel">
-  <form class="ƒ p5" on:submit|preventDefault>
+<section class="ƒ-col p-rel fade">
+  <form class="ƒ p5 fade-down" on:submit|preventDefault>
     <img class="m5 rx5" id="engineImage" src="{base}/icons/Basic.svg" alt="" />
     <TextInput
       class="b0"

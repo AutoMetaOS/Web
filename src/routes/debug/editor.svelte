@@ -12,6 +12,8 @@
         const flask = new CodeFlask(ƒ("#code"), {
             language: "html",
             lineNumbers: true,
+            tabSize: 4,
+            wordWrap: true,
         });
 
         flask.updateCode(w3);
@@ -20,4 +22,15 @@
     });
 </script>
 
-<div id="code" />
+<div class="w-50 h-100 p-rel fade-right">
+    <style>
+        .codeflask__flatten {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+    <pre class="w-100" id="code">Initialising...</pre>
+</div>
+
+<style>
+</style>

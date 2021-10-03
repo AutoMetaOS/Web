@@ -14,13 +14,6 @@
             .then((r) => {
                 const fetched = r.data.children[0].data;
                 reddit = {
-                    // image:
-                    //     fetched?.preview.images[0].source.url.replaceAll(
-                    //         "&amp;",
-                    //         "&"
-                    //     ) ||
-                    //     fetched?.thumbnail ||
-                    //     reddit.image,
                     title: fetched.title,
                     href: fetched.url,
                 };
@@ -30,10 +23,9 @@
 
 <ClickableTile
     href={reddit.href}
-    class="p0 ƒ-col †j p-abs"
-    style="bottom:1em;right:11%;z-index:10;width:350px;"
+    class="p0 ƒ-col †j fade-right"
+    style="bottom:1em;right:11%;z-index:10;width:350px;position:absolute;"
 >
-    <!-- <img height="150px" src={reddit.image} alt="" /> -->
     <p>
         {reddit.title} &rarr;
     </p>

@@ -11,7 +11,7 @@
         image;
 </script>
 
-<div class="recom p-rel m5 p0 ƒ-col" on:click={videoSet}>
+<div class="recom p-rel fade-right m5 p0 ƒ-col" on:click={videoSet}>
     <a
         href="#wrapper"
         data-type={type}
@@ -51,16 +51,10 @@
         &:hover {
             transform: scale(1.1);
             z-index: 2;
-            img {
-                border-radius-top-left: 5px;
-                border-radius-top-right: 5px;
-            }
             .deets {
                 z-index: 44;
                 opacity: 1;
                 top: 100%;
-                border-radius-bottom-left: 5px;
-                border-radius-bottom-right: 5px;
             }
         }
     }

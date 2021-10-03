@@ -39,21 +39,13 @@
 
 <main>
     <Bar {searcher} />
-    <div class="ƒ cont">
-        <Player />
-    </div>
+    <Player />
     <Search videos={base} />
     <Subsc />
     <NebSubsc />
 </main>
 
 <style>
-    .cont {
-        height: 100vh;
-        width: 100vw;
-        justify-content: center;
-        align-items: center;
-    }
     main {
         overflow-x: hidden;
     }

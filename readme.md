@@ -1,5 +1,9 @@
 # AutoMetaOS Web Client
 
+<div align="center">
+<img src="https://cdn.jsdelivr.net/gh/AutoMetaOS/UI@latest/icons/amos.png" alt="amos" width="300px" height="300px"/>
+</div>
+
 ## Globally Provided JS
 ### Shorthand
 For QuerySelectors

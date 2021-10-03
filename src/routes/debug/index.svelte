@@ -2,15 +2,18 @@
   import { onMount } from "svelte";
   import { Toggle } from "$hakama";
   import { wordCount, Iframe, Editor } from "./functions";
+  import MarkdownIt from "markdown-it";
+
+  const mkd = new MarkdownIt();
 
   let //
     ifr,
     md = false,
-    words,
+    words = 0,
     oldHT = "";
 
   const handleCode = (html) => {
-    const htmlURI = md ? markdown.parse(html.detail) : html.detail;
+    const htmlURI = md ? mkd.render(html.detail) : html.detail;
     if (oldHT === htmlURI) return 0;
     oldHT = htmlURI;
 
@@ -27,12 +30,8 @@
   });
 </script>
 
-<svelte:head>
-  <script src="/helpers/code/wasm-md.js"></script>
-</svelte:head>
-
 <section>
-  <nav class="w-100 p10 ƒ ∆-bw">
+  <nav class="w-100 p10 ƒ ∆-bw fade-down">
     <div>&nbsp;</div>
     <div>{words}</div>
     <div>
@@ -41,13 +40,16 @@
         .bx--toggle__switch {
           margin-top: 0 !important;
         }
+        .bx--toggle__switch span {
+          display: none !important;
+        }
       </style>
     </div>
   </nav>
   <article class="ƒ w-100">
-    <div class="w-50 h-100 p-rel"><Editor on:code={handleCode} /></div>
+    <Editor on:code={handleCode} />
     <hr />
-    <div class="w-50 h-100"><Iframe /></div>
+    <div class="w-50 h-100 fade-left"><Iframe /></div>
   </article>
 </section>
 
