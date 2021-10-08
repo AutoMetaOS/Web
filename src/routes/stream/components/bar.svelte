@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { TextInput } from "$hakama";
+  import { TextInput } from "$oui";
   import { channels, nebula } from "../shared/store";
 
   export let searcher;

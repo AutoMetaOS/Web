@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { Toggle } from "$hakama";
+  import { Toggle } from "$oui";
   import { wordCount, Iframe, Editor } from "./functions";
   import MarkdownIt from "markdown-it";
 

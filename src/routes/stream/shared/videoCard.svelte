@@ -1,6 +1,6 @@
 <script>
     import { videoSet } from "../shared/store";
-    import { ImageLoader } from "$hakama";
+    import { ImageLoader } from "$oui";
 
     export let //
         title = "",

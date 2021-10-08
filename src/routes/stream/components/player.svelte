@@ -1,6 +1,6 @@
 <script>
     import { vId } from "../shared/store";
-    import { AspectRatio } from "$hakama";
+    import { AspectRatio } from "$oui";
 
     const allow = [
         "fullscreen",

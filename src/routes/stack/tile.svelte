@@ -1,7 +1,7 @@
 <script>
     export let data = {};
 
-    import { ClickableTile } from "$hakama";
+    import { ClickableTile } from "$oui";
     import { onMount } from "svelte";
 
     const type_process = ({ type, url }) => {

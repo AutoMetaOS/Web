@@ -1,5 +1,5 @@
 <script>
-    import { getShows } from "./components/functions";
+    import { getShows } from "./functions";
     import shows from "../../../../config/database/multiple.json";
 
     const TODAY = +Date.now();

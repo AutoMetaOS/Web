@@ -1,6 +1,6 @@
 <script>
     import { subscriptions } from "../shared/store";
-    import { Slider } from "$hakama";
+    import { Slider } from "$oui";
     import { Kron } from "$lib/shared/molecular";
     import Card from "../shared/videoCard.svelte";
 

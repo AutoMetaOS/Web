@@ -1,7 +1,5 @@
 <script>
     import { w3 } from "./functions";
-    import CodeFlask from "codeflask";
-    // import Prism from 'prismjs';
     import { onMount, createEventDispatcher } from "svelte";
 
     const dispatch = createEventDispatcher();
@@ -9,28 +7,51 @@
     const update = (code) => dispatch("code", code);
 
     onMount(() => {
-        const flask = new CodeFlask(ƒ("#code"), {
-            language: "html",
-            lineNumbers: true,
-            tabSize: 4,
-            wordWrap: true,
+        const loads = [
+            "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/theme-chrome.min.js",
+        ];
+
+        loads.forEach((load) => {
+            const scr = document.createElement("script");
+            scr.type = "text/javascript";
+            scr.src = load;
+            document.body.appendChild(scr);
         });
 
-        flask.updateCode(w3);
+        setTimeout(function () {
+            let editor = ace.edit("editor");
+            editor.setTheme("ace/theme/chrome");
+            editor.session.setMode("ace/mode/html");
 
-        flask.onUpdate((code) => update(code));
+            editor.setOptions({
+                useWrapMode: true, // wrap text to view
+                wrapBehavioursEnabled: true,
+                wrap: true,
+                showPrintMargin: false,
+                fontSize: 16,
+                cursorStyle: "slim",
+            });
+
+            editor.on("change", function () {
+                update(editor.getValue());
+            });
+
+            editor.setValue(w3);
+        }, 2e3);
     });
 </script>
 
 <div class="w-50 h-100 p-rel fade-right">
-    <style>
-        .codeflask__flatten {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-    </style>
-    <pre class="w-100" id="code">Initialising...</pre>
+    <pre class="w-100" id="editor">Initialising...</pre>
 </div>
 
 <style>
+    #editor {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
 </style>

@@ -12,10 +12,11 @@ export default {
 			resolve: {
 				alias: {
 					$routes: path.resolve( 'src/routes' ),
-					$hakama: path.resolve( '../UI/src' ),
-					$db: path.resolve( '../db' ),
+					$oui: path.resolve( '../UI/src' ),
+					$db: path.resolve( '../Engine/db' ),
 				}
 			}
-		}
+		},
+		appDir: 'internal'
 	}
 }

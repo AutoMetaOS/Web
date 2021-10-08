@@ -3,7 +3,7 @@
     import { onMount } from "svelte";
     import { base } from "$app/paths";
 
-    import { Button, Dropdown } from "$hakama";
+    import { Button, Dropdown } from "$oui";
     import { serverURL } from "$lib/shared/molecular";
 
     import {

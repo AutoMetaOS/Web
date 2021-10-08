@@ -1,5 +1,5 @@
 <script>
-    import { TextInput, Tile } from "$hakama";
+    import { TextInput, Tile } from "$oui";
     import { getMetadata, setStack, full_stack } from "./functions";
 
     let data = {

@@ -1,11 +1,19 @@
 <script>
     import { recommendations } from "./samurai";
-    import { Tile } from "$hakama";
+    import { Tile } from "$oui";
+
+    const tile_style = [
+        ["--bg", "#ccc"],
+        ["margin", "10px 0"],
+        ["padding", "5px 10px"],
+    ]
+        .map((e) => e.join(":"))
+        .join(";");
 </script>
 
-<ul id="autoComplete" class="mx-a">
+<ul id="autoComplete" class="mx-a w-100">
     {#each $recommendations as rec}
-        <Tile style="display:flex;">
+        <Tile class="bg ƒ rx10" style={tile_style}>
             <img
                 class="rx2"
                 src={rec[3]?.zs || "https://i.imgur.com/drIqvV8.jpg"}
@@ -25,7 +33,7 @@
 
 <style type="text/scss">
     #autoComplete {
-        width: calc(80vw - 1em);
+        width: 80%;
         list-style-type: none;
         &:empty {
             opacity: 0;

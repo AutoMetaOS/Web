@@ -1,7 +1,7 @@
 <script>
   import { base } from "$app/paths";
   import { engine, preprocessor, recommendations } from "./command/samurai";
-  import { TextInput } from "$hakama";
+  import { TextInput } from "$oui";
 
   import TIL from "./command/til.svelte";
   import Recoms from "./command/suggestion.svelte";
@@ -35,8 +35,6 @@
 </script>
 
 <svelte:head>
-  <link rel="preconnect" href="https://api.nukes.in/" />
-  <link rel="preload" href="https://api.nukes.in/data/NASA/img" as="image" />
   <link rel="preconnect" href="https://web.whatsapp.com/" />
   <link rel="preconnect" href="https://en.wikipedia.org/" />
   <link rel="preconnect" href="https://github.com" />
@@ -47,18 +45,32 @@
 <TIL />
 
 <section class="ƒ-col p-rel fade">
-  <form class="ƒ p5 fade-down" on:submit|preventDefault>
+  <style>
+    * .bg {
+      --bg: #fff;
+      --tx: #000;
+      background: var(--bg) !important;
+      color: var(--tx) !important;
+    }
+  </style>
+  <form class="ƒ bg p5 rx10 fade-down" on:submit|preventDefault>
     <img class="m5 rx5" id="engineImage" src="{base}/icons/Basic.svg" alt="" />
     <TextInput
-      class="b0"
+      class="b0 bg"
       on:keyup={go}
+      style="--bg:#ccc;-tx:#000"
       bind:value
       id="rsc"
       hideLabel
-      placeholder="Ronin"
-      style="outline:none;"
+      placeholder="AMOS Search"
     />
+    <style>
+      input::placeholder {
+        color: #333;
+      }
+    </style>
   </form>
+  <br />
   {#if value && $recommendations.length}
     <Recoms />
   {/if}
@@ -68,20 +80,18 @@
   section {
     justify-content: center;
     align-items: center;
-    background: url(https://api.nukes.in/data/NASA/img) center center no-repeat;
-    background-size: cover;
+    background: #fff;
     height: 100vh;
     z-index: 1;
   }
   form {
-    justify-content: center;
-    width: calc(80vw - 0.8em);
-    background: #262626;
+    --bg: #ccc;
+    width: 80%;
     font-size: 1.25rem;
     img {
-      width: 1.5em;
-      height: 1.5em;
-      color: #fff;
+      width: 1.25em;
+      height: 1.25em;
+      color: #333;
     }
   }
 </style>
