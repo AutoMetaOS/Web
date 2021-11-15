@@ -1,13 +1,15 @@
 <script>
   import { base } from "$app/paths";
   import { engine, preprocessor, recommendations } from "./command/samurai";
-  import { TextInput } from "$oui";
 
+  import Logo from "./command/logo.svelte";
   import TIL from "./command/til.svelte";
   import Recoms from "./command/suggestion.svelte";
   import { onMount } from "svelte";
 
-  let value;
+  let //
+    value,
+    show_extras = false;
 
   const go = (e) => {
     const send = engine(value);
@@ -39,55 +41,92 @@
   <link rel="preconnect" href="https://en.wikipedia.org/" />
   <link rel="preconnect" href="https://github.com" />
   <link rel="prefetch" href="{base}/stream" />
-  <link rel="prefetch" href="{base}/notes" />
 </svelte:head>
 
-<TIL />
-
-<section class="ƒ-col p-rel fade">
-  <style>
-    * .bg {
-      --bg: #fff;
-      --tx: #000;
-      background: var(--bg) !important;
-      color: var(--tx) !important;
-    }
-  </style>
+<section class="ƒ-col p-rel">
+  <div>
+    <Logo />
+  </div>
   <form class="ƒ bg p5 rx10 fade-down" on:submit|preventDefault>
     <img class="m5 rx5" id="engineImage" src="{base}/icons/Basic.svg" alt="" />
-    <TextInput
-      class="b0 bg"
+    <input
+      type="text"
+      class="b0 w-100"
       on:keyup={go}
-      style="--bg:#ccc;-tx:#000"
       bind:value
       id="rsc"
-      hideLabel
       placeholder="AMOS Search"
     />
-    <style>
-      input::placeholder {
-        color: #333;
-      }
-    </style>
   </form>
   <br />
   {#if value && $recommendations.length}
     <Recoms />
   {/if}
+  <div class="p-rel ƒ" style="padding-top:5%;">
+    {#if show_extras}
+      <TIL />
+    {:else}
+      <a href="/stream" class="svg">
+        <img
+          class="h-100 w-100"
+          src="https://raw.githubusercontent.com/AutoMetaOS/UI/main/icons/web/stream.svg"
+          alt=""
+        />
+      </a>
+      <svg
+        class="p2"
+        viewBox="0 0 32 32"
+        stroke="#FFF"
+        stroke-width="2"
+        on:click={() => (show_extras = true)}
+      >
+        <path d="M16 2 L16 30 M2 16 L30 16" />
+      </svg>
+      <a href="/debug" class="svg">
+        <img
+          class="h-100 w-100"
+          src="https://raw.githubusercontent.com/AutoMetaOS/UI/main/icons/web/debug.svg"
+          alt=""
+        />
+      </a>
+    {/if}
+  </div>
 </section>
 
 <style type="text/scss">
   section {
-    justify-content: center;
+    padding-top: 12.5%;
     align-items: center;
     background: #fff;
     height: 100vh;
     z-index: 1;
   }
+  svg,
+  .svg {
+    margin: 10px;
+    stroke-width: 2;
+    background: #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    will-change: transform;
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
   form {
     --bg: #ccc;
     width: 80%;
     font-size: 1.25rem;
+    input {
+      background: #ccc;
+      color: #000;
+      &::placeholder {
+        color: #8888;
+      }
+    }
     img {
       width: 1.25em;
       height: 1.25em;

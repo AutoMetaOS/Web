@@ -6,6 +6,7 @@
         ["--bg", "#ccc"],
         ["margin", "10px 0"],
         ["padding", "5px 10px"],
+        ["color", "#000"],
     ]
         .map((e) => e.join(":"))
         .join(";");

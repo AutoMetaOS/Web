@@ -13,10 +13,7 @@ export const sites = JSON.parse( `{
 }`);
 
 export const quickPages = JSON.parse( `{
-    "wa": { "url": "https://web.whatsapp.com/" },
-    "notes": { "url": "${ base }/notes" },"note": { "url": "${ base }/notes" },
-    "news": { "url": "${ base }/social" },
-    "yt": { "url": "${ base }/stream" },"nebula": { "url": "${ base }/stream" },"video": { "url": "${ base }/stream" },
+    "yt": { "url": "${ base }/stream" },
     "cal": { "url": "${ base }/calendar" },
     "mon": { "url": "${ base }/monitor" },
     "debug": { "url": "${ base }/debug" },"w3": { "url": "${ base }/debug" },"repl": { "url": "${ base }/debug" }
