@@ -133,3 +133,13 @@ const onClickOutside = ( element, callback ) => {
 };
 
 const truthy = condition => condition ? true : false;
+
+
+document.onload = () => {
+    const elements = ƒA( '*' ).length;
+
+    const log = {
+        total_elements: elements
+    }
+    console.log( log );
+}
