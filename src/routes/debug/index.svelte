@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import { Toggle } from "$oui";
   import { wordCount, Iframe, Editor } from "./functions";
   import MarkdownIt from "markdown-it";
 
@@ -21,7 +20,7 @@
     ifr.document.write(htmlURI);
     ifr.document.close();
 
-    words = wordCount(htmlURI);
+    words = md ? wordCount(htmlURI) : "Code";
   };
 
   onMount(() => {
@@ -31,19 +30,11 @@
 </script>
 
 <section>
-  <nav class="w-100 p10 ƒ ∆-bw fade-down">
+  <nav class="w-100 ƒ ∆-bw fade-down">
     <div>&nbsp;</div>
     <div>{words}</div>
-    <div>
-      <Toggle hideLabel size="sm" bind:toggled={md} />
-      <style>
-        .bx--toggle__switch {
-          margin-top: 0 !important;
-        }
-        .bx--toggle__switch span {
-          display: none !important;
-        }
-      </style>
+    <div style="padding-right: 20px;">
+      md: <input type="checkbox" bind:checked={md} />
     </div>
   </nav>
   <article class="ƒ w-100">
@@ -59,6 +50,7 @@
     color: #000;
   }
   nav {
+    padding: 10px;
     border-bottom: 1px solid #ddd;
   }
   hr {

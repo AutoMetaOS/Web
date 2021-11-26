@@ -29,6 +29,10 @@
 </script>
 
 <svelte:head>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/AutoMetaOS/UI@latest/css/g100.css"
+    />
     <style>
         body {
             background: #111;

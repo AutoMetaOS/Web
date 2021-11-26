@@ -33,7 +33,10 @@
     return send;
   };
 
-  onMount(() => setInterval(ƒ("#rsc").focus(), 1e2));
+  onMount(() => {
+    setInterval(ƒ("#rsc").focus(), 1e2);
+    setTimeout(() => (show_extras = true), 6e3);
+  });
 </script>
 
 <svelte:head>
@@ -44,9 +47,7 @@
 </svelte:head>
 
 <section class="ƒ-col p-rel">
-  <div>
-    <Logo />
-  </div>
+  <Logo />
   <form class="ƒ bg p5 rx10 fade-down" on:submit|preventDefault>
     <img class="m5 rx5" id="engineImage" src="{base}/icons/Basic.svg" alt="" />
     <input
@@ -66,13 +67,6 @@
     {#if show_extras}
       <TIL />
     {:else}
-      <a href="/stream" class="svg">
-        <img
-          class="h-100 w-100"
-          src="https://raw.githubusercontent.com/AutoMetaOS/UI/main/icons/web/stream.svg"
-          alt=""
-        />
-      </a>
       <svg
         class="p2"
         viewBox="0 0 32 32"
@@ -82,13 +76,6 @@
       >
         <path d="M16 2 L16 30 M2 16 L30 16" />
       </svg>
-      <a href="/debug" class="svg">
-        <img
-          class="h-100 w-100"
-          src="https://raw.githubusercontent.com/AutoMetaOS/UI/main/icons/web/debug.svg"
-          alt=""
-        />
-      </a>
     {/if}
   </div>
 </section>
@@ -101,8 +88,7 @@
     height: 100vh;
     z-index: 1;
   }
-  svg,
-  .svg {
+  svg {
     margin: 10px;
     stroke-width: 2;
     background: #ddd;

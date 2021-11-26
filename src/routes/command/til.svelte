@@ -2,7 +2,6 @@
     import { onMount } from "svelte";
 
     let reddit = {
-        // image: "https://stayhipp.com/wp-content/uploads/2019/10/reddit.png",
         title: "fetching...",
         href: "#",
     };
@@ -25,11 +24,17 @@
         ["--bg", "linear-gradient(135deg, #30a, #90F)"],
     ]);
     const twt_style = styler([["border", "1px solid #2af"]]);
+    const wiki_style = styler([
+        ["border", "1px solid #888"],
+        ["height", "240px"],
+    ]);
 
     const cleaner = (tx) => {
         return tx
             .replace("TIL that", "")
             .replace("TIL about", "")
+            .replace("TIL :", "")
+            .replace("TIL:", "")
             .replace("TIL", "")
             .replace("Today I Learned", "")
             .trim();
@@ -41,11 +46,9 @@
     class="rpm-10 tile ƒ-col †j fade-right bg"
     style={tile_style}
 >
-    <p>
-        {@html cleaner(reddit.title)} &rarr;
-    </p>
+    {@html cleaner(reddit.title)} &rarr;
 </a>
-<div class="rpm-10 tile" style={twt_style}>
+<div class="rpm-10 tile fade-right" style={twt_style}>
     <a
         class="twitter-timeline "
         href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw"
@@ -56,9 +59,15 @@
         src="https://platform.twitter.com/widgets.js"
         charset="utf-8"></script>
 </div>
+<iframe
+    class="tile rx10 m10 fade-right"
+    style={wiki_style}
+    title="Wiki"
+    src="https://en.m.wikipedia.org/wiki/Special:Random"
+/>
 
 <style>
-    p::first-letter {
+    a:first-letter {
         text-transform: uppercase;
     }
     .tile {

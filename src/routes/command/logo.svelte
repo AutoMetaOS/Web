@@ -146,7 +146,7 @@
     }
     .copy {
         position: absolute;
-        bottom: 12.5%;
+        top: -20%;
         left: 0;
         align-items: center;
         pointer-events: none;

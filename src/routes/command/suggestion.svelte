@@ -12,7 +12,7 @@
         .join(";");
 </script>
 
-<ul id="autoComplete" class="mx-a w-100">
+<ul id="autoComplete" class="mx-a w-100 p0">
     {#each $recommendations as rec}
         <Tile class="bg ƒ rx10" style={tile_style}>
             <img
@@ -20,12 +20,12 @@
                 src={rec[3]?.zs || "https://i.imgur.com/drIqvV8.jpg"}
                 alt=""
             />
-            <div class="ƒ-col ∆-ct">
+            <div class="fw4 ƒ-col ∆-ct">
                 {#if rec[3]}
-                    <div class="fw7">{@html rec[3]?.zh || rec[0]}</div>
+                    <div>{@html rec[3]?.zh || rec[0]}</div>
                     <span>{rec[3]?.zi || ""}</span>
                 {:else}
-                    <div class="fw7">{@html rec[0]}</div>
+                    {@html rec[0]}
                 {/if}
             </div>
         </Tile>
@@ -34,7 +34,7 @@
 
 <style type="text/scss">
     #autoComplete {
-        width: 80%;
+        width: calc(80% + 10px);
         list-style-type: none;
         &:empty {
             opacity: 0;

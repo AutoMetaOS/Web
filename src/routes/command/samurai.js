@@ -22,7 +22,7 @@ export const engine = ( input ) => {
     if ( out ) return out;
 
     // CHECK FOR BANG NOTATION
-    if ( input.charAt( 0 ) === '!' ) {
+    if ( input?.charAt( 0 ) === '!' ) {
         let//
             withBang = input.replace( '!', '' ),
             key = withBang.split( ' ' )[ 0 ]?.toLowerCase(),
