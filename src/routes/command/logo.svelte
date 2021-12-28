@@ -6,6 +6,14 @@
     const [rangeMin, rangeMax] = [1, 20];
     let tick = 0;
 
+    const cycle = (num1, num2) => ((num1 % num2) + num2) % num2;
+
+    function random(num1, num2) {
+        let max = Math.max(num1, num2);
+        let min = Math.min(num1, num2);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     onMount(() => {
         const dpr = window.devicePixelRatio || 1;
         const radius = 100 * dpr;
@@ -118,16 +126,6 @@
 
             ctx.closePath();
             ctx.fill();
-        }
-
-        function cycle(num1, num2) {
-            return ((num1 % num2) + num2) % num2;
-        }
-
-        function random(num1, num2) {
-            let max = Math.max(num1, num2);
-            let min = Math.min(num1, num2);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
         }
     });
 </script>

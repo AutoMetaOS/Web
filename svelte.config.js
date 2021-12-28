@@ -3,7 +3,10 @@ import statix from '@sveltejs/adapter-static';
 import path from 'path';
 
 export default {
-	preprocess: sveltePreprocess(),
+	preprocess: sveltePreprocess( {
+		defaults: { markup: 'html', script: 'javascript', style: 'css' },
+		sourceMap: false
+	} ),
 	kit: {
 		adapter: statix(),
 
@@ -12,8 +15,7 @@ export default {
 			resolve: {
 				alias: {
 					$routes: path.resolve( 'src/routes' ),
-					$oui: path.resolve( '../UI/src' ),
-					$db: path.resolve( '../Engine/db' ),
+					$oui: path.resolve( '../UI/src' )
 				}
 			}
 		},

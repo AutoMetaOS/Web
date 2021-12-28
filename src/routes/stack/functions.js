@@ -1,19 +1,25 @@
-import { serverURL } from "$lib/shared/molecular";
-import { writable } from "svelte/store";
+import { writable, get } from "svelte/store";
+import { stack } from "$lib/db";
 
 export const full_stack = writable( [] );
 
-export const getStack = () => {
-    fetch( serverURL + 'stack/' ).then( res => res.json() ).then( data => {
-        full_stack.set( data );
-    } );
-};
+stack.list( "amos" ).then( r => {
+    JSON.parse( r ).forEach( s => {
+        const id = s.name;
+        stack.get( 'amos', id ).then( d => {
+            const obj = JSON.parse( `{${ d }}` );
+            obj.id = id;
+            full_stack.set( [ ...get( full_stack ), transformer( obj ) ] );
+        } );
+    } )
+} );
 
-export const setStack = ( data ) => {
-    fetch( serverURL + 'stack/', { method: 'POST', body: JSON.stringify( data ) } )
-        .then( res => res.json() )
-        .then( console.log );
-};
+function transformer ( d ) {
+    const { image, title, id } = d;
+    const type = Object.keys( d )[ 0 ];
+    const url = d[ type ];
+    return { id, title, image, type, url };
+}
 
 export const getMetadata = async ( url ) => {
     const URL = serverURL + '/requestMetadata?url=' + encodeURI( url );

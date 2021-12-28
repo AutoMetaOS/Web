@@ -1,6 +1,6 @@
 <script>
     import { TextInput, Tile } from "$oui";
-    import { getMetadata, setStack, full_stack } from "./functions";
+    // import { getMetadata, setStack, full_stack } from "./functions";
 
     let data = {
         title: "",
@@ -30,7 +30,6 @@
         data.id = uuid();
         data.date = Date.now();
         console.log(data, data.url);
-        console.log($full_stack);
         // setStack(data);
     };
 </script>

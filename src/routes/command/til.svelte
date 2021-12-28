@@ -29,8 +29,8 @@
         ["height", "240px"],
     ]);
 
-    const cleaner = (tx) => {
-        return tx
+    const cleaner = (tx) =>
+        tx
             .replace("TIL that", "")
             .replace("TIL about", "")
             .replace("TIL :", "")
@@ -38,7 +38,6 @@
             .replace("TIL", "")
             .replace("Today I Learned", "")
             .trim();
-    };
 </script>
 
 <a

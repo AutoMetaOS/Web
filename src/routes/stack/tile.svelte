@@ -1,29 +1,20 @@
 <script>
     export let data = {};
 
-    import { ClickableTile } from "$oui";
     import { onMount } from "svelte";
 
     const type_process = ({ type, url }) => {
-        url = new URL(url || "https://trial.nukes.in")?.hostname.replace(
+        url = new URL(url || "https://os.nukes.in")?.hostname.replace(
             /^www\./,
             ""
         );
         if (type === "Article") return (type = `Article (${url})`);
         else return type;
     };
-
-    let holders = {
-        time: "",
-    };
-
-    onMount(() => {
-        holders.time = time.since(data?.date);
-    });
 </script>
 
-<ClickableTile
-    class="tile"
+<a
+    class="tile w-25 p0"
     href={data?.url}
     id={data?.id}
     style="background:url({data?.image}) center center no-repeat;background-size: cover;"
@@ -37,15 +28,18 @@
         </div>
         <h1>{data?.title}</h1>
         <div class="tile-rec p-abs">
-            <span>{holders.time}</span>
-            (<span>{data?.from}</span>)
+            (<span>{data?.from || "FROM"}</span>)
         </div>
     </div>
-</ClickableTile>
+</a>
 
-<style>
-    .tile-rec {
-        bottom: 1em;
+<style type="text/scss">
+    .tile {
+        color: #fff;
+        height: 300px;
+        &-rec {
+            bottom: 1em;
+        }
     }
     .clearfix {
         background: #000c;
