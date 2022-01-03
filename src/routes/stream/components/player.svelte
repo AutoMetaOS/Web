@@ -1,6 +1,5 @@
 <script>
     import { vId } from "../shared/store";
-    import { AspectRatio } from "$oui";
 
     const allow = [
         "fullscreen",
@@ -14,17 +13,16 @@
 
 {#if $vId}
     <div class="ƒ cont ∆-ct">
-        <AspectRatio class="†c w-100 h-100" ratio="16x10">
-            <iframe
-                title="vid"
-                class="w-100 h-100"
-                framebor
-                der="0"
-                src={$vId}
-                {allow}
-                {sandbox}
-            />
-        </AspectRatio>
+        <iframe
+            title="vid"
+            class="w-100 h-100"
+            framebor
+            der="0"
+            src={$vId}
+            {allow}
+            {sandbox}
+            style="aspect-ratio: 16/10;"
+        />
     </div>
 {/if}
 

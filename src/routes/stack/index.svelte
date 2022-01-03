@@ -1,6 +1,6 @@
 <script>
     import Stick from "./tile.svelte";
-    import Adder from "./adder.svelte";
+    // import Adder from "./adder.svelte";
     import { full_stack } from "./functions";
     import { onMount } from "svelte";
 
@@ -17,7 +17,7 @@
 
 <section class="">
     <div class="ƒ ƒ∑">
-        <Adder />
+        <!-- <Adder /> -->
         {#each $full_stack as orb}
             <Stick data={orb} />
         {/each}

@@ -1,25 +1,13 @@
 <script>
     import { w3 } from "./functions";
     import { onMount, createEventDispatcher } from "svelte";
+    import { debounce } from "$lib/shared/molecular";
 
     const dispatch = createEventDispatcher();
 
     const update = (code) => dispatch("code", code);
 
     onMount(() => {
-        const loads = [
-            "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.min.js",
-            "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js",
-            "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/theme-chrome.min.js",
-        ];
-
-        loads.forEach((load) => {
-            const scr = document.createElement("script");
-            scr.type = "text/javascript";
-            scr.src = load;
-            document.body.appendChild(scr);
-        });
-
         setTimeout(function () {
             let editor = ace.edit("editor");
             editor.setTheme("ace/theme/chrome");
@@ -34,14 +22,22 @@
                 cursorStyle: "slim",
             });
 
-            editor.on("change", function () {
-                update(editor.getValue());
-            });
+            editor.on("change",
+                debounce(function () {
+                    update(editor.getValue());
+                }, 5e2)
+            );
 
             editor.setValue(w3);
-        }, 2e3);
+        }, 5e2);
     });
 </script>
+
+<svelte:head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/theme-chrome.min.js"></script>
+</svelte:head>
 
 <div class="w-50 h-100 p-rel fade-right">
     <pre class="w-100" id="editor">Initialising...</pre>

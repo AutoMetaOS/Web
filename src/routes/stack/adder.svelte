@@ -1,5 +1,4 @@
 <script>
-    import { TextInput, Tile } from "$oui";
     // import { getMetadata, setStack, full_stack } from "./functions";
 
     let data = {
@@ -34,14 +33,14 @@
     };
 </script>
 
-<Tile
+<div
     class="tile"
     id="adding-tile"
     style="background:url(/assets/Amos.svg) center center no-repeat;"
 >
     <form class="clfx p20 w-100 h-100" on:submit|preventDefault={preprocess}>
-        <TextInput size="sm" placeholder="Type" bind:value={data.type} />
-        <TextInput size="lg" placeholder="Title" bind:value={data.title} />
+        <input size="sm" placeholder="Type" bind:value={data.type} />
+        <input size="lg" placeholder="Title" bind:value={data.title} />
         <br />
         <div class="extra ƒ">
             <svg viewBox="0 0 32 32">
@@ -49,7 +48,7 @@
                     d="M18 8 C18 8 24 2 27 5 30 8 29 12 24 16 19 20 16 21 14 17 M14 24 C14 24 8 30 5 27 2 24 3 20 8 16 13 12 16 11 18 15"
                 />
             </svg>
-            <TextInput
+            <input
                 size="sm"
                 placeholder="Link"
                 on:blur={getImage}
@@ -63,15 +62,15 @@
                 />
                 <circle cx="10" cy="9" r="3" />
             </svg>
-            <TextInput size="sm" placeholder="Image" bind:value={data.image} />
+            <input size="sm" placeholder="Image" bind:value={data.image} />
         </div>
         <span class="rec p-abs">
-            <TextInput size="sm" placeholder="Rec" bind:value={data.from} />
+            <input size="sm" placeholder="Rec" bind:value={data.from} />
         </span>
         <input class="o-0" type="submit" value="Go" />
     </form>
     <div class="add p-abs">Add More...</div>
-</Tile>
+</div>
 
 <style type="text/scss">
     form {

@@ -8,12 +8,13 @@ export const recommendations = writable( [] );
 const suggestions = ( SIn ) =>
     fetch( `https://api.nukes.in/quick/suggest?q=${ SIn }` )
         .then( r => r.json() )
-        .then( r => recommendations.set( r ) )
+        .then( recommendations.set )
         .catch( console.warn );
 
 const setEngineImage = ( key ) => {
     const engineImage = ƒ( '#engineImage' );
-    if ( engineImage ) engineImage.src = `${ base }/icons/${ sites[ key ]?.name || key }.svg`
+    if ( engineImage ) engineImage.src = `${ base }/icons/${ sites[ key ]?.name || key }.svg`;
+    return 0;
 }
 
 export const engine = ( input ) => {

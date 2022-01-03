@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import { TextInput } from "$oui";
   import { channels, nebula } from "../shared/store";
 
   export let searcher;
@@ -21,13 +20,10 @@
   class="o-0 w-100 p5 ƒ blur p-fix ∆-bw"
   on:submit|preventDefault={searcher}
 >
-  <TextInput
-    class="p5 b0"
-    hideLabel
-    size="40"
-    placeholder="Search"
-    value={searchText}
-    style="background:transparent;outline:none;"
+  <input
+  class="p5 b0"
+  placeholder="Search"
+  bind:value={searchText}
   />
   <svg viewBox="0 0 32 32" height="22" width="22" fill="none">
     <circle stroke="#fff" cx="14" cy="14" r="12" />
@@ -46,6 +42,11 @@
     &:hover,
     &:focus {
       opacity: 1;
+    }
+    & input{
+      color: #fff;
+      background:#0000;
+      outline:none;
     }
   }
 </style>

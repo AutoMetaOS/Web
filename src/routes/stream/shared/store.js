@@ -41,6 +41,8 @@ export const videoProcessor = ( type, slug, tok = null ) => {
     if ( type === "Youtube" ) URL = yt + slug + ext;
     if ( type === "Nebula" ) URL = prefix + slug + suffix;
 
+    window.history.pushState( '', '', `?type=${ type }&token=${ tok }&id=${ slug }` );
+
     vId.set( 'https://' + URL );
     return 0;
 }

@@ -1,6 +1,5 @@
 <script>
     import { recommendations } from "./samurai";
-    import { Tile } from "$oui";
 
     const tile_style = [
         ["--bg", "#ccc"],
@@ -14,7 +13,7 @@
 
 <ul id="autoComplete" class="mx-a w-100 p0">
     {#each $recommendations as rec}
-        <Tile class="bg ƒ rx10" style={tile_style}>
+        <div class="bg ƒ rx10" style={tile_style}>
             <img
                 class="rx2"
                 src={rec[3]?.zs || "https://i.imgur.com/drIqvV8.jpg"}
@@ -28,7 +27,7 @@
                     {@html rec[0]}
                 {/if}
             </div>
-        </Tile>
+        </div>
     {/each}
 </ul>
 

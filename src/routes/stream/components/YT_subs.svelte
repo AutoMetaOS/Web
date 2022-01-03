@@ -2,22 +2,20 @@
   import { substack } from "../shared/store";
   import { Kron } from "$lib/shared/molecular";
   import Card from "../shared/videoCard.svelte";
-  import { Slider } from "$oui";
 
   $: videos = $substack;
 
   const clear = () => (videos = []);
 
   let slicer = 2;
-  const update = (e) => (slicer = e.detail);
 </script>
 
 <section class="ƒ p20 ƒ∑" id="search">
   {#if videos.length}
     <div class="w-100 ƒ p5 ∆-bw">
       <span on:click={clear}> Youtube </span>
-      <span>
-        <Slider hideTextInput on:change={update} max={6} value={2} />
+      <span style="font-size:1.25rem">
+        0<input type="range" min={1} max={6} bind:value={slicer}>6
       </span>
     </div>
     {#each videos

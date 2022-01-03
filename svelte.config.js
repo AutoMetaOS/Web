@@ -14,8 +14,7 @@ export default {
 		vite: {
 			resolve: {
 				alias: {
-					$routes: path.resolve( 'src/routes' ),
-					$oui: path.resolve( '../UI/src' )
+					$routes: path.resolve( 'src/routes' )
 				}
 			}
 		},

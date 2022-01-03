@@ -1,6 +1,5 @@
 <script>
     import { subscriptions } from "../shared/store";
-    import { Slider } from "$oui";
     import { Kron } from "$lib/shared/molecular";
     import Card from "../shared/videoCard.svelte";
 
@@ -8,15 +7,14 @@
     const clear = () => (videos = []);
 
     let slicer = 1;
-    const update = (e) => (slicer = e.detail);
 </script>
 
 <section class="ƒ p20 ƒ∑" id="search">
     {#if videos.length}
         <div class="w-100 ƒ p5 ∆-bw">
             <span on:click={clear}> Nebula </span>
-            <span>
-                <Slider hideTextInput on:change={update} max={4} value={1} />
+            <span style="font-size:1.25rem">
+                0<input type="range" min={0} max={4} bind:value={slicer}>4
             </span>
         </div>
         {#each videos.slice(0, slicer * 5) as vid}
