@@ -12,28 +12,29 @@
 
 		
 
-		<link rel="modulepreload" href="/internal/start-6fa15676.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-0412d674.js">
-		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-46d21178.js">
-		<link rel="modulepreload" href="/internal/pages/index.svelte-b0b2c255.js">
-		<link rel="modulepreload" href="/internal/chunks/suggestion-32740f98.js">
-		<link rel="modulepreload" href="/internal/chunks/Tile-524770c8.js">
-		<link rel="modulepreload" href="/internal/pages/command/logo.svelte-5d0d29c9.js">
-		<link rel="modulepreload" href="/internal/pages/command/til.svelte-18117f21.js">
 		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/internal/assets/pages/index.svelte-6fe08a06.css">
 		<link rel="stylesheet" href="/internal/assets/suggestion-25e0bd32.css">
 		<link rel="stylesheet" href="/internal/assets/pages/command/logo.svelte-e428a1ee.css">
-		<link rel="stylesheet" href="/internal/assets/pages/command/til.svelte-cd5aa951.css">
+		<link rel="stylesheet" href="/internal/assets/pages/command/micro/twitter.svelte-4c966c12.css">
+		<link rel="stylesheet" href="/internal/assets/pages/command/micro/card.svelte-3e00ad48.css">
+		<link rel="modulepreload" href="/internal/start-2e350315.js">
+		<link rel="modulepreload" href="/internal/chunks/vendor-50ecb96e.js">
+		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
+		<link rel="modulepreload" href="/internal/layout.svelte-abbe6312.js">
+		<link rel="modulepreload" href="/internal/pages/index.svelte-fc8b9776.js">
+		<link rel="modulepreload" href="/internal/chunks/suggestion-469317a9.js">
+		<link rel="modulepreload" href="/internal/pages/command/logo.svelte-6f5b77e9.js">
+		<link rel="modulepreload" href="/internal/pages/command/til.svelte-ac6ffc94.js">
+		<link rel="modulepreload" href="/internal/pages/command/micro/twitter.svelte-6c10e02c.js">
+		<link rel="modulepreload" href="/internal/pages/command/micro/card.svelte-b5b4f850.js">
 
 		<script type="module">
-			import { start } from "/internal/start-6fa15676.js";
+			import { start } from "/internal/start-2e350315.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
 				session: {},
-				host: location.host,
 				route: true,
 				spa: false,
 				trailing_slash: "never",
@@ -41,21 +42,21 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/internal/layout.svelte-46d21178.js"),
-						import("/internal/pages/index.svelte-b0b2c255.js")
+						import("/internal/layout.svelte-abbe6312.js"),
+						import("/internal/pages/index.svelte-fc8b9776.js")
 					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "/",
-						query: new URLSearchParams(""),
-						params: {}
-					}
+					url: new URL("sveltekit://prerender/"),
+					params: {}
 				}
 			});
+		</script><script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+			}
 		</script>
 
 	<script src="/helpers/RoninScript.js"></script>
-	<script src="/helpers/NinjaScript.js"></script>
+	<script src="/helpers/TsukaiScript.js"></script>
 
 	<script>
 		const meta = {
@@ -81,9 +82,8 @@
 </section>
 
 
-
-			
-		
 </body>
+
+<script defer async src="/helpers/NinjaScript.js"></script>
 
 </html>

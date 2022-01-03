@@ -12,25 +12,20 @@
 
 		
 
-		<link rel="modulepreload" href="/internal/start-6fa15676.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-0412d674.js">
-		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-46d21178.js">
-		<link rel="modulepreload" href="/internal/pages/stack/adder.svelte-70e3e2d3.js">
-		<link rel="modulepreload" href="/internal/chunks/TextInput-0ef02bb8.js">
-		<link rel="modulepreload" href="/internal/chunks/Tile-524770c8.js">
-		<link rel="modulepreload" href="/internal/chunks/functions-c981d709.js">
-		<link rel="modulepreload" href="/internal/chunks/molecular-e392fe60.js">
 		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/internal/assets/pages/stack/adder.svelte-6cc283aa.css">
+		<link rel="modulepreload" href="/internal/start-2e350315.js">
+		<link rel="modulepreload" href="/internal/chunks/vendor-50ecb96e.js">
+		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
+		<link rel="modulepreload" href="/internal/layout.svelte-abbe6312.js">
+		<link rel="modulepreload" href="/internal/pages/stack/adder.svelte-174a4b4e.js">
 
 		<script type="module">
-			import { start } from "/internal/start-6fa15676.js";
+			import { start } from "/internal/start-2e350315.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
 				session: {},
-				host: location.host,
 				route: true,
 				spa: false,
 				trailing_slash: "never",
@@ -38,21 +33,21 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/internal/layout.svelte-46d21178.js"),
-						import("/internal/pages/stack/adder.svelte-70e3e2d3.js")
+						import("/internal/layout.svelte-abbe6312.js"),
+						import("/internal/pages/stack/adder.svelte-174a4b4e.js")
 					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "/stack/adder",
-						query: new URLSearchParams(""),
-						params: {}
-					}
+					url: new URL("sveltekit://prerender/stack/adder"),
+					params: {}
 				}
 			});
+		</script><script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+			}
 		</script>
 
 	<script src="/helpers/RoninScript.js"></script>
-	<script src="/helpers/NinjaScript.js"></script>
+	<script src="/helpers/TsukaiScript.js"></script>
 
 	<script>
 		const meta = {
@@ -65,77 +60,21 @@
 	
 
 
-
-<div class="tile bx--tile " id="adding-tile" style="background:url(/assets/Amos.svg) center center no-repeat;"><form class="clfx p20 w-100 h-100 svelte-17412sk">
-<div class="bx--form-item bx--text-input-wrapper">
-  
-  <div class="bx--text-input__field-outer-wrapper"><div class="bx--text-input__field-wrapper">
-      
-      <input id="ccs-0.sidadhdu9m" placeholder="Type" type="" value="" class="bx--text-input--sm undefined bx--text-input   ">
-      
-      
-      </div>
-    
-    
-    </div></div>
-        
-<div class="bx--form-item bx--text-input-wrapper">
-  
-  <div class="bx--text-input__field-outer-wrapper"><div class="bx--text-input__field-wrapper">
-      
-      <input id="ccs-0.clxtuvtbz2b" placeholder="Title" type="" value="" class="bx--text-input--lg undefined bx--text-input   ">
-      
-      
-      </div>
-    
-    
-    </div></div>
+<div class="tile" id="adding-tile" style="background:url(/assets/Amos.svg) center center no-repeat;"><form class="clfx p20 w-100 h-100 svelte-17412sk"><input size="sm" placeholder="Type" value="">
+        <input size="lg" placeholder="Title" value="">
         <br>
         <div class="extra ƒ"><svg viewBox="0 0 32 32" class="svelte-17412sk"><path d="M18 8 C18 8 24 2 27 5 30 8 29 12 24 16 19 20 16 21 14 17 M14 24 C14 24 8 30 5 27 2 24 3 20 8 16 13 12 16 11 18 15"></path></svg>
-            
-<div class="bx--form-item bx--text-input-wrapper">
-  
-  <div class="bx--text-input__field-outer-wrapper"><div class="bx--text-input__field-wrapper">
-      
-      <input id="ccs-0.ifekbvjjvcn" placeholder="Link" type="" value="" class="bx--text-input--sm undefined bx--text-input   ">
-      
-      
-      </div>
-    
-    
-    </div></div></div>
+            <input size="sm" placeholder="Link" value=""></div>
         <div class="extra ƒ"><svg viewBox="0 0 32 32" class="svelte-17412sk"><path d="M20 24 L12 16 2 26 2 2 30 2 30 24 M16 20 L22 14 30 22 30 30 2 30 2 24"></path><circle cx="10" cy="9" r="3"></circle></svg>
-            
-<div class="bx--form-item bx--text-input-wrapper">
-  
-  <div class="bx--text-input__field-outer-wrapper"><div class="bx--text-input__field-wrapper">
-      
-      <input id="ccs-0.chzcuq20eoo" placeholder="Image" type="" value="" class="bx--text-input--sm undefined bx--text-input   ">
-      
-      
-      </div>
-    
-    
-    </div></div></div>
-        <span class="rec p-abs svelte-17412sk">
-<div class="bx--form-item bx--text-input-wrapper">
-  
-  <div class="bx--text-input__field-outer-wrapper"><div class="bx--text-input__field-wrapper">
-      
-      <input id="ccs-0.fgiim53wv3l" placeholder="Rec" type="" value="" class="bx--text-input--sm undefined bx--text-input   ">
-      
-      
-      </div>
-    
-    
-    </div></div></span>
+            <input size="sm" placeholder="Image" value=""></div>
+        <span class="rec p-abs svelte-17412sk"><input size="sm" placeholder="Rec" value=""></span>
         <input class="o-0" type="submit" value="Go"></form>
-    <div class="add p-abs svelte-17412sk">Add More...</div></div>
+    <div class="add p-abs svelte-17412sk">Add More...</div>
+</div>
 
 
-
-			
-		
 </body>
+
+<script defer async src="/helpers/NinjaScript.js"></script>
 
 </html>

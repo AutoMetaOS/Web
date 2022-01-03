@@ -2,7 +2,8 @@ const runner = ( ...arr ) => arr.forEach( e => e() );
 
 function errorHandler ( msg, url, line, col, error ) {
     const struct = `Error at (${ line },${ col })`;
-    console.warn( struct + error, url, msg );
+    // console.warn( struct + error, url, msg );
+    console.warn( "Error Caught at " + line );
     return 0;
 };
 

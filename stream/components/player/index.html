@@ -12,24 +12,22 @@
 
 		
 
-		<link rel="modulepreload" href="/internal/start-6fa15676.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-0412d674.js">
-		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-46d21178.js">
-		<link rel="modulepreload" href="/internal/pages/stream/components/player.svelte-e312d77e.js">
-		<link rel="modulepreload" href="/internal/chunks/store-96a06c31.js">
-		<link rel="modulepreload" href="/internal/chunks/molecular-e392fe60.js">
-		<link rel="modulepreload" href="/internal/chunks/AspectRatio-f5a3f9fa.js">
 		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/internal/assets/pages/stream/components/player.svelte-b5dad4c0.css">
+		<link rel="modulepreload" href="/internal/start-2e350315.js">
+		<link rel="modulepreload" href="/internal/chunks/vendor-50ecb96e.js">
+		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
+		<link rel="modulepreload" href="/internal/layout.svelte-abbe6312.js">
+		<link rel="modulepreload" href="/internal/pages/stream/components/player.svelte-b95bdb82.js">
+		<link rel="modulepreload" href="/internal/chunks/store-e7240bd4.js">
+		<link rel="modulepreload" href="/internal/chunks/molecular-7e46d950.js">
 
 		<script type="module">
-			import { start } from "/internal/start-6fa15676.js";
+			import { start } from "/internal/start-2e350315.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
 				session: {},
-				host: location.host,
 				route: true,
 				spa: false,
 				trailing_slash: "never",
@@ -37,21 +35,21 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/internal/layout.svelte-46d21178.js"),
-						import("/internal/pages/stream/components/player.svelte-e312d77e.js")
+						import("/internal/layout.svelte-abbe6312.js"),
+						import("/internal/pages/stream/components/player.svelte-b95bdb82.js")
 					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "/stream/components/player",
-						query: new URLSearchParams(""),
-						params: {}
-					}
+					url: new URL("sveltekit://prerender/stream/components/player"),
+					params: {}
 				}
 			});
+		</script><script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+			}
 		</script>
 
 	<script src="/helpers/RoninScript.js"></script>
-	<script src="/helpers/NinjaScript.js"></script>
+	<script src="/helpers/TsukaiScript.js"></script>
 
 	<script>
 		const meta = {
@@ -67,9 +65,8 @@
 
 
 
-
-			
-		
 </body>
+
+<script defer async src="/helpers/NinjaScript.js"></script>
 
 </html>

@@ -8,29 +8,29 @@
 
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/AutoMetaOS/UI/css/global.css'>
 
-	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.min.js" data-svelte="svelte-33ba07"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js" data-svelte="svelte-33ba07"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/theme-chrome.min.js" data-svelte="svelte-33ba07"></script>
 
 		
 
-		<link rel="modulepreload" href="/internal/start-6fa15676.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-0412d674.js">
-		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-46d21178.js">
-		<link rel="modulepreload" href="/internal/pages/debug/index.svelte-07453eb2.js">
-		<link rel="modulepreload" href="/internal/chunks/functions-369e3161.js">
-		<link rel="modulepreload" href="/internal/pages/debug/frame.svelte-4891c084.js">
 		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/internal/assets/pages/debug/index.svelte-089cdbfa.css">
-		<link rel="stylesheet" href="/internal/assets/frame.svelte_svelte&type=style&lang-493cac8f.css">
+		<link rel="stylesheet" href="/internal/assets/frame.svelte_svelte_type_style_lang-fff8ae1b.css">
 		<link rel="stylesheet" href="/internal/assets/functions-9740e283.css">
+		<link rel="modulepreload" href="/internal/start-2e350315.js">
+		<link rel="modulepreload" href="/internal/chunks/vendor-50ecb96e.js">
+		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
+		<link rel="modulepreload" href="/internal/layout.svelte-abbe6312.js">
+		<link rel="modulepreload" href="/internal/pages/debug/index.svelte-fb7e9afb.js">
+		<link rel="modulepreload" href="/internal/chunks/functions-155fc7b4.js">
+		<link rel="modulepreload" href="/internal/chunks/molecular-7e46d950.js">
+		<link rel="modulepreload" href="/internal/pages/debug/frame.svelte-2cbd3c13.js">
 
 		<script type="module">
-			import { start } from "/internal/start-6fa15676.js";
+			import { start } from "/internal/start-2e350315.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
 				session: {},
-				host: location.host,
 				route: true,
 				spa: false,
 				trailing_slash: "never",
@@ -38,21 +38,21 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/internal/layout.svelte-46d21178.js"),
-						import("/internal/pages/debug/index.svelte-07453eb2.js")
+						import("/internal/layout.svelte-abbe6312.js"),
+						import("/internal/pages/debug/index.svelte-fb7e9afb.js")
 					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "/debug",
-						query: new URLSearchParams(""),
-						params: {}
-					}
+					url: new URL("sveltekit://prerender/debug"),
+					params: {}
 				}
 			});
+		</script><script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+			}
 		</script>
 
 	<script src="/helpers/RoninScript.js"></script>
-	<script src="/helpers/NinjaScript.js"></script>
+	<script src="/helpers/TsukaiScript.js"></script>
 
 	<script>
 		const meta = {
@@ -68,16 +68,17 @@
 <section class="svelte-ujh5ef"><nav class="w-100 ƒ ∆-bw fade-down svelte-ujh5ef"><div> </div>
     <div>0</div>
     <div style="padding-right: 20px;">md: <input type="checkbox"></div></nav>
-  <article class="ƒ w-100 svelte-ujh5ef"><div class="w-50 h-100 p-rel fade-right"><pre class="w-100 svelte-19p418o" id="editor">Initialising...</pre>
+  <article class="ƒ w-100 svelte-ujh5ef">
+
+<div class="w-50 h-100 p-rel fade-right"><pre class="w-100 svelte-19p418o" id="editor">Initialising...</pre>
 </div>
     <hr class="svelte-ujh5ef">
     <div class="w-50 h-100 fade-left"><iframe title="sim" src="/assets/repl.html" class="w-100 h-100 svelte-1bxppfn" frameborder="0"></iframe></div></article>
 </section>
 
 
-
-			
-		
 </body>
+
+<script defer async src="/helpers/NinjaScript.js"></script>
 
 </html>

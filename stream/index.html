@@ -16,36 +16,32 @@
 
 		
 
-		<link rel="modulepreload" href="/internal/start-6fa15676.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-0412d674.js">
-		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-46d21178.js">
-		<link rel="modulepreload" href="/internal/pages/stream/index.svelte-c4124b4b.js">
-		<link rel="modulepreload" href="/internal/pages/stream/components/bar.svelte-b477c896.js">
-		<link rel="modulepreload" href="/internal/chunks/TextInput-0ef02bb8.js">
-		<link rel="modulepreload" href="/internal/chunks/store-96a06c31.js">
-		<link rel="modulepreload" href="/internal/chunks/molecular-e392fe60.js">
-		<link rel="modulepreload" href="/internal/pages/stream/components/player.svelte-e312d77e.js">
-		<link rel="modulepreload" href="/internal/chunks/AspectRatio-f5a3f9fa.js">
-		<link rel="modulepreload" href="/internal/pages/stream/components/YT_subs.svelte-a3e76ed2.js">
-		<link rel="modulepreload" href="/internal/pages/stream/shared/videoCard.svelte-ea99a110.js">
-		<link rel="modulepreload" href="/internal/chunks/Slider-9493bbd4.js">
-		<link rel="modulepreload" href="/internal/pages/stream/components/NB_subs.svelte-d9298ba5.js">
-		<link rel="modulepreload" href="/internal/pages/stream/components/search.svelte-65eca41e.js">
 		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/internal/assets/pages/stream/index.svelte-04cf0ad1.css">
-		<link rel="stylesheet" href="/internal/assets/pages/stream/components/bar.svelte-b49569df.css">
+		<link rel="stylesheet" href="/internal/assets/pages/stream/components/bar.svelte-9c24cef9.css">
 		<link rel="stylesheet" href="/internal/assets/pages/stream/components/player.svelte-b5dad4c0.css">
 		<link rel="stylesheet" href="/internal/assets/pages/stream/shared/videoCard.svelte-5af47e23.css">
 		<link rel="stylesheet" href="/internal/assets/pages/stream/components/search.svelte-b5dab9be.css">
+		<link rel="modulepreload" href="/internal/start-2e350315.js">
+		<link rel="modulepreload" href="/internal/chunks/vendor-50ecb96e.js">
+		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
+		<link rel="modulepreload" href="/internal/layout.svelte-abbe6312.js">
+		<link rel="modulepreload" href="/internal/pages/stream/index.svelte-60eeb5a3.js">
+		<link rel="modulepreload" href="/internal/pages/stream/components/bar.svelte-87fa6efd.js">
+		<link rel="modulepreload" href="/internal/chunks/store-e7240bd4.js">
+		<link rel="modulepreload" href="/internal/chunks/molecular-7e46d950.js">
+		<link rel="modulepreload" href="/internal/pages/stream/components/player.svelte-b95bdb82.js">
+		<link rel="modulepreload" href="/internal/pages/stream/components/YT_subs.svelte-485e46c7.js">
+		<link rel="modulepreload" href="/internal/pages/stream/shared/videoCard.svelte-838858c3.js">
+		<link rel="modulepreload" href="/internal/pages/stream/components/NB_subs.svelte-975b1876.js">
+		<link rel="modulepreload" href="/internal/pages/stream/components/search.svelte-e4713c81.js">
 
 		<script type="module">
-			import { start } from "/internal/start-6fa15676.js";
+			import { start } from "/internal/start-2e350315.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
 				session: {},
-				host: location.host,
 				route: true,
 				spa: false,
 				trailing_slash: "never",
@@ -53,21 +49,21 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/internal/layout.svelte-46d21178.js"),
-						import("/internal/pages/stream/index.svelte-c4124b4b.js")
+						import("/internal/layout.svelte-abbe6312.js"),
+						import("/internal/pages/stream/index.svelte-60eeb5a3.js")
 					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "/stream",
-						query: new URLSearchParams(""),
-						params: {}
-					}
+					url: new URL("sveltekit://prerender/stream"),
+					params: {}
 				}
 			});
+		</script><script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+			}
 		</script>
 
 	<script src="/helpers/RoninScript.js"></script>
-	<script src="/helpers/NinjaScript.js"></script>
+	<script src="/helpers/TsukaiScript.js"></script>
 
 	<script>
 		const meta = {
@@ -82,18 +78,7 @@
 
 
 
-<main class="svelte-rus5w2"><form class="o-0 w-100 p5 ƒ blur p-fix ∆-bw svelte-4d925k">
-<div class="bx--form-item bx--text-input-wrapper">
-  
-  <div class="bx--text-input__field-outer-wrapper"><div class="bx--text-input__field-wrapper">
-      
-      <input id="ccs-0.b9izvnnidnt" placeholder="Search" type="" value="" class="bx--text-input--40 p5 b0 bx--text-input   " style="background:transparent;outline:none;">
-      
-      
-      </div>
-    
-    
-    </div></div>
+<main class="svelte-rus5w2"><form class="o-0 w-100 p5 ƒ blur p-fix ∆-bw svelte-1wkl3hy"><input class="p5 b0 svelte-1wkl3hy" placeholder="Search" value="">
   <svg viewBox="0 0 32 32" height="22" width="22" fill="none"><circle stroke="#fff" cx="14" cy="14" r="12"></circle><path stroke="#fff" d="M23 23 L30 30"></path></svg>
 </form>
     
@@ -104,9 +89,8 @@
 </main>
 
 
-
-			
-		
 </body>
+
+<script defer async src="/helpers/NinjaScript.js"></script>
 
 </html>

@@ -12,21 +12,23 @@
 
 		
 
-		<link rel="modulepreload" href="/internal/start-6fa15676.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-0412d674.js">
-		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-46d21178.js">
-		<link rel="modulepreload" href="/internal/pages/command/til.svelte-18117f21.js">
 		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/internal/assets/pages/command/til.svelte-cd5aa951.css">
+		<link rel="stylesheet" href="/internal/assets/pages/command/micro/twitter.svelte-4c966c12.css">
+		<link rel="stylesheet" href="/internal/assets/pages/command/micro/card.svelte-3e00ad48.css">
+		<link rel="modulepreload" href="/internal/start-2e350315.js">
+		<link rel="modulepreload" href="/internal/chunks/vendor-50ecb96e.js">
+		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
+		<link rel="modulepreload" href="/internal/layout.svelte-abbe6312.js">
+		<link rel="modulepreload" href="/internal/pages/command/til.svelte-ac6ffc94.js">
+		<link rel="modulepreload" href="/internal/pages/command/micro/twitter.svelte-6c10e02c.js">
+		<link rel="modulepreload" href="/internal/pages/command/micro/card.svelte-b5b4f850.js">
 
 		<script type="module">
-			import { start } from "/internal/start-6fa15676.js";
+			import { start } from "/internal/start-2e350315.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
 				session: {},
-				host: location.host,
 				route: true,
 				spa: false,
 				trailing_slash: "never",
@@ -34,21 +36,21 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/internal/layout.svelte-46d21178.js"),
-						import("/internal/pages/command/til.svelte-18117f21.js")
+						import("/internal/layout.svelte-abbe6312.js"),
+						import("/internal/pages/command/til.svelte-ac6ffc94.js")
 					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "/command/til",
-						query: new URLSearchParams(""),
-						params: {}
-					}
+					url: new URL("sveltekit://prerender/command/til"),
+					params: {}
 				}
 			});
+		</script><script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+			}
 		</script>
 
 	<script src="/helpers/RoninScript.js"></script>
-	<script src="/helpers/NinjaScript.js"></script>
+	<script src="/helpers/TsukaiScript.js"></script>
 
 	<script>
 		const meta = {
@@ -61,16 +63,24 @@
 	
 
 
-<a href="#" class="rpm-10 tile ƒ-col †j fade-right bg svelte-1qosmd2" style="--bg:linear-gradient(135deg, #30a, #90F)"><!-- HTML_TAG_START -->fetching...<!-- HTML_TAG_END --> →
+<a href="" class="m10 tile ƒ †l fade-right svelte-ggge88"><div class="p10 svelte-ggge88">
+        <!-- HTML_TAG_START -->fetching...<!-- HTML_TAG_END --></div>
+    
 </a>
-<div class="rpm-10 tile fade-right svelte-1qosmd2" style="border:1px solid #2af"><a class="twitter-timeline  svelte-1qosmd2" href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw">Tweets by elonmusk</a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-<iframe class="tile rx10 m10 fade-right svelte-1qosmd2" style="border:1px solid #888;height:240px" title="Wiki" src="https://en.m.wikipedia.org/wiki/Special:Random"></iframe>
+
+<div class="m10 p10 tile fade-right svelte-trc8qv" style="border: 1px solid #0002;"><a class="twitter-timeline " href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw">Tweets by elonmusk
+    </a>
+    <script async src="https://platform.twitter.com/widgets.js"></script>
+</div>
+
+<a href="" class="m10 tile ƒ †l fade-right svelte-ggge88"><div class="p10 svelte-ggge88">
+        <!-- HTML_TAG_START -->fetching...<!-- HTML_TAG_END --></div>
+    
+</a>
 
 
-
-			
-		
 </body>
+
+<script defer async src="/helpers/NinjaScript.js"></script>
 
 </html>
