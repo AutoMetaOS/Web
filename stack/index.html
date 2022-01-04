@@ -6,7 +6,8 @@
 	<link rel="icon" href="/assets/Amos.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/AutoMetaOS/UI/css/global.css'>
+	<link rel='stylesheet' href='/OUI/css/global.css'>
+	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
 
 	<style data-svelte="svelte-o7vier">body {
             background: #222;
@@ -16,17 +17,20 @@
 		
 
 		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/internal/assets/pages/stack/tile.svelte-e71a1257.css">
-		<link rel="modulepreload" href="/internal/start-2e350315.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-50ecb96e.js">
+		<link rel="stylesheet" href="/internal/assets/pages/stack/tile.svelte-83cdca67.css">
+		<link rel="stylesheet" href="/internal/assets/pages/stack/adder.svelte-7eb44b97.css">
+		<link rel="modulepreload" href="/internal/start-f9b0c8f4.js">
+		<link rel="modulepreload" href="/internal/chunks/vendor-858ab733.js">
 		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-abbe6312.js">
-		<link rel="modulepreload" href="/internal/pages/stack/index.svelte-b3b3f82e.js">
-		<link rel="modulepreload" href="/internal/pages/stack/tile.svelte-951e0a08.js">
-		<link rel="modulepreload" href="/internal/chunks/functions-9e75b96c.js">
+		<link rel="modulepreload" href="/internal/layout.svelte-edacde82.js">
+		<link rel="modulepreload" href="/internal/pages/stack/index.svelte-95a1b450.js">
+		<link rel="modulepreload" href="/internal/pages/stack/tile.svelte-f17b77ba.js">
+		<link rel="modulepreload" href="/internal/chunks/meta-44ce4353.js">
+		<link rel="modulepreload" href="/internal/pages/stack/adder.svelte-1710e321.js">
+		<link rel="modulepreload" href="/internal/chunks/index-c2ada53c.js">
 
 		<script type="module">
-			import { start } from "/internal/start-2e350315.js";
+			import { start } from "/internal/start-f9b0c8f4.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -38,8 +42,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/internal/layout.svelte-abbe6312.js"),
-						import("/internal/pages/stack/index.svelte-b3b3f82e.js")
+						import("/internal/layout.svelte-edacde82.js"),
+						import("/internal/pages/stack/index.svelte-95a1b450.js")
 					],
 					url: new URL("sveltekit://prerender/stack"),
 					params: {}
@@ -67,8 +71,20 @@
 
 
 
-<section class=""><div class="ƒ ƒ∑">
-        </div></section>
+<section class="ƒ ƒ∑"><div class="tile p-rel" style="width:400px;height:300px;"><img class="p-abs svelte-e9sv60" src="" width="400px" height="300px" alt="Placeholder" style="z-index: 0;">
+    <form class="p-abs p20 svelte-e9sv60"><select><option value="Article">Article
+                </option><option value="Repository">Repository
+                </option><option value="Video">Video
+                </option></select> <br>
+
+        <input type="text" placeholder="URL" class="svelte-e9sv60" value="">
+
+        <input type="text" placeholder="Title" class="svelte-e9sv60" value="">
+
+        <input type="text" placeholder="Image" class="svelte-e9sv60" value="">
+        <input class="o-0 svelte-e9sv60" type="submit" value="Go"></form>
+</div>
+    </section>
 
 
 </body>

@@ -6,22 +6,24 @@
 	<link rel="icon" href="/assets/Amos.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/AutoMetaOS/UI/css/global.css'>
+	<link rel='stylesheet' href='/OUI/css/global.css'>
+	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
 
 	
 
 		
 
 		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/internal/assets/pages/stack/adder.svelte-6cc283aa.css">
-		<link rel="modulepreload" href="/internal/start-2e350315.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-50ecb96e.js">
+		<link rel="stylesheet" href="/internal/assets/pages/stack/adder.svelte-7eb44b97.css">
+		<link rel="modulepreload" href="/internal/start-f9b0c8f4.js">
+		<link rel="modulepreload" href="/internal/chunks/vendor-858ab733.js">
 		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-abbe6312.js">
-		<link rel="modulepreload" href="/internal/pages/stack/adder.svelte-174a4b4e.js">
+		<link rel="modulepreload" href="/internal/layout.svelte-edacde82.js">
+		<link rel="modulepreload" href="/internal/pages/stack/adder.svelte-1710e321.js">
+		<link rel="modulepreload" href="/internal/chunks/meta-44ce4353.js">
 
 		<script type="module">
-			import { start } from "/internal/start-2e350315.js";
+			import { start } from "/internal/start-f9b0c8f4.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -33,8 +35,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/internal/layout.svelte-abbe6312.js"),
-						import("/internal/pages/stack/adder.svelte-174a4b4e.js")
+						import("/internal/layout.svelte-edacde82.js"),
+						import("/internal/pages/stack/adder.svelte-1710e321.js")
 					],
 					url: new URL("sveltekit://prerender/stack/adder"),
 					params: {}
@@ -60,16 +62,18 @@
 	
 
 
-<div class="tile" id="adding-tile" style="background:url(/assets/Amos.svg) center center no-repeat;"><form class="clfx p20 w-100 h-100 svelte-17412sk"><input size="sm" placeholder="Type" value="">
-        <input size="lg" placeholder="Title" value="">
-        <br>
-        <div class="extra ƒ"><svg viewBox="0 0 32 32" class="svelte-17412sk"><path d="M18 8 C18 8 24 2 27 5 30 8 29 12 24 16 19 20 16 21 14 17 M14 24 C14 24 8 30 5 27 2 24 3 20 8 16 13 12 16 11 18 15"></path></svg>
-            <input size="sm" placeholder="Link" value=""></div>
-        <div class="extra ƒ"><svg viewBox="0 0 32 32" class="svelte-17412sk"><path d="M20 24 L12 16 2 26 2 2 30 2 30 24 M16 20 L22 14 30 22 30 30 2 30 2 24"></path><circle cx="10" cy="9" r="3"></circle></svg>
-            <input size="sm" placeholder="Image" value=""></div>
-        <span class="rec p-abs svelte-17412sk"><input size="sm" placeholder="Rec" value=""></span>
-        <input class="o-0" type="submit" value="Go"></form>
-    <div class="add p-abs svelte-17412sk">Add More...</div>
+<div class="tile p-rel" style="width:0;height:0;"><img class="p-abs svelte-e9sv60" src="" width="0" height="0" alt="Placeholder" style="z-index: 0;">
+    <form class="p-abs p20 svelte-e9sv60"><select><option value="Article">Article
+                </option><option value="Repository">Repository
+                </option><option value="Video">Video
+                </option></select> <br>
+
+        <input type="text" placeholder="URL" class="svelte-e9sv60" value="">
+
+        <input type="text" placeholder="Title" class="svelte-e9sv60" value="">
+
+        <input type="text" placeholder="Image" class="svelte-e9sv60" value="">
+        <input class="o-0 svelte-e9sv60" type="submit" value="Go"></form>
 </div>
 
 
