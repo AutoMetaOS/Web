@@ -6,9 +6,9 @@
     let href = "";
 
     onMount(() => {
-        window.onload(() => {
+        window.onload = () => {
             href = "#wrapper";
-        });
+        };
     });
 
     export let //

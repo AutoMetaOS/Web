@@ -12,7 +12,7 @@ export const reddit = d => {
     const data = {
         desc: cleaner( fetched.title ),
         href: fetched.url,
-        image: fetched.preview?.images[ 0 ].resolutions[ 1 ].url.replaceAll( '&amp;', '&' ) || "https://voicebot.ai/wp-content/uploads/2021/04/reddit.png"
+        image: fetched.preview?.images[ 0 ].resolutions[ 1 ].url.replaceAll( '&amp;', '&' )
     };
     return data;
 };

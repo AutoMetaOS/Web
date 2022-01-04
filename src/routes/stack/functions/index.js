@@ -11,7 +11,8 @@ stack.list( "amos" ).then( r => {
             obj.id = id;
             full_stack.set( [ ...get( full_stack ), transformer( obj ) ] );
         } );
-    } )
+    } );
+    return 0;
 } );
 
 function transformer ( d ) {
@@ -19,13 +20,6 @@ function transformer ( d ) {
     const type = Object.keys( d )[ 0 ];
     const url = d[ type ];
     return { id, title, image, type, url };
-}
-
-export const getMetadata = async ( url ) => {
-    const URL = serverURL + '/requestMetadata?url=' + encodeURI( url );
-    const response = await fetch( URL );
-    const json = await response.json();
-    return json;
 }
 
 export const getShows = async ( filtered_list ) => {

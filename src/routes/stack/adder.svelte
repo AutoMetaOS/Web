@@ -1,111 +1,86 @@
 <script>
-    // import { getMetadata, setStack, full_stack } from "./functions";
+    import { getMetadata } from "./functions/meta.js";
+
+    export let size = {
+        width: 0,
+        height: 0,
+    };
+
+    const types = ["Article", "Repository", "Video"];
+
+    const blurHandler = (e) => {
+        getMetadata(e.target.value).then((r) => {
+            if (r.title) data.title = r.title;
+            if (r.image) data.image = r.image;
+            if (r.type) data.type = r.type;
+        });
+    };
 
     let data = {
         title: "",
-        type: "",
+        type: "Video",
         url: "",
         image: "",
-        from: "",
-    };
-
-    const getImage = (e) => {
-        const holder = ƒ("form");
-        if (data.url.includes("youtube")) {
-            data.image =
-                "https://i.ytimg.com/vi/" +
-                data.url.split("v=")[1].split("&")[0] +
-                "/maxresdefault.jpg";
-        } else {
-            getMetadata(data.url).then((res) => {
-                data.image = res.meta.image.url;
-            });
-        }
-        holder.style.background = `url(${data.image}) center center no-repeat;`;
-        holder.style.backgroundSize = `cover`;
     };
 
     const preprocess = (e) => {
         data.id = uuid();
         data.date = Date.now();
-        console.log(data, data.url);
-        // setStack(data);
     };
 </script>
 
-<div
-    class="tile"
-    id="adding-tile"
-    style="background:url(/assets/Amos.svg) center center no-repeat;"
->
-    <form class="clfx p20 w-100 h-100" on:submit|preventDefault={preprocess}>
-        <input size="sm" placeholder="Type" bind:value={data.type} />
-        <input size="lg" placeholder="Title" bind:value={data.title} />
-        <br />
-        <div class="extra ƒ">
-            <svg viewBox="0 0 32 32">
-                <path
-                    d="M18 8 C18 8 24 2 27 5 30 8 29 12 24 16 19 20 16 21 14 17 M14 24 C14 24 8 30 5 27 2 24 3 20 8 16 13 12 16 11 18 15"
-                />
-            </svg>
-            <input
-                size="sm"
-                placeholder="Link"
-                on:blur={getImage}
-                bind:value={data.url}
-            />
-        </div>
-        <div class="extra ƒ">
-            <svg viewBox="0 0 32 32">
-                <path
-                    d="M20 24 L12 16 2 26 2 2 30 2 30 24 M16 20 L22 14 30 22 30 30 2 30 2 24"
-                />
-                <circle cx="10" cy="9" r="3" />
-            </svg>
-            <input size="sm" placeholder="Image" bind:value={data.image} />
-        </div>
-        <span class="rec p-abs">
-            <input size="sm" placeholder="Rec" bind:value={data.from} />
-        </span>
+<div class="tile p-rel" style={`width:${size.width};height:${size.height};`}>
+    <img
+        class="p-abs"
+        src={data.image}
+        width={size.width}
+        height={size.height}
+        alt="Placeholder"
+        style="z-index: 0;"
+    />
+    <form class="p-abs p20" on:submit|preventDefault={preprocess}>
+        <select bind:value={data.type}>
+            <!-- on:change={() => console.log(data.type)} -->
+            {#each types as type}
+                <option value={type}>
+                    {type}
+                </option>
+            {/each}
+        </select> <br />
+
+        <input
+            type="text"
+            placeholder="URL"
+            on:blur={blurHandler}
+            bind:value={data.url}
+        />
+
+        <input type="text" placeholder="Title" bind:value={data.title} />
+
+        <input type="text" placeholder="Image" bind:value={data.image} />
         <input class="o-0" type="submit" value="Go" />
     </form>
-    <div class="add p-abs">Add More...</div>
 </div>
 
 <style type="text/scss">
     form {
-        opacity: 0.5;
-        transition: opacity 0.2s ease;
-        &:hover {
-            opacity: 1;
-            & ~ .add {
-                opacity: 0;
-            }
-        }
-        .rec {
-            bottom: 1em;
-        }
-    }
-    svg {
-        height: 28px;
-        width: 28px;
-        margin: 2px 5px 0 0;
-        stroke: #fff;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        fill: none;
-    }
+        z-index: 1;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
 
-    .clfx {
-        background: #0008;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        -moz-backdrop-filter: blur(4px);
+        background: #000a;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        input {
+            margin: 5px;
+            border: 1px solid #fff8;
+            border-radius: 5px;
+            padding: 5px;
+            color: #fff;
+        }
     }
-    .add {
-        color: #000;
-        bottom: 1em;
-        right: 1em;
+    .p-abs {
+        top: 0;
+        left: 0;
     }
 </style>

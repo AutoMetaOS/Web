@@ -49,8 +49,12 @@
         border: 1px solid #0002;
         & img {
             background: #fff;
-            max-width: 40%;
+            width: 33%;
             object-fit: cover;
+            transition: width 0.1s ease;
+            &:hover {
+                width: 100%;
+            }
         }
     }
 </style>
