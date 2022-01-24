@@ -1,5 +1,7 @@
 <script>
     import { type_process } from "./functions/meta.js";
+    import { stack } from "$lib/db";
+    import { F } from "predefined";
 
     export let //
         data = {},
@@ -20,6 +22,13 @@
             document.head.appendChild(rel);
             defs.preload = 1;
         }
+        return 0;
+    };
+
+    const deleteHandler = (e) => {
+        const id = e.target.parentElement.id;
+        stack.delete("amos", id).then((r) => console.log(id, r));
+        F(`#${id}`).remove();
         return 0;
     };
 </script>
@@ -46,6 +55,7 @@
         <h1>{data?.title}</h1>
     </div>
     <svg
+        on:click|preventDefault={deleteHandler}
         class="p-abs"
         viewBox="0 0 32 32"
         width="16"

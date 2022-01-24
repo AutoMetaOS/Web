@@ -1,7 +1,7 @@
 <script>
     import { w3 } from "./functions";
     import { onMount, createEventDispatcher } from "svelte";
-    import { debounce } from "$lib/shared/molecular";
+    import { debounce } from "$lib/shared";
 
     const dispatch = createEventDispatcher();
 
@@ -22,7 +22,8 @@
                 cursorStyle: "slim",
             });
 
-            editor.on("change",
+            editor.on(
+                "change",
                 debounce(function () {
                     update(editor.getValue());
                 }, 5e2)
@@ -34,9 +35,11 @@
 </script>
 
 <svelte:head>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/theme-chrome.min.js"></script>
+    {#each ["ace.min.js", "mode-html.min.js", "theme-chrome.min.js"] as doc}
+        <script
+            type="text/javascript"
+            src={`https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/${doc}`}></script>
+    {/each}
 </svelte:head>
 
 <div class="w-50 h-100 p-rel fade-right">

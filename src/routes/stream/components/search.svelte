@@ -1,8 +1,8 @@
 <script>
   export let videos = [];
 
-  import Card from "../shared/videoCard.svelte";
-  import { Kron } from "$lib/shared/molecular";
+  import Card from "./videoCard.svelte";
+  import { Kron } from "$lib/shared";
 </script>
 
 <section class="p20 ƒ ƒ∑" id="search">
@@ -13,7 +13,6 @@
     {#each videos as vid}
       <Card
         title={vid.snippet.title}
-        type="Youtube"
         image={vid.snippet.thumbnails.medium.url}
         slug={vid.id.videoId}
         details={[

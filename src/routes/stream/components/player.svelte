@@ -1,5 +1,5 @@
 <script>
-    import { vId } from "../shared/store";
+    import { vId } from "../store";
 
     const allow = [
         "fullscreen",

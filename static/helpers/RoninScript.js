@@ -1,5 +1,5 @@
 const ƒ = ( x ) => document.querySelector( x );
-const ƒA = ( x ) => [ ...document.querySelectorAll( x ) ];
+const FA = ( x ) => [ ...document.querySelectorAll( x ) ];
 
 const time = {
     since: function ( val ) {
@@ -136,7 +136,7 @@ const truthy = condition => condition ? true : false;
 
 
 document.onload = () => {
-    const elements = ƒA( '*' ).length;
+    const elements = FA( '*' ).length;
 
     const log = {
         total_elements: elements

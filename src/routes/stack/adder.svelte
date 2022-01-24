@@ -1,5 +1,10 @@
 <script>
+    import { crypt } from "predefined";
     import { getMetadata } from "./functions/meta.js";
+    import { stack } from "$lib/db";
+
+    const capitalCase = (string) =>
+        string.charAt(0).toUpperCase() + string.slice(1);
 
     export let size = {
         width: 0,
@@ -9,10 +14,12 @@
     const types = ["Article", "Repository", "Video"];
 
     const blurHandler = (e) => {
+        data.title = "Fetching...";
+        data.image = "Fetching...";
         getMetadata(e.target.value).then((r) => {
-            if (r.title) data.title = r.title;
-            if (r.image) data.image = r.image;
-            if (r.type) data.type = r.type;
+            if (r.title) data.title = r.title || "";
+            if (r.image) data.image = r.image || "";
+            if (r.type) data.type = capitalCase(r.type) || "Article";
         });
     };
 
@@ -24,8 +31,27 @@
     };
 
     const preprocess = (e) => {
-        data.id = uuid();
-        data.date = Date.now();
+        const send = data;
+        const uuid = crypt.uuid().split("-")[0];
+        const date = new Date();
+
+        const id = `${(+date).toString(36)}-${uuid}`;
+
+        stack.put("amos", id, send).then((r) => {
+            if (r.charAt(0) === `"`) {
+                console.log(200);
+                data = {
+                    title: "",
+                    type: "Article",
+                    url: "",
+                    image: "",
+                };
+            } else {
+                data.title = "ERROR Sending!";
+                data.image = "Check console";
+                console.log(r);
+            }
+        });
     };
 </script>
 
@@ -42,9 +68,7 @@
         <select bind:value={data.type}>
             <!-- on:change={() => console.log(data.type)} -->
             {#each types as type}
-                <option value={type}>
-                    {type}
-                </option>
+                <option value={type}>{type}</option>
             {/each}
         </select> <br />
 

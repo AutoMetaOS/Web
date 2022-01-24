@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { F } from "predefined";
     const pi = Math.PI;
     const points = 10;
     const circles = [];
@@ -21,7 +22,7 @@
         const w = 300 * dpr;
         const center = { x: (w / 2) * dpr, y: (h / 2) * dpr };
 
-        const el = ƒ("#canvas");
+        const el = F("#canvas");
         const ctx = el.getContext("2d");
 
         const gradienter = (i) => {

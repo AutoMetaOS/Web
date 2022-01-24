@@ -1,28 +1,30 @@
 <script>
+    import pkg from "predefined";
+    const { url_params } = pkg;
     import Bar from "./components/bar.svelte";
     import Player from "./components/player.svelte";
-    import Subsc from "./components/YT_subs.svelte";
-    import NebSubsc from "./components/NB_subs.svelte";
+    import SubSet from "./components/set.svelte";
     import Search from "./components/search.svelte";
 
     import { onMount } from "svelte";
-    import { videoProcessor, search } from "./shared/store";
+    import { videoProcessor, search } from "./store";
+    import cnls from "../../../../config/sorted_channels.json";
 
     let base = [];
 
     const searcher = (sc) => {
         const q = typeof sc === "string" ? sc : sc.target[0].value;
-        if (!q) return setµ("q", "");
+        if (!q) return url_params.set("q", "");
         else search(q).then((r) => (base = r.items));
         window.location.href = "#search";
-        return setµ("q", q);
+        return url_params.set("q", q);
     };
 
     onMount(() => {
-        const params = getµ();
+        const params = url_params.get();
         params.q && searcher(params.q);
         if (params.id) {
-            videoProcessor(params.type, params.id, params.token);
+            videoProcessor(params.id);
         }
         return 0;
     });
@@ -42,8 +44,9 @@
     <Bar {searcher} />
     <Player />
     <Search videos={base} />
-    <Subsc />
-    <NebSubsc />
+    {#each cnls as set}
+        <SubSet {set} />
+    {/each}
 </main>
 
 <style>

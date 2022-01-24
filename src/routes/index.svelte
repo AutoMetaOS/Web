@@ -1,4 +1,5 @@
 <script>
+  import { F } from "predefined";
   import { base } from "$app/paths";
   import { engine, preprocessor, recommendations } from "./command/samurai";
 
@@ -34,7 +35,7 @@
   };
 
   onMount(() => {
-    setInterval(ƒ("#rsc").focus(), 1e2);
+    setInterval(F("#rsc").focus(), 1e2);
     setTimeout(() => (show_extras = true), 6e3);
   });
 </script>

@@ -4,7 +4,7 @@
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"deploy": "npx gh-pages -d build -t true && rm -rf build .svelte-kit",
-		"commit": "git add . && git commit -m 'Bug Fixes' && git push"
+		"commit": "git add . && git commit -m 'MANY MANY CHANGES' && git push"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "next",
@@ -17,11 +17,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"carbon-icons-svelte": "^10.44.3",
-		"codeflask": "^1.4.1",
 		"markdown-it": "^12.2.0",
-		"prismjs": "^1.25.0",
-		"quill": "^1.3.7",
-		"ramjet": "^0.5.0"
+		"predefined": "1.1.0"
 	}
 }

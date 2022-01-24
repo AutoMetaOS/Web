@@ -1,18 +1,13 @@
 <script>
   import { onMount } from "svelte";
-  import { channels, nebula } from "../shared/store";
+  import { url_params } from "predefined";
 
   export let searcher;
 
   let searchText = "";
 
   onMount(() => {
-    if (getµ().q || getµ().id) {
-      searchText = getµ()?.q || "";
-    } else {
-      nebula();
-      channels();
-    }
+    searchText = url_params.get()?.q || "";
   });
 </script>
 
@@ -20,11 +15,7 @@
   class="o-0 w-100 p5 ƒ blur p-fix ∆-bw"
   on:submit|preventDefault={searcher}
 >
-  <input
-  class="p5 b0"
-  placeholder="Search"
-  bind:value={searchText}
-  />
+  <input class="p5 b0" placeholder="Search" bind:value={searchText} />
   <svg viewBox="0 0 32 32" height="22" width="22" fill="none">
     <circle stroke="#fff" cx="14" cy="14" r="12" />
     <path stroke="#fff" d="M23 23 L30 30" />
@@ -43,10 +34,10 @@
     &:focus {
       opacity: 1;
     }
-    & input{
+    & input {
       color: #fff;
-      background:#0000;
-      outline:none;
+      background: #0000;
+      outline: none;
     }
   }
 </style>

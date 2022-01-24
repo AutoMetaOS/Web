@@ -12,7 +12,7 @@ const suggestions = ( SIn ) =>
         .catch( console.warn );
 
 const setEngineImage = ( key ) => {
-    const engineImage = ƒ( '#engineImage' );
+    const engineImage = F( '#engineImage' );
     if ( engineImage ) engineImage.src = `${ base }/icons/${ sites[ key ]?.name || key }.svg`;
     return 0;
 }

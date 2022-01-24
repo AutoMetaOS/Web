@@ -9,7 +9,7 @@
 For QuerySelectors
 ```js
 ƒ = document.querySelector;
-ƒA = document.querySelectorAll;
+FA = document.querySelectorAll;
 ```
 
 ### New Functions
