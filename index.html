@@ -10,54 +10,44 @@
 	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
 
 	<link rel="preconnect" href="https://web.whatsapp.com/" data-svelte="svelte-uae9sy"><link rel="preconnect" href="https://en.wikipedia.org/" data-svelte="svelte-uae9sy"><link rel="preconnect" href="https://github.com" data-svelte="svelte-uae9sy"><link rel="prefetch" href="/stream" data-svelte="svelte-uae9sy">
+	<link rel="stylesheet" href="/internal/assets/pages/index.svelte-6fe08a06.css">
+	<link rel="stylesheet" href="/internal/assets/suggestion-25e0bd32.css">
+	<link rel="stylesheet" href="/internal/assets/pages/command/logo.svelte-e428a1ee.css">
+	<link rel="stylesheet" href="/internal/assets/pages/command/micro/twitter.svelte-4c966c12.css">
+	<link rel="stylesheet" href="/internal/assets/pages/command/micro/card.svelte-f3798919.css">
+	<link rel="modulepreload" href="/internal/start-6d354ca5.js">
+	<link rel="modulepreload" href="/internal/chunks/vendor-4b89dd0c.js">
+	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/internal/layout.svelte-e31fdfda.js">
+	<link rel="modulepreload" href="/internal/pages/index.svelte-6a1360ce.js">
+	<link rel="modulepreload" href="/internal/chunks/suggestion-769ae378.js">
+	<link rel="modulepreload" href="/internal/pages/command/logo.svelte-5f02c637.js">
+	<link rel="modulepreload" href="/internal/pages/command/til.svelte-1459ec65.js">
+	<link rel="modulepreload" href="/internal/pages/command/micro/twitter.svelte-1f737e15.js">
+	<link rel="modulepreload" href="/internal/pages/command/micro/card.svelte-25d53830.js">
+			<script type="module">
+				import { start } from "/internal/start-6d354ca5.js";
+				start({
+					target: document.querySelector("body"),
+					paths: {"base":"","assets":""},
+					session: {},
+					route: true,
+					spa: false,
+					trailing_slash: "never",
+					hydrate: {
+						status: 200,
+						error: null,
+						nodes: [
+							import("/internal/layout.svelte-e31fdfda.js"),
+						import("/internal/pages/index.svelte-6a1360ce.js")
+						],
+						url: new URL("http://sveltekit-prerender/"),
+						params: {}
+					}
+				});
+			</script>
 
-		
-
-		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/internal/assets/pages/index.svelte-6fe08a06.css">
-		<link rel="stylesheet" href="/internal/assets/suggestion-25e0bd32.css">
-		<link rel="stylesheet" href="/internal/assets/pages/command/logo.svelte-e428a1ee.css">
-		<link rel="stylesheet" href="/internal/assets/pages/command/micro/twitter.svelte-4c966c12.css">
-		<link rel="stylesheet" href="/internal/assets/pages/command/micro/card.svelte-f3798919.css">
-		<link rel="modulepreload" href="/internal/start-f9b0c8f4.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-858ab733.js">
-		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-edacde82.js">
-		<link rel="modulepreload" href="/internal/pages/index.svelte-d211f8f2.js">
-		<link rel="modulepreload" href="/internal/chunks/suggestion-5efc4b65.js">
-		<link rel="modulepreload" href="/internal/pages/command/logo.svelte-c7a7afeb.js">
-		<link rel="modulepreload" href="/internal/pages/command/til.svelte-957b8d18.js">
-		<link rel="modulepreload" href="/internal/pages/command/micro/twitter.svelte-306ca779.js">
-		<link rel="modulepreload" href="/internal/pages/command/micro/card.svelte-ac7cd3a8.js">
-
-		<script type="module">
-			import { start } from "/internal/start-f9b0c8f4.js";
-			start({
-				target: document.querySelector("body"),
-				paths: {"base":"","assets":""},
-				session: {},
-				route: true,
-				spa: false,
-				trailing_slash: "never",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/internal/layout.svelte-edacde82.js"),
-						import("/internal/pages/index.svelte-d211f8f2.js")
-					],
-					url: new URL("sveltekit://prerender/"),
-					params: {}
-				}
-			});
-		</script><script>
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('/service-worker.js');
-			}
-		</script>
-
-	<script src="/helpers/RoninScript.js"></script>
-	<script src="/helpers/TsukaiScript.js"></script>
+	<!-- <script src="/helpers/RoninScript.js"></script> -->
 
 	<script>
 		const meta = {
@@ -84,7 +74,5 @@
 
 
 </body>
-
-<script defer async src="/helpers/NinjaScript.js"></script>
 
 </html>

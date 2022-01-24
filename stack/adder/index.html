@@ -10,46 +10,36 @@
 	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
 
 	
+	<link rel="stylesheet" href="/internal/assets/pages/stack/adder.svelte-7eb44b97.css">
+	<link rel="modulepreload" href="/internal/start-6d354ca5.js">
+	<link rel="modulepreload" href="/internal/chunks/vendor-4b89dd0c.js">
+	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/internal/layout.svelte-e31fdfda.js">
+	<link rel="modulepreload" href="/internal/pages/stack/adder.svelte-9eb13c60.js">
+	<link rel="modulepreload" href="/internal/chunks/index-dd575005.js">
+			<script type="module">
+				import { start } from "/internal/start-6d354ca5.js";
+				start({
+					target: document.querySelector("body"),
+					paths: {"base":"","assets":""},
+					session: {},
+					route: true,
+					spa: false,
+					trailing_slash: "never",
+					hydrate: {
+						status: 200,
+						error: null,
+						nodes: [
+							import("/internal/layout.svelte-e31fdfda.js"),
+						import("/internal/pages/stack/adder.svelte-9eb13c60.js")
+						],
+						url: new URL("http://sveltekit-prerender/stack/adder"),
+						params: {}
+					}
+				});
+			</script>
 
-		
-
-		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/internal/assets/pages/stack/adder.svelte-7eb44b97.css">
-		<link rel="modulepreload" href="/internal/start-f9b0c8f4.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-858ab733.js">
-		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-edacde82.js">
-		<link rel="modulepreload" href="/internal/pages/stack/adder.svelte-1710e321.js">
-		<link rel="modulepreload" href="/internal/chunks/meta-44ce4353.js">
-
-		<script type="module">
-			import { start } from "/internal/start-f9b0c8f4.js";
-			start({
-				target: document.querySelector("body"),
-				paths: {"base":"","assets":""},
-				session: {},
-				route: true,
-				spa: false,
-				trailing_slash: "never",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/internal/layout.svelte-edacde82.js"),
-						import("/internal/pages/stack/adder.svelte-1710e321.js")
-					],
-					url: new URL("sveltekit://prerender/stack/adder"),
-					params: {}
-				}
-			});
-		</script><script>
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('/service-worker.js');
-			}
-		</script>
-
-	<script src="/helpers/RoninScript.js"></script>
-	<script src="/helpers/TsukaiScript.js"></script>
+	<!-- <script src="/helpers/RoninScript.js"></script> -->
 
 	<script>
 		const meta = {
@@ -63,10 +53,7 @@
 
 
 <div class="tile p-rel" style="width:0;height:0;"><img class="p-abs svelte-e9sv60" src="" width="0" height="0" alt="Placeholder" style="z-index: 0;">
-    <form class="p-abs p20 svelte-e9sv60"><select><option value="Article">Article
-                </option><option value="Repository">Repository
-                </option><option value="Video">Video
-                </option></select> <br>
+    <form class="p-abs p20 svelte-e9sv60"><select><option value="Article">Article</option><option value="Repository">Repository</option><option value="Video">Video</option></select> <br>
 
         <input type="text" placeholder="URL" class="svelte-e9sv60" value="">
 
@@ -78,7 +65,5 @@
 
 
 </body>
-
-<script defer async src="/helpers/NinjaScript.js"></script>
 
 </html>

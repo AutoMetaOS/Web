@@ -10,44 +10,34 @@
 	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
 
 	
+	<link rel="modulepreload" href="/internal/start-6d354ca5.js">
+	<link rel="modulepreload" href="/internal/chunks/vendor-4b89dd0c.js">
+	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/internal/layout.svelte-e31fdfda.js">
+	<link rel="modulepreload" href="/internal/pages/math/index.svelte-7b2d01b9.js">
+			<script type="module">
+				import { start } from "/internal/start-6d354ca5.js";
+				start({
+					target: document.querySelector("body"),
+					paths: {"base":"","assets":""},
+					session: {},
+					route: true,
+					spa: false,
+					trailing_slash: "never",
+					hydrate: {
+						status: 200,
+						error: null,
+						nodes: [
+							import("/internal/layout.svelte-e31fdfda.js"),
+						import("/internal/pages/math/index.svelte-7b2d01b9.js")
+						],
+						url: new URL("http://sveltekit-prerender/math"),
+						params: {}
+					}
+				});
+			</script>
 
-		
-
-		<link rel="stylesheet" href="/internal/assets/start-61d1577b.css">
-		<link rel="modulepreload" href="/internal/start-f9b0c8f4.js">
-		<link rel="modulepreload" href="/internal/chunks/vendor-858ab733.js">
-		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/internal/layout.svelte-edacde82.js">
-		<link rel="modulepreload" href="/internal/pages/math/index.svelte-dcb3b6c1.js">
-
-		<script type="module">
-			import { start } from "/internal/start-f9b0c8f4.js";
-			start({
-				target: document.querySelector("body"),
-				paths: {"base":"","assets":""},
-				session: {},
-				route: true,
-				spa: false,
-				trailing_slash: "never",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/internal/layout.svelte-edacde82.js"),
-						import("/internal/pages/math/index.svelte-dcb3b6c1.js")
-					],
-					url: new URL("sveltekit://prerender/math"),
-					params: {}
-				}
-			});
-		</script><script>
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('/service-worker.js');
-			}
-		</script>
-
-	<script src="/helpers/RoninScript.js"></script>
-	<script src="/helpers/TsukaiScript.js"></script>
+	<!-- <script src="/helpers/RoninScript.js"></script> -->
 
 	<script>
 		const meta = {
@@ -66,7 +56,5 @@
 
 
 </body>
-
-<script defer async src="/helpers/NinjaScript.js"></script>
 
 </html>
