@@ -1,11 +1,28 @@
-export const type_process = ( { type, url } ) => {
-    url = new URL( url || "https://os.nukes.in" )?.hostname.replace(
-        /^www\./,
-        ""
-    );
-    if ( type === "Article" ) return ( type = `ARTICLE ${ url }` );
-    else return type;
+export const url_process = ( url ) => new URL( url || "https://os.nukes.in" )
+    ?.hostname.replace( /^www\./, "" );
+
+export const image_process = ( { url, image } ) => {
+    if ( image ) return image;
+
+    if ( url?.includes( 'wikipedia' ) ) return "https://wallpaperaccess.com/full/7408458.png";
+
+    return "/OUI/icons/amos.png";
 };
+
+export const type_process = ( type ) => {
+    if ( type === "Video" ) return "#f00";
+    if ( type === 'Collection' ) return '#ff0';
+    if ( type === 'Repository' ) return '#a2f';
+
+    return "#fff";
+}
+
+export const types = [
+    "Article",
+    "Collection",
+    "Repository",
+    "Video"
+];
 
 export const getMetadata = async ( url ) => {
     let md = {

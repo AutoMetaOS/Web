@@ -7,14 +7,14 @@ export const sites = JSON.parse( `{
     "qi":{"name":"Amos","prelink":"https://google.com/search?q=","postlink":"&tbm=isch"},
     "r":{"name":"Reddit","base":"https://reddit.com/","prelink":"https://reddit.com/search?q="},
     "y":{"name":"Youtube","prelink":"/stream?q="},
-    "fr":{"name":"Frontier","prelink":"https://frontier.nukes.in/search?query="},
     "dict":{"name":"Webster","prelink":"https://www.merriam-webster.com/dictionary/"},
     "wiki":{"name":"Wikipedia","prelink":"https://en.wikipedia.org/wiki/Special:Search?search="}
 }`);
 
 export const quickPages = JSON.parse( `{
     "yt": { "url": "${ base }/stream" },
-    "cal": { "url": "${ base }/calendar" },
-    "mon": { "url": "${ base }/monitor" },
-    "debug": { "url": "${ base }/debug" },"w3": { "url": "${ base }/debug" },"repl": { "url": "${ base }/debug" }
+    "math": { "url": "${ base }/math" },
+    "books": { "url": "${ base }/books" },
+    "debug": { "url": "${ base }/debug" },
+    "stack": { "url": "${ base }/stack" }
 }`);

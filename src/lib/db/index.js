@@ -9,9 +9,10 @@ const transformer = ( json ) => {
         "title": "Threshold when Shapes Give Way",
         "type": "Article",
         "image": "https://placeholder.gif",
+        "notes": "notes"
     };
 
-    const data = `"${ json.type }":"${ json.url }","title":"${ json.title }","image":"${ json.image }"`;
+    const data = `"${ json.type }":"${ json.url }","title":"${ json.title }","image":"${ json.image }","notes":"${ json.notes }"`;
     return btoa( data );
 };
 const ssfetch = async ( endpoint ) => {

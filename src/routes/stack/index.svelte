@@ -1,7 +1,8 @@
 <script>
     import Row from "./tile.svelte";
+    import Filter from "./filter.svelte";
     import Adder from "./adder.svelte";
-    import { full_stack } from "./functions";
+    import { full_stack, filter } from "./functions";
     import { onMount } from "svelte";
 
     const size = {
@@ -22,6 +23,11 @@
         size.width = ~~(w / frac) + "px";
         size.height = ~~(((3 / 4) * w) / frac) + "px";
     });
+
+    $: filter_calc = (e) => {
+        const result = $filter?.length ? e.type === $filter : true;
+        return result;
+    };
 </script>
 
 <svelte:head>
@@ -33,8 +39,18 @@
 </svelte:head>
 
 <section class="ƒ ƒ∑">
+    <div class="ƒ ∆-bw w-100">
+        <img
+            class="m10"
+            src="/OUI/icons/infinity.svg"
+            width="40px"
+            height="40px"
+            alt=""
+        />
+        <Filter />
+    </div>
     <Adder {size} />
-    {#each $full_stack as orb}
+    {#each $full_stack.filter(filter_calc) as orb}
         <Row {size} data={orb} />
     {/each}
 </section>

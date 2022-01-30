@@ -1,6 +1,7 @@
 import { base } from '$app/paths';
 import { writable } from "svelte/store";
 import { sites, quickPages } from "./data";
+import { F } from "predefined";
 
 export const recommendations = writable( [] );
 

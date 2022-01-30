@@ -1,6 +1,6 @@
 <script>
     import { crypt } from "predefined";
-    import { getMetadata } from "./functions/meta.js";
+    import { getMetadata, types } from "./functions/meta.js";
     import { stack } from "$lib/db";
 
     const capitalCase = (string) =>
@@ -11,15 +11,30 @@
         height: 0,
     };
 
-    const types = ["Article", "Repository", "Video"];
-
     const blurHandler = (e) => {
         data.title = "Fetching...";
         data.image = "Fetching...";
-        getMetadata(e.target.value).then((r) => {
-            if (r.title) data.title = r.title || "";
-            if (r.image) data.image = r.image || "";
-            if (r.type) data.type = capitalCase(r.type) || "Article";
+
+        // Get Metadata for specified URL and general domain
+        const promises = [
+            e.target.value,
+            e.target.value.split("/")[0].split("?")[0],
+        ].map(getMetadata);
+
+        Promise.all(promises).then((metadata) => {
+            const [r, bkp] = metadata;
+            if (r.title) data.title = r.title || "No Title Recieved";
+            if (r.image)
+                data.image = r.image || bkp.image || "No Image Available";
+            if (r.type) {
+                if (
+                    !types
+                        .map((e) => e.toLowerCase())
+                        .includes(r.type.toLowerCase())
+                )
+                    data.notes = r.type;
+                data.type = capitalCase(r.type) || "Article";
+            }
         });
     };
 
@@ -28,6 +43,7 @@
         type: "Video",
         url: "",
         image: "",
+        notes: "",
     };
 
     const preprocess = (e) => {
@@ -37,6 +53,8 @@
 
         const id = `${(+date).toString(36)}-${uuid}`;
 
+        send.type ||= "Article";
+
         stack.put("amos", id, send).then((r) => {
             if (r.charAt(0) === `"`) {
                 console.log(200);
@@ -45,6 +63,7 @@
                     type: "Article",
                     url: "",
                     image: "",
+                    notes: "",
                 };
             } else {
                 data.title = "ERROR Sending!";
@@ -70,8 +89,8 @@
             {#each types as type}
                 <option value={type}>{type}</option>
             {/each}
-        </select> <br />
-
+        </select>
+        <br />
         <input
             type="text"
             placeholder="URL"
@@ -79,9 +98,16 @@
             bind:value={data.url}
         />
 
+        <!-- ADD LENGTH REDUCTION HERE -->
         <input type="text" placeholder="Title" bind:value={data.title} />
-
         <input type="text" placeholder="Image" bind:value={data.image} />
+        <textarea
+            name="notes"
+            rows="5"
+            placeholder="Notes"
+            bind:value={data.notes}
+        />
+
         <input class="o-0" type="submit" value="Go" />
     </form>
 </div>
@@ -95,12 +121,14 @@
         background: #000a;
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        input {
+        input,
+        textarea {
             margin: 5px;
             border: 1px solid #fff8;
             border-radius: 5px;
             padding: 5px;
             color: #fff;
+            width: 70%;
         }
     }
     .p-abs {

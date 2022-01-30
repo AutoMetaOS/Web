@@ -1,5 +1,5 @@
 <script>
-  export let set;
+  export let set, index;
 
   import { Kron } from "$lib/shared";
   import { getRecents } from "../store";
@@ -18,7 +18,7 @@
   {:then videos}
     {#if videos.length}
       <div class="w-100 ƒ p5 ∆-bw">
-        <span on:click={clear}> {set.class} ({videos.length})</span>
+        <span on:click={clear}>{index}. {set.class} ({videos.length})</span>
         <span style="font-size:1.25rem">
           0<input type="range" min={0} max={3} bind:value={slicer} />3
         </span>
@@ -27,6 +27,7 @@
         .sort((a, b) => new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt))
         .slice(0, slicer * 5) as vid, i}
         <Card
+          count={[index, i]}
           title={vid.snippet.title}
           type="Youtube"
           slug={vid.snippet.resourceId.videoId}

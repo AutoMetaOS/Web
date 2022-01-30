@@ -4,12 +4,14 @@
     export let //
         title = "",
         details = [],
+        count = [0, 0],
         slug = "",
         image = "https://wallpaperaccess.com/full/2404603.png";
 </script>
 
 <div
     class="recom p-rel fade-right rx5 m5 p0 ƒ-col"
+    data-count={count.join(",")}
     data-title={title}
     data-slug={slug}
     on:click={videoSet}

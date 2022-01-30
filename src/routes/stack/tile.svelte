@@ -1,5 +1,9 @@
 <script>
-    import { type_process } from "./functions/meta.js";
+    import {
+        url_process,
+        image_process,
+        type_process,
+    } from "./functions/meta.js";
     import { stack } from "$lib/db";
     import { F } from "predefined";
 
@@ -27,8 +31,13 @@
 
     const deleteHandler = (e) => {
         const id = e.target.parentElement.id;
-        stack.delete("amos", id).then((r) => console.log(id, r));
-        F(`#${id}`).remove();
+        try {
+            stack.delete("amos", id).then((r) => console.log(id, r));
+            F(`#${id}`).remove();
+        } catch (error) {
+            let err = typeof error === "string" ? error : error.message;
+            data.notes = err;
+        }
         return 0;
     };
 </script>
@@ -44,15 +53,27 @@
         <img
             width={size.width}
             height={size.height}
-            src={data.image}
+            src={image_process(data)}
             alt="thumb"
         />
     </div>
-    <div class="clearfix">
+    <div class="clearfix p-rel">
         <div class="ƒ ∆-bw">
-            <span>{type_process(data)}</span>
+            <span>{url_process(data.url)}</span>
+            <svg
+                width="16"
+                height="16"
+                viewbox="0 0 64 64"
+                style="color:{type_process(data.type)}"
+            >
+                <circle cx="32" cy="32" r="32" fill="currentcolor" />
+            </svg>
         </div>
-        <h1>{data?.title}</h1>
+        <div class="fw4">
+            <span class="fw7">{data.type}:&nbsp;</span>
+            {data?.title}
+        </div>
+        <p><i>{data?.notes || "Click to See More!"}</i></p>
     </div>
     <svg
         on:click|preventDefault={deleteHandler}
@@ -61,7 +82,7 @@
         width="16"
         height="16"
         stroke="#fff"
-        style="top:10px;right:10px;z-index:0;"
+        style="top:10px;right:10px;z-index:2;"
     >
         <path d="M2 30 L30 2 M30 30 L2 2" />
     </svg>
@@ -71,20 +92,28 @@
     .tile {
         color: #fff;
         &:hover .clearfix {
-            width: calc(100% - 40px);
+            top: 0;
+            height: calc(100% - 40px);
         }
     }
+    .fw4 {
+        font-size: 1.33em;
+        min-height: 3em;
+        padding: 10px 0;
+        word-wrap: break-word;
+    }
     .clearfix {
+        overflow: hidden;
         padding: 20px;
-        width: calc(50% - 40px);
-        height: calc(100% - 40px);
+        width: calc(100% - 40px);
+        height: 3.77rem;
+        top: 65%;
         z-index: 1;
         background: #000c;
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         -moz-backdrop-filter: blur(4px);
 
-        transition: width 0.2s ease;
-        will-change: width;
+        transition: all 0.2s ease;
     }
 </style>

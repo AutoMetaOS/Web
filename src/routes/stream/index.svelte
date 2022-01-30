@@ -44,8 +44,8 @@
     <Bar {searcher} />
     <Player />
     <Search videos={base} />
-    {#each cnls as set}
-        <SubSet {set} />
+    {#each cnls as set, index}
+        <SubSet {set} {index} />
     {/each}
 </main>
 
