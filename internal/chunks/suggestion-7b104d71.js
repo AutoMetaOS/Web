@@ -1,4 +1,4 @@
-import{D as V,U as x,S as D,i as L,s as M,e as _,k as w,c as g,a as b,m as q,d as m,b as p,M as I,g as k,J as y,K as $,Y as N,R as O,Z as P,l as S,_ as R,t as U,h as J,j as T}from"./vendor-88a0371f.js";import{b as v}from"./paths-4b3c6e7e.js";const f=JSON.parse(`{
+import{D as V,U as x,S as D,i as L,s as M,e as _,k as w,c as g,a as b,m as q,d as m,b as p,M as I,g as k,J as y,K as $,Y as N,R as O,Z as P,l as S,_ as R,t as U,h as J,j as T}from"./vendor-58b3727c.js";import{b as v}from"./paths-4b3c6e7e.js";const f=JSON.parse(`{
     "nf":{"name":"Netflix","prelink":"https://netflix.com/search?q="},
     "git":{"name":"GitHub","prelink":"https://github.com/search?&q="},
     "s":{"name":"Amos","prelink":"https://google.com/search?q="},
