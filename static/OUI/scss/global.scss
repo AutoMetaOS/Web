@@ -41,22 +41,13 @@ input, button, textarea{
 
 // SHORT CODES
 .blur{
-	background: #2228;
-	backdrop-filter: blur(32px);
-	-webkit-backdrop-filter: blur(32px);
-	-moz-backdrop-filter: blur(32px);
-	&W{
-		@extend .blur;
-		background: #8884;
-	}
-	&WW{
-		@extend .blur;
-		background: #ccc4;
-	}
-	&WWW{
-		@extend .blur;
-		background: #fff8;
-	}
+	--bg: #2228;
+	--sz:32px;
+	background: var(--bg);
+	backdrop-filter: blur(var(--sz));
+	-webkit-backdrop-filter: blur(var(--sz));
+	-ms-backdrop-filter: blur(var(--sz));
+	-moz-backdrop-filter: blur(var(--sz));
 }
 
 .rpm{

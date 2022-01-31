@@ -10,14 +10,14 @@
 </script>
 
 <div
-    class="recom p-rel fade-right rx5 m5 p0 ƒ-col"
-    data-count={count.join(",")}
+    class="recom p-rel fade-right rx10 ƒ-col"
+    data-count={count}
     data-title={title}
     data-slug={slug}
     on:click={videoSet}
 >
     <img src={image} class="w-100" alt="thubmnail" />
-    <div class="†c w-100 deets p-abs p5">
+    <div class="†c w-100 deets blur p-abs p5">
         <div style="padding-bottom:5px;">
             {@html title?.slice(0, 60)}
             {title.length > 60 ? "..." : ""}
@@ -31,32 +31,27 @@
 <style type="text/scss">
     .recom {
         cursor: pointer;
-        width: calc(20% - 10px);
-        z-index: 1;
-        transform: scale(1);
-        transition: all 0.2s ease;
+        margin: 5px 0;
+        width: calc(20%);
+        overflow: hidden;
         .deets {
+            --bg: #000a;
+            --sz: 8px;
             -webkit-font-smoothing: antialiased;
-            background: #222;
             pointer-events: none;
 
-            z-index: 0;
+            z-index: 2;
+            height: 3.75rem;
+            top: calc(99% - 3.5rem);
             opacity: 0;
-            top: 50%;
 
-            transition: all 0.15s ease;
+            transition: opacity 0.2s ease;
+        }
+        &:hover .deets {
+            opacity: 1;
         }
         img {
             aspect-ratio: 16/9;
-        }
-        &:hover {
-            transform: scale(1.25);
-            z-index: 2;
-            .deets {
-                z-index: 44;
-                opacity: 1;
-                top: 99%;
-            }
         }
     }
 </style>

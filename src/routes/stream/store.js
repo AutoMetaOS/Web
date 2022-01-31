@@ -15,7 +15,7 @@ const YT_KEY = keys.YT_KEY;
 
 export const subscriptions = writable( [] );
 export const vId = writable( "" );
-export const tracker = writable( [ 0, 0 ] );
+export const tracker = writable( 0 );
 
 export const YT = 'https://youtube.googleapis.com/youtube/v3/';
 
@@ -26,7 +26,7 @@ export const videoProcessor = ( slug, count ) => {
     const URL = `www.youtube-nocookie.com/embed/${ slug }?autoplay=1&enablejsapi=1`;
     window.history.pushState( '', '', `?id=${ slug }` );
 
-    tracker.set( count.split( ',' ) );
+    tracker.set( +count );
     vId.set( 'https://' + URL );
     return 0;
 }
@@ -49,7 +49,7 @@ export const videoSet = ( e ) => {
 const playlist = ( q, num = 3 ) => yt_req( `/playlistItems?part=snippet&playlistId=${ q }&key=${ YT_KEY }&maxResults=${ num }` );
 
 export const getRecents = async ( ids ) => {
-    const last_seen = db( 'last_seen' );
+    const last_seen = ( new Date() - db( 'last_seen' ) ) / 864e5;
     const link = `/channels?part=snippet%2CcontentDetails&id=${ ids.map( ( el ) => el.id ).join( "%2C" ) }&key=${ YT_KEY }`;
     const json = await yt_req( link );
 
@@ -61,12 +61,13 @@ export const getRecents = async ( ids ) => {
             } )
     );
 
-    const flattened = videoList.flat()
+    const flattened = videoList
+        .flat()
         .filter( ( el ) => {
-            const publishedAt = +new Date( el.snippet.publishedAt );
-            const buffer = ( 1 / 2 ) * 864e5;
+            const ago = ( new Date() - new Date( el.snippet.publishedAt ) ) / 864e5;
+            return ago < last_seen + 1;
+        } )
+        .map( e => e.snippet );
 
-            return last_seen + buffer < publishedAt;
-        } );
     return flattened;
 };

@@ -1,44 +1,65 @@
 <script>
-  export let set, index;
+  export let set;
 
-  import { Kron } from "$lib/shared";
+  const since = (val) => {
+    val = 0 | ((Date.now() - new Date(val)) / 1000);
+    let unit,
+      length = {
+        second: 60,
+        minute: 60,
+        hour: 24,
+        day: 7,
+        week: 4.35,
+        month: 12,
+        year: 10000,
+      },
+      result;
+
+    for (unit in length) {
+      result = val % length[unit];
+      if (!(val = 0 | (val / length[unit])))
+        return result + " " + (result - 1 ? unit + "s" : unit);
+    }
+  };
+
   import { getRecents } from "../store";
   import Card from "./videoCard.svelte";
 
-  const promise = getRecents(set?.channels);
+  const promise = Promise.all(set?.map((e) => getRecents(e.channels)));
 
   const clear = () => (videos = []);
 
-  let slicer = 1;
+  let slicer = 3;
 </script>
 
 <section class="ƒ p20 ƒ∑" id="search">
   {#await promise}
-    Waiting for <i>&nbsp;{set?.class}</i>...
+    Waiting for Updates...
   {:then videos}
-    {#if videos.length}
-      <div class="w-100 ƒ p5 ∆-bw">
-        <span on:click={clear}>{index}. {set.class} ({videos.length})</span>
-        <span style="font-size:1.25rem">
-          0<input type="range" min={0} max={3} bind:value={slicer} />3
-        </span>
-      </div>
-      {#each videos
-        .sort((a, b) => new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt))
-        .slice(0, slicer * 5) as vid, i}
-        <Card
-          count={[index, i]}
-          title={vid.snippet.title}
-          type="Youtube"
-          slug={vid.snippet.resourceId.videoId}
-          image={vid.snippet.thumbnails.medium.url}
-          details={[
-            vid.snippet.channelTitle,
-            new Kron(vid.snippet.publishedAt).timeSince(),
-          ]}
+    <div class="w-100 ƒ p5 ∆-bw">
+      <span on:click={clear}> Updates ({videos.length})</span>
+      <span style="font-size:1.25rem">
+        <input
+          type="range"
+          min={0}
+          max={videos.flat().length / 5}
+          bind:value={slicer}
         />
-      {/each}
-    {/if}
+      </span>
+    </div>
+    {#each videos
+      .flat()
+      .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+      .slice(0, slicer * 5) as vid, i}
+      <Card
+        type="snippet"
+        count={i}
+        title={vid.title}
+        slug={vid.resourceId.videoId}
+        image={vid.thumbnails.medium.url}
+        details={[vid.channelTitle, since(vid.publishedAt)]}
+      />
+    {/each}
   {:catch error}
     {typeof error === "string" ? error : JSON.stringify(error)}
   {/await}

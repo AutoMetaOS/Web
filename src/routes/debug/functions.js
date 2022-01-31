@@ -20,7 +20,15 @@ svg{
     border: 1px solid #aaa8;
     border-radius:5px;
 }
-</style>`;
+</style>
+<h4></h4>
+<h5></h5>
+<p></p>
+<script>
+[p, h4, h5] = ['p', 'h4', 'h5'].map(ƒ);
+
+p.innerHTML = 1;
+</script>`;
 
 export const debounce = function ( func, wait, immediate ) {
   let timeout;

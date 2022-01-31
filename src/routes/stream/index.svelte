@@ -4,6 +4,7 @@
     import Bar from "./components/bar.svelte";
     import Player from "./components/player.svelte";
     import SubSet from "./components/set.svelte";
+    import Stack from "./components/stack.svelte";
     import Search from "./components/search.svelte";
 
     import { onMount } from "svelte";
@@ -44,9 +45,8 @@
     <Bar {searcher} />
     <Player />
     <Search videos={base} />
-    {#each cnls as set, index}
-        <SubSet {set} {index} />
-    {/each}
+    <SubSet set={cnls} />
+    <Stack />
 </main>
 
 <style>

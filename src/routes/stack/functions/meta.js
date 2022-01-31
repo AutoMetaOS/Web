@@ -12,6 +12,7 @@ export const image_process = ( { url, image } ) => {
 export const type_process = ( type ) => {
     if ( type === "Video" ) return "#f00";
     if ( type === 'Collection' ) return '#ff0';
+    if ( type === 'Reference' ) return '#2af';
     if ( type === 'Repository' ) return '#a2f';
 
     return "#fff";
@@ -20,6 +21,7 @@ export const type_process = ( type ) => {
 export const types = [
     "Article",
     "Collection",
+    "Reference",
     "Repository",
     "Video"
 ];

@@ -15,7 +15,7 @@
     const sandbox = ["allow-scripts", "allow-same-origin"].join(" ");
 
     const handleClick = (e) => {
-        console.log($tracker);
+        alert($tracker);
     };
 
     onMount(() => {
@@ -43,7 +43,7 @@
             id="magicBox"
             class="fw5 p10 p-abs visible"
         >
-            Hi {$tracker.join(",")}
+            Hi {$tracker}
         </div>
     </div>
 {/if}

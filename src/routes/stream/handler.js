@@ -35,12 +35,14 @@ export const postMessage = ( iframe, command ) => {
 }
 
 export const db = ( k, v ) => {
-    if ( v ) {
-        const d = JSON.stringify( { t: v } );
-        localStorage.setItem( k, d );
-        return 0;
-    } else {
-        const d = localStorage.getItem( k );
-        return JSON.parse( d ).t;
-    };
+    if ( typeof window !== 'undefined' ) {
+        if ( v ) {
+            const d = JSON.stringify( { t: v } );
+            localStorage.setItem( k, d );
+            return 0;
+        } else {
+            const d = localStorage.getItem( k );
+            return JSON.parse( d ).t;
+        };
+    } else return 0;
 }
