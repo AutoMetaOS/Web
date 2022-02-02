@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="/assets/Amos.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel='stylesheet' href='/OUI/css/global.css'>
+	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
+
+	<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/internal/assets/book-3b045f6e.css">
+	<link rel="modulepreload" href="/internal/start-d0638fcc.js">
+	<link rel="modulepreload" href="/internal/chunks/vendor-1a0fbb3d.js">
+	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/internal/layout.svelte-722460b4.js">
+	<link rel="modulepreload" href="/internal/pages/books/components/book.svelte-4375219e.js">
+	<link rel="modulepreload" href="/internal/chunks/book-0f78d521.js"><script type="module">
+		import { start } from "/internal/start-d0638fcc.js";
+		start({
+			target: document.querySelector("body"),
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/internal/layout.svelte-722460b4.js"),
+						import("/internal/pages/books/components/book.svelte-4375219e.js")
+				],
+				url: new URL("http://sveltekit-prerender/books/components/book"),
+				params: {}
+			}
+		});
+	</script>
+
+	<!-- <script src="/helpers/RoninScript.js"></script> -->
+
+	<script>
+		const meta = {
+			authHash: 'c3f438ce714c766ab764fe2f96a8e6ce7216dc4ed26572e160b2156f54a7ef20'
+		}
+	</script>
+</head>
+
+<body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	
+
+
+<div id="UNKNOWN" class="book ƒ m10 svelte-1yo3vmp"><img src="https://openlibrary.org/images/icons/avatar_book-sm.png" alt="" class="svelte-1yo3vmp">
+    <div class="p10"><div class="fw4"></div>
+        <div>(list) =&gt; {
+  if (typeof list === &quot;string&quot;)
+    return author;
+  if (typeof list === &quot;object&quot;) {
+    const compacted = [...new Set(list.map((e) =&gt; e.trim()))];
+    if (compacted.length &gt; 3)
+      return `${compacted.slice(0, 3).join(&quot;, &quot;)} et al.`;
+    else
+      return compacted.join(&quot;, &quot;);
+  }
+}</div>
+
+        <div class="p5"><i class="published svelte-1yo3vmp">First Published undefined</i> <br>
+            <div class="tags svelte-1yo3vmp"></div>
+            </div></div>
+</div>
+
+
+</body>
+
+</html>

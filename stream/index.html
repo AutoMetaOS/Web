@@ -9,30 +9,28 @@
 	<link rel='stylesheet' href='/OUI/css/global.css'>
 	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
 
-	<meta http-equiv="content-security-policy" content=""><link rel="stylesheet" href="/OUI/css/g100.css" data-svelte="svelte-1cbifua"><style data-svelte="svelte-1cbifua">body {
-            background: #111;
-            color: #fff;
-        }
-    </style>
-	<link rel="stylesheet" href="/internal/assets/pages/stream/index.svelte-04cf0ad1.css">
-	<link rel="stylesheet" href="/internal/assets/pages/stream/components/bar.svelte-9c24cef9.css">
-	<link rel="stylesheet" href="/internal/assets/pages/stream/components/player.svelte-bb85d1c1.css">
-	<link rel="stylesheet" href="/internal/assets/pages/stream/components/videoCard.svelte-c83a1b84.css">
-	<link rel="stylesheet" href="/internal/assets/pages/stream/components/search.svelte-b5dab9be.css">
-	<link rel="modulepreload" href="/internal/start-c297e09c.js">
-	<link rel="modulepreload" href="/internal/chunks/vendor-c8cae9c7.js">
+	<meta http-equiv="content-security-policy" content=""><link rel="stylesheet" href="/OUI/css/g100.css" data-svelte="svelte-1qbv7r7">
+	<link rel="stylesheet" href="/internal/assets/pages/stream/index.svelte-e36b6df7.css">
+	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/bar.svelte-93a44e6b.css">
+	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/player.svelte-84eb5839.css">
+	<link rel="stylesheet" href="/internal/assets/pages/stream/components/videoCard.svelte-7011cdda.css">
+	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/search.svelte-1bd91240.css">
+	<link rel="stylesheet" href="/internal/assets/pages/stream/components/chips.svelte-a769018b.css">
+	<link rel="modulepreload" href="/internal/start-d0638fcc.js">
+	<link rel="modulepreload" href="/internal/chunks/vendor-1a0fbb3d.js">
 	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
-	<link rel="modulepreload" href="/internal/layout.svelte-3860dfef.js">
-	<link rel="modulepreload" href="/internal/pages/stream/index.svelte-e1f397d4.js">
-	<link rel="modulepreload" href="/internal/pages/stream/components/bar.svelte-b54e5926.js">
-	<link rel="modulepreload" href="/internal/pages/stream/components/player.svelte-3032a590.js">
-	<link rel="modulepreload" href="/internal/chunks/store-6eac0b2d.js">
-	<link rel="modulepreload" href="/internal/pages/stream/components/set.svelte-84e3ff5b.js">
-	<link rel="modulepreload" href="/internal/pages/stream/components/videoCard.svelte-a9ecb010.js">
-	<link rel="modulepreload" href="/internal/pages/stream/components/stack.svelte-6c15ddd2.js">
-	<link rel="modulepreload" href="/internal/chunks/index-103846bb.js">
-	<link rel="modulepreload" href="/internal/pages/stream/components/search.svelte-81a9d3c7.js"><script type="module">
-		import { start } from "/internal/start-c297e09c.js";
+	<link rel="modulepreload" href="/internal/layout.svelte-722460b4.js">
+	<link rel="modulepreload" href="/internal/pages/stream/index.svelte-09cf71b5.js">
+	<link rel="modulepreload" href="/internal/pages/stream/parts/bar.svelte-f10890b9.js">
+	<link rel="modulepreload" href="/internal/pages/stream/parts/player.svelte-a9df6e66.js">
+	<link rel="modulepreload" href="/internal/chunks/index-f966bf0b.js">
+	<link rel="modulepreload" href="/internal/pages/stream/parts/set.svelte-438df822.js">
+	<link rel="modulepreload" href="/internal/pages/stream/components/videoCard.svelte-091cdb44.js">
+	<link rel="modulepreload" href="/internal/pages/stream/parts/stack.svelte-6d0ef378.js">
+	<link rel="modulepreload" href="/internal/chunks/index-d7aeb396.js">
+	<link rel="modulepreload" href="/internal/pages/stream/parts/search.svelte-09c2acea.js">
+	<link rel="modulepreload" href="/internal/pages/stream/components/chips.svelte-1c3e766e.js"><script type="module">
+		import { start } from "/internal/start-d0638fcc.js";
 		start({
 			target: document.querySelector("body"),
 			paths: {"base":"","assets":""},
@@ -44,8 +42,8 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/internal/layout.svelte-3860dfef.js"),
-						import("/internal/pages/stream/index.svelte-e1f397d4.js")
+					import("/internal/layout.svelte-722460b4.js"),
+						import("/internal/pages/stream/index.svelte-09cf71b5.js")
 				],
 				url: new URL("http://sveltekit-prerender/stream"),
 				params: {}
@@ -68,18 +66,93 @@
 
 
 
-<main class="svelte-rus5w2"><form class="o-0 w-100 p5 ƒ blur p-fix ∆-bw svelte-1wkl3hy"><input class="p5 b0 svelte-1wkl3hy" placeholder="Search" value="">
+<main class="svelte-s2fiyw"><form class="o-0 w-100 p5 ƒ blur p-fix ∆-bw svelte-1wkl3hy"><input class="p5 b0 svelte-1wkl3hy" placeholder="Search" value="">
   <svg viewBox="0 0 32 32" height="22" width="22" fill="none"><circle stroke="#fff" cx="14" cy="14" r="12"></circle><path stroke="#fff" d="M23 23 L30 30"></path></svg>
 </form>
     
     <section class="p20 ƒ ƒ∑" id="search">
 </section>
-    <section class="ƒ p20 ƒ∑" id="search">
-    Waiting for Updates...
+    <section class="ƒ p20 ƒ∑" id="updates"><div class="w-100 ƒ p5 ∆-bw"><span>Updates (0)</span>
+    <span style="font-size:1.25rem"><input type="range" min="0" max="0" value="3"></span></div>
   </section>
     <section class="ƒ p20 ƒ∑" id="search">
         Waiting for Updates...
     </section>
+    <section class="w-100 ƒ ƒ∑ m10 p10"><div id="UCMOqf8ab-42UUQIdVoKwjlQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Practical Engg
+        </div><div id="UCUHW94eEFW7hkUMVaZz4eDg" class="chip rx20 p10 †c m5 svelte-93r4f2">minutephysics
+        </div><div id="UC176GAQozKKjhz62H8u9vQQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Real Sci
+        </div><div id="UCYO_jab_esuFRV4b17AJtAw" class="chip rx20 p10 †c m5 svelte-93r4f2">3Blue1Brown
+        </div><div id="UCSju5G2aFaWMqn-_0YBtq5A" class="chip rx20 p10 †c m5 svelte-93r4f2">Stand Up Maths
+        </div><div id="UC1yNl2E66ZzKApQdRuTQ4tw" class="chip rx20 p10 †c m5 svelte-93r4f2">Sabine Hossenfelder
+        </div><div id="UCrMePiHCWG4Vwqv3t7W9EFg" class="chip rx20 p10 †c m5 svelte-93r4f2">SciShow Space
+        </div><div id="UCxqAWLTk1CmBvZFPzeZMd9A" class="chip rx20 p10 †c m5 svelte-93r4f2">Domain of Science
+        </div><div id="UC9yt3wz-6j19RwD5m5f6HSg" class="chip rx20 p10 †c m5 svelte-93r4f2">Think Twice
+        </div><div id="UC7_gcs09iThXybpVgjHZ_7g" class="chip rx20 p10 †c m5 svelte-93r4f2">PBS Space Time
+        </div><div id="UCryGec9PdUCLjpJW2mgCuLw" class="chip rx20 p10 †c m5 svelte-93r4f2">NASA JPL
+        </div><div id="UC7DdEm33SyaTDtWYGO2CwdA" class="chip rx20 p10 †c m5 svelte-93r4f2">Physics Girl
+        </div><div id="UCAY-SMFNfynqz1bdoaV8BeQ" class="chip rx20 p10 †c m5 svelte-93r4f2">NASA Goddard
+        </div><div id="UCIFtADcWrOApqrsinzPoOfA" class="chip rx20 p10 †c m5 svelte-93r4f2">Desitny
+        </div><div id="UC6_clxPYNS_BstewLKjyA9g" class="chip rx20 p10 †c m5 svelte-93r4f2">Scientia Plus
+        </div><div id="UCqZQJ4600a9wIfMPbYc60OQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Lesics
+        </div><div id="UCN3aYbtQ7yCqk9DM56B0kEw" class="chip rx20 p10 †c m5 svelte-93r4f2">Tomorrow&#39;s Build
+        </div><div id="UC0vBXGSyV14uvJ4hECDOl0Q" class="chip rx20 p10 †c m5 svelte-93r4f2">Techquickie
+        </div><div id="UC4QZ_LsYcvcq7qOsOhpAX4A" class="chip rx20 p10 †c m5 svelte-93r4f2">ColdFusion
+        </div><div id="UCbCq5Y0WPGimG2jNXhoQxGw" class="chip rx20 p10 †c m5 svelte-93r4f2">Atomic Frontier
+        </div><div id="UC6n8I1UDTKP1IWjQMg6_TwA" class="chip rx20 p10 †c m5 svelte-93r4f2">B1M
+        </div><div id="UCR1IuLEqb6UEA_zQ81kwXfg" class="chip rx20 p10 †c m5 svelte-93r4f2">Real Engg
+        </div><div id="UClcE-kVhqyiHCcjYwcpfj9w" class="chip rx20 p10 †c m5 svelte-93r4f2">LiveOverflow
+        </div><div id="UCeeFfhMcJa1kjtfZAGskOCA" class="chip rx20 p10 †c m5 svelte-93r4f2">TechLinked
+        </div><div id="UCP5tjEmvPItGyLhmjdwP7Ww" class="chip rx20 p10 †c m5 svelte-93r4f2">Real Life Lore
+        </div><div id="UC9RM-iSvTu1uPJb8X5yp3EQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Wendover
+        </div><div id="UCsooa4yRKGN_zEE8iknghZA" class="chip rx20 p10 †c m5 svelte-93r4f2">TED-Ed
+        </div><div id="UCsXVk37bltHxD1rDPwtNM8Q" class="chip rx20 p10 †c m5 svelte-93r4f2">Kurzgesagt - In a Nutshell
+        </div><div id="UCHnyfMqiRRG1u-2MsSQLbXA" class="chip rx20 p10 †c m5 svelte-93r4f2">Veritasium
+        </div><div id="UCEIwxahdLz7bap-VDs9h35A" class="chip rx20 p10 †c m5 svelte-93r4f2">Steve Mould
+        </div><div id="UCY1kMZp36IQSyNx_9h4mpCg" class="chip rx20 p10 †c m5 svelte-93r4f2">Mark Rober
+        </div><div id="UC6107grRI4m0o2-emgoDnAA" class="chip rx20 p10 †c m5 svelte-93r4f2">SmarterEveryDay
+        </div><div id="UCH4BNI0-FOK2dMXoFtViWHw" class="chip rx20 p10 †c m5 svelte-93r4f2">Its okay to be Smart
+        </div><div id="UCzWQYUVCpZqtN93H8RR44Qw" class="chip rx20 p10 †c m5 svelte-93r4f2">Seeker
+        </div><div id="UCTpmmkp1E4nmZqWPS-dl5bg" class="chip rx20 p10 †c m5 svelte-93r4f2">Quanta Magazine
+        </div><div id="UCeiYXex_fwgYDonaTcSIk6w" class="chip rx20 p10 †c m5 svelte-93r4f2">Minute Earth
+        </div><div id="UCKMnl27hDMKvch--noWe5CA" class="chip rx20 p10 †c m5 svelte-93r4f2">Cogito
+        </div><div id="UCHdluULl5c7bilx1x1TGzJQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Feature History
+        </div><div id="UCLOwKVD0bYHxaDZxXkK4piw" class="chip rx20 p10 †c m5 svelte-93r4f2">Kento Bento
+        </div><div id="UCixD9UbKvDxzGNiPC_fgHyA" class="chip rx20 p10 †c m5 svelte-93r4f2">Paolo fromTOKYO
+        </div><div id="UCcIsxujzLRO5qY5f9buahCQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Nobita from Japan
+        </div><div id="UCgNg3vwj3xt7QOrcIDaHdFg" class="chip rx20 p10 †c m5 svelte-93r4f2">Polymatter
+        </div><div id="UCYb6v1AlX6prKl83DswM5iw" class="chip rx20 p10 †c m5 svelte-93r4f2">History Scope
+        </div><div id="UCtYKe7-XbaDjpUwcU5x0bLg" class="chip rx20 p10 †c m5 svelte-93r4f2">neo
+        </div><div id="UCvQ4C0f9_OWRf1uyobwqOwA" class="chip rx20 p10 †c m5 svelte-93r4f2">BlueJay
+        </div><div id="UC3XTzVzaHQEd30rQbuvCtTQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Last Week Tonight with John Oliver
+        </div><div id="UCrTNhL_yO3tPTdQ5XgmmWjA" class="chip rx20 p10 †c m5 svelte-93r4f2">RedLetterMedia
+        </div><div id="UC7u-Dg0jb7g9s7XjmtJrtpg" class="chip rx20 p10 †c m5 svelte-93r4f2">Chain Bear
+        </div><div id="UCL6JmiMXKoXS6bpP1D3bk8g" class="chip rx20 p10 †c m5 svelte-93r4f2">Donut Media
+        </div><div id="UC1ZBQ-F-yktYD4m5AzM6pww" class="chip rx20 p10 †c m5 svelte-93r4f2">Mustard
+        </div><div id="UCC_sp9B1jwesbC5-T04Tt9w" class="chip rx20 p10 †c m5 svelte-93r4f2">Jenny Ma
+        </div><div id="UCXAS_Ekkq0iFJ9dSUIkcAkw" class="chip rx20 p10 †c m5 svelte-93r4f2">Efficient Engg
+        </div><div id="UCzV9N7eGedBchEQjQhPapyQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Matt Parker 2
+        </div><div id="UC67gfx2Fg7K2NSHqoENVgwA" class="chip rx20 p10 †c m5 svelte-93r4f2">Tom Stanton
+        </div><div id="UCbsfyGlrjrKQC0gbzK0-EiA" class="chip rx20 p10 †c m5 svelte-93r4f2">Jared Owen
+        </div><div id="UCRRr_xrOm66qaigIbwFLvbQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Simon Clark
+        </div><div id="UCgRBRE1DUP2w7HTH9j_L4OQ" class="chip rx20 p10 †c m5 svelte-93r4f2">Medlife Crisis
+        </div><div id="UCFk__1iexL3T5gvGcMpeHNA" class="chip rx20 p10 †c m5 svelte-93r4f2">Looking Glass Universe
+        </div><div id="UCBa659QWEk1AI4Tg--mrJ2A" class="chip rx20 p10 †c m5 svelte-93r4f2">Tom Scott
+        </div><div id="UCHC4G4X-OR5WkY-IquRGa3Q" class="chip rx20 p10 †c m5 svelte-93r4f2">Tom Scott Plus
+        </div><div id="UC1_uAIS3r8Vu6JjXWvastJg" class="chip rx20 p10 †c m5 svelte-93r4f2">Mathologer
+        </div><div id="UCnEiGCE13SUI7ZvojTAVBKw" class="chip rx20 p10 †c m5 svelte-93r4f2">Bill Gates
+        </div><div id="UCosExgfjj-DhMJXnQd2Y4gA" class="chip rx20 p10 †c m5 svelte-93r4f2">SaVRee
+        </div><div id="UC4pNDofN0Xh-z2bhh62g8Ow" class="chip rx20 p10 †c m5 svelte-93r4f2">Not What You Think
+        </div><div id="UCoxcjq-8xIDTYp3uz647V5A" class="chip rx20 p10 †c m5 svelte-93r4f2">Numberphile
+        </div><div id="UC9-y-6csu5WGm29I7JiwpnA" class="chip rx20 p10 †c m5 svelte-93r4f2">Computerphile
+        </div><div id="UCUdettijNYvLAm4AixZv4RA" class="chip rx20 p10 †c m5 svelte-93r4f2">SciShow Psych
+        </div><div id="UCNIuvl7V8zACPpTmmNIqP2A" class="chip rx20 p10 †c m5 svelte-93r4f2">OverSimplified
+        </div><div id="UCZ4AMrDcNrfy3X6nsU8-rPg" class="chip rx20 p10 †c m5 svelte-93r4f2">Economics Explained
+        </div><div id="UC_E4px0RST-qFwXLJWBav8Q" class="chip rx20 p10 †c m5 svelte-93r4f2">Business Casual
+        </div><div id="UC5_HIscbiDZM0dMX-nCksuA" class="chip rx20 p10 †c m5 svelte-93r4f2">Casual Navigation
+        </div><div id="UCvBqzzvUBLCs8Y7Axb-jZew" class="chip rx20 p10 †c m5 svelte-93r4f2">60 Symbols
+        </div><div id="UCFhXFikryT4aFcLkLw2LBLA" class="chip rx20 p10 †c m5 svelte-93r4f2">NileRed
+        </div>
+</section>
 </main>
 
 
