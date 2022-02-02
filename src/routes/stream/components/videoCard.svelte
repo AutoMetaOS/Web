@@ -1,20 +1,31 @@
 <script>
-    import { videoSet } from "../store";
+    import { processors } from "../functions";
 
     export let //
         title = "",
         details = [],
-        count = [0, 0],
+        type = "",
+        count = 0,
         slug = "",
         image = "https://wallpaperaccess.com/full/2404603.png";
+
+    const id_processor = () => {
+        let id;
+
+        if (type === "snippet") id = "yt-" + count;
+        if (type === "stack") id = "kv-" + count;
+        else id = "yt-" + count;
+
+        return id;
+    };
 </script>
 
 <div
-    class="recom p-rel fade-right rx10 ƒ-col"
-    data-count={count}
+    class="recom p-rel fade-right m5 rx10 ƒ-col"
+    id={id_processor()}
     data-title={title}
     data-slug={slug}
-    on:click={videoSet}
+    on:click={processors.videoSet}
 >
     <img src={image} class="w-100" alt="thubmnail" />
     <div class="†c w-100 deets blur p-abs p5">
@@ -31,8 +42,7 @@
 <style type="text/scss">
     .recom {
         cursor: pointer;
-        margin: 5px 0;
-        width: calc(20%);
+        width: calc(20% - 10px);
         overflow: hidden;
         .deets {
             --bg: #000a;
@@ -41,7 +51,7 @@
             pointer-events: none;
 
             z-index: 2;
-            height: 3.75rem;
+            height: 4rem;
             top: calc(99% - 3.5rem);
             opacity: 0;
 

@@ -1,0 +1,6 @@
+{
+    "$function": {
+        "arguments": "a,b,c",
+        "body": "return a*b+c;"
+    }
+}

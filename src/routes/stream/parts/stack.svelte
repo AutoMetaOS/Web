@@ -1,43 +1,20 @@
 <script>
     import { stack } from "$lib/db";
-    import Card from "./videoCard.svelte";
+    import { processors } from "../functions";
+    import Card from "../components/VideoCard.svelte";
 
-    const promise = stack.type("amos", "Video");
+    const promise = stack.type("stack", "Video");
 
     const url_process = (ur) => {
-        if (ur.includes("tu.be")) return ur.split("?")[0].split("be/")[1];
-        else return ur.split("?")[0].split("v=")[1];
+        if (ur.includes("tu.be")) return ur.split("be/")[1].split("?")[0];
+        else return ur.split("v=")[1].split("&")[0];
     };
 
     const dater = (v) => parseInt(v.id.split("-")[0], 36);
 
     const sorter = (a, b) => {
-        console.log(a);
         const [a_dt, b_dt] = [a, b].map(dater);
-        console.log(a_dt, b_dt);
-
         return new Date(b_dt) - new Date(a_dt);
-    };
-
-    const since = (val) => {
-        val = 0 | ((Date.now() - new Date(val)) / 1000);
-        let unit,
-            length = {
-                second: 60,
-                minute: 60,
-                hour: 24,
-                day: 7,
-                week: 4.35,
-                month: 12,
-                year: 10000,
-            },
-            result;
-
-        for (unit in length) {
-            result = val % length[unit];
-            if (!(val = 0 | (val / length[unit])))
-                return result + " " + (result - 1 ? unit + "s" : unit);
-        }
     };
 
     let slicer = 3;
@@ -60,12 +37,12 @@
         </div>
         {#each videos.sort(sorter).slice(0, slicer * 5) as vid, i}
             <Card
-                type="snippet"
+                type="stack"
                 count={i}
                 title={vid.title}
                 slug={url_process(vid.url)}
                 image={vid.image}
-                details={["Stack", since(dater(vid))]}
+                details={["Stack", processors.timeSince(dater(vid))]}
             />
         {/each}
     {:catch error}

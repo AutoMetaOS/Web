@@ -41,23 +41,23 @@ const objectify = arr_string => JSON
 // MAIN
 export const stack = {
     type: async ( db, type ) => {
-        const res = await ssfetch( `${ db }/type?q=${ type }` );
+        const res = await ssfetch( `amos/type?db=${ db }&q=${ type }` );
         return objectify( res );
     },
     list: async ( db ) => {
-        const res = await ssfetch( `${ db }/all` );
+        const res = await ssfetch( `amos/all?db=${ db }` );
         return objectify( res );
     },
     get: async ( db, id ) => {
-        const res = await ssfetch( `${ db }/get?id=${ id }` );
+        const res = await ssfetch( `amos/get?db=${ db }&id=${ id }` );
         return res;
     },
     delete: async ( db, id ) => {
-        const res = await ssfetch( `${ db }/delete?id=${ id }` );
+        const res = await ssfetch( `amos/delete?db=${ db }&id=${ id }` );
         return res;
     },
     put: async ( db, id, data ) => {
-        const res = await ssfetch( `${ db }/put?id=${ id }&value=${ froTransformer( data ) }` );
+        const res = await ssfetch( `amos/put?db=${ db }&id=${ id }&value=${ froTransformer( data ) }` );
         return res;
     },
 }

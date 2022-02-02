@@ -32,7 +32,7 @@
     const deleteHandler = (e) => {
         const id = e.target.parentElement.id;
         try {
-            stack.delete("amos", id).then((r) => console.log(id, r));
+            stack.delete("stack", id).then((r) => console.log(id, r));
             F(`#${id}`).remove();
         } catch (error) {
             let err = typeof error === "string" ? error : error.message;

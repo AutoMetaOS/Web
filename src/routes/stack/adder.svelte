@@ -55,7 +55,7 @@
 
         send.type ||= "Article";
 
-        stack.put("amos", id, send).then((r) => {
+        stack.put("stack", id, send).then((r) => {
             if (r.charAt(0) === `"`) {
                 console.log(200);
                 data = {

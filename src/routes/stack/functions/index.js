@@ -4,4 +4,4 @@ import { stack } from "$lib/db";
 export const filter = writable( "" );
 export const full_stack = writable( [] );
 
-stack.list( "amos" ).then( async r => full_stack.set( r.reverse() ) );
+stack.list( "stack" ).then( async r => full_stack.set( r.reverse() ) );
