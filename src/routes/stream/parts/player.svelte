@@ -1,7 +1,8 @@
 <script>
     import { onMount } from "svelte";
     import { processors } from "../functions";
-    import { tracker, vId, playNext } from "../functions/store";
+    import Next from "../components/showNext.svelte";
+    import { vId } from "../functions/store";
 
     let iframe;
 
@@ -13,8 +14,6 @@
     ].join(";");
 
     const sandbox = ["allow-scripts", "allow-same-origin"].join(" ");
-
-    const handleClick = (e) => playNext($tracker);
 
     onMount(() => {
         window.addEventListener("message", processors.onMessage, false);
@@ -36,13 +35,7 @@
             {allow}
             {sandbox}
         />
-        <div
-            on:click|preventDefault={handleClick}
-            id="magicBox"
-            class="fw5 p10 p-abs visible"
-        >
-            Play {$tracker || "URL"} Next
-        </div>
+        <Next />
     </div>
 {/if}
 
@@ -54,29 +47,6 @@
         left: 0;
         right: 0;
         bottom: 0;
-    }
-    #magicBox {
-        z-index: 1;
-        bottom: 3em;
-        width: 250px;
-        background: #000a;
-        font-size: 2rem;
-        border: 1px solid #fff4;
-        color: #fff;
-
-        right: -350px;
-        opacity: 0;
-        transition: all 0.2s ease-in;
-    }
-    .visible {
-        opacity: 1 !important;
-        right: -1px !important;
-        &:hover {
-            cursor: pointer;
-            border: 1px solid #fff;
-            background: #000;
-            color: #fff;
-        }
     }
     .cont {
         height: 100vh;

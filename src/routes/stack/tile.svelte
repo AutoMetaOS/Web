@@ -57,7 +57,7 @@
             alt="thumb"
         />
     </div>
-    <div class="clearfix p-rel">
+    <div class="clearfix blur p-rel">
         <div class="ƒ ∆-bw">
             <span>{url_process(data.url)}</span>
             <svg
@@ -107,12 +107,10 @@
         padding: 20px;
         width: calc(100% - 40px);
         height: 3.77rem;
-        top: 65%;
+        top: 63%;
         z-index: 1;
-        background: #000c;
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        -moz-backdrop-filter: blur(4px);
+        --bg: #000c;
+        --sz: 4px;
 
         transition: all 0.2s ease;
     }

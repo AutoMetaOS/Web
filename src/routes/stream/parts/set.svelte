@@ -1,7 +1,7 @@
 <script>
   export let set;
 
-  import { channelList } from "../functions/store";
+  import { F } from "predefined";
   import { youtube, processors } from "../functions";
   import Card from "../components/videoCard.svelte";
   import { onMount } from "svelte";
@@ -18,9 +18,10 @@
     );
     promise.then((e) => {
       videos = e.flat();
-      const channels = videos.map((e) => e.channelId);
-
-      channelList.set(channels);
+      const channels = videos.map((e) => F(`#${e.snippet.channelId}`));
+      channels.forEach((e) => {
+        if (e) e.remove();
+      });
     });
   });
 </script>

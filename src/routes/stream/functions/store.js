@@ -3,7 +3,6 @@ const { F } = pkg;
 import { writable } from 'svelte/store';
 import { processors } from "./index";
 
-export const channelList = writable( [] );
 export const subscriptions = writable( [] );
 export const vId = writable( "" );
 export const tracker = writable( "URL" );

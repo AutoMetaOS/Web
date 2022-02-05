@@ -27,21 +27,29 @@
     data-slug={slug}
     on:click={processors.videoSet}
 >
-    <img src={image} class="w-100" alt="thubmnail" />
-    <div class="†c w-100 deets blur p-abs p5">
-        <div style="padding-bottom:5px;">
-            {@html title?.slice(0, 60)}
-            {title.length > 60 ? "..." : ""}
+    <img
+        id={"img_" + id_processor()}
+        src={image}
+        class="w-100"
+        alt="thubmnail"
+    />
+    {#if details.length}
+        <div class="†c w-100 deets blur p-abs p5">
+            <div style="padding-bottom:5px;">
+                {@html title?.slice(0, 60)}
+                {title.length > 60 ? "..." : ""}
+            </div>
+            <div style="color: #888;">
+                {details.join(" • ")}
+            </div>
         </div>
-        <div style="color: #888;">
-            {details?.join(" • ")}
-        </div>
-    </div>
+    {/if}
 </div>
 
 <style type="text/scss">
     .recom {
         cursor: pointer;
+        min-width: 300px;
         width: calc(20% - 10px);
         overflow: hidden;
         .deets {

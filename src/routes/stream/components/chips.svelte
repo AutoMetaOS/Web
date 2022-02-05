@@ -1,16 +1,13 @@
 <script>
-    import { channelList } from "../functions/store";
     export let //
         cnls,
         recenter;
-
-    let set = [...new Set($channelList || [])];
 
     $: list =
         cnls
             ?.map((e) => e.channels)
             .flat()
-            .filter((e) => !set.includes(e.id)) || [];
+            .sort((a, b) => (a.name - b.name ? 1 : -1)) || [];
 </script>
 
 <section class="w-100 ƒ ƒ∑ m10 p10">
