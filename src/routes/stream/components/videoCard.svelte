@@ -1,11 +1,14 @@
 <script>
+    import { onMount } from "svelte";
     import { processors } from "../functions";
+    import { now_playing, getNext } from "../functions/store";
 
     export let //
+        get_next = 0,
         title = "",
         details = [],
         type = "",
-        count = 0,
+        count = +$now_playing.local_id?.split("-")[1] || 0,
         slug = "",
         image = "https://wallpaperaccess.com/full/2404603.png";
 
@@ -18,6 +21,31 @@
 
         return id;
     };
+
+    $: self = {
+        title,
+        details,
+        type,
+        count,
+        slug,
+        image,
+        id: id_processor(),
+    };
+
+    const clickHandler = () => processors.videoSet(self);
+
+    onMount(() => {
+        if (get_next) {
+            const next = getNext();
+            [title, slug, image, count, type] = [
+                next.title,
+                next.slug,
+                next.image,
+                next.count,
+                next.type,
+            ];
+        }
+    });
 </script>
 
 <div
@@ -25,7 +53,7 @@
     id={id_processor()}
     data-title={title}
     data-slug={slug}
-    on:click={processors.videoSet}
+    on:click={clickHandler}
 >
     <img
         id={"img_" + id_processor()}

@@ -3,16 +3,13 @@ const baseURL = "https://api.nukes.in/";
 
 // FUNCTIONS
 const froTransformer = ( json ) => {
-    const schema = {
-        "id": "c0c40fe5-f9fe-491c-83d1-4c605fef672e",
-        "url": "https://quantamagazine.org/stuff-20210603/",
-        "title": "Threshold when Shapes Give Way",
-        "type": "Article",
-        "image": "https://placeholder.gif",
-        "notes": "notes"
-    };
+    let data = "";
 
-    const data = `"${ json.type }":"${ json.url }","title":"${ json.title }","image":"${ json.image }","notes":"${ json.notes }"`;
+    if ( json.type ) data += `"${ json.type }":"${ json.url }",`;
+    delete json.type;
+    delete json.url;
+    Object.keys( json ).forEach( key => data += `"${ key }":"${ json[ key ] }",` );
+
     return btoa( data );
 };
 const ssfetch = async ( endpoint ) => {
@@ -33,9 +30,19 @@ const toTransformer = ( obj ) => {
     return obj;
 }
 
+// const json = {
+//     parse: ( d ) => {
+//         console.log( d );
+//         console.log( typeof ( `{${ d }}` ) );
+//         console.log( typeof JSON.parse( `{${ d }}` ) );
+//         console.log( JSON.parse( `{${ d }}` ) );
+//         return JSON.parse( `{${ d }}` );
+//     }
+// };
+
 const objectify = arr_string => JSON
     .parse( arr_string )
-    .map( d => JSON.parse( `{${ d }}` ) )
+    .map( d => JSON.parse( ( `{${ d }}` ).replaceAll( ',}', '}' ) ) )
     .map( toTransformer );
 
 // MAIN

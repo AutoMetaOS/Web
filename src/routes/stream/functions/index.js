@@ -1,6 +1,6 @@
 import { getRecents, search, channel } from "./youtube";
 import { videoSet } from "./store";
-import { videoProcessor, onMessage, postMessage, timeSince } from "./processors";
+import { onMessage, postMessage, timeSince } from "./processors";
 
 
 export const youtube = {
@@ -11,7 +11,6 @@ export const youtube = {
 
 export const processors = {
     videoSet,
-    videoProcessor,
     onMessage,
     postMessage,
     timeSince

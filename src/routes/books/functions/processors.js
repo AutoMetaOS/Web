@@ -3,19 +3,23 @@ export const image = id => {
     return "https://openlibrary.org/images/icons/avatar_book-sm.png";
 };
 
-export const isbn = isb => {
-    if ( typeof isbn === "string" ) return isbn;
-    if ( typeof isbn === "object" ) return isbn[ 0 ];
-    return "UNKNOWN";
-};
+export const tags = tags => tags.filter( ( e ) => !/[^a-zA-Z]/i.test( e ) )
+    .map( ( e ) => e.toLowerCase() )
+    .slice( 0, 4 )
+    .join( ", " );
 
 export const author = list => {
-    if ( typeof list === "string" ) return author;
+    if ( typeof list === "string" ) return list;
     if ( typeof list === "object" ) {
         const compacted = [ ...new Set( list.map( e => e.trim() ) ) ];
         if ( compacted.length > 3 ) return `${ compacted.slice( 0, 3 ).join( ", " ) } et al.`;
         else return compacted.join( ", " )
     };
+};
+
+export const published = list => {
+    if ( typeof list === "string" ) return +list;
+    if ( typeof list === "object" ) return +list[ 0 ];
 };
 
 export const add = ( data ) => {

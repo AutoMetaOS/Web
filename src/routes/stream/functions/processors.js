@@ -1,39 +1,40 @@
-import { vId, tracker, playNext } from "./store";
+import { playNext, now_playing, app_behavior } from "./store";
 import { get } from "svelte/store";
-import pkg from "predefined";
-const { url_params, F } = pkg;
 
 let DURATION = 0;
-let type = () => DURATION >= 300 ? 'long' : 'soft';
 
 const triggerCheck = ( data ) => {
-    const magicBox = F( '#magicBox' );
+    if ( data.length >= 8 ) {
+        if ( data.timeLeft <= 90 ) app_behavior.set( { show_next: true } );
+        else app_behavior.set( { show_next: false } );
 
-    if ( data.fracLeft <= 0.05 || data.timeLeft <= 30 ) magicBox.classList.add( 'visible' );
-    else magicBox.classList.remove( 'visible' );
+        if ( data.timeLeft <= 30 ) {
+            playNext( get( now_playing ).local_id )
+            app_behavior.set( { show_next: false } );
+        };
 
-    if ( data.fracLeft <= 0.01 || data.timeLeft <= 5 ) playNext( get( tracker ) );
-};
+    } else {
+        if ( data.timeLeft <= 30 ) app_behavior.set( { show_next: true } );
+        else app_behavior.set( { show_next: false } );
 
-export const videoProcessor = ( slug, id ) => {
-    if ( !url_params.get().id ) { url_params.set( "id", slug ); }
-    const URL = `www.youtube-nocookie.com/embed/${ slug }?autoplay=1&enablejsapi=1`;
-    window.history.pushState( '', '', `?id=${ slug }` );
-
-    tracker.set( id );
-    vId.set( 'https://' + URL );
-    return 0;
+        if ( data.timeLeft <= 5 ) {
+            playNext( get( now_playing ).local_id )
+            app_behavior.set( { show_next: false } );
+        };
+    }
 };
 
 export const onMessage = ( message ) => {
-    const { duration, currentTime } = JSON.parse( message.data ).info;
+    if ( message.data.charAt( 0 ) !== '{' ) return;
+
+    const { duration, currentTime } = JSON.parse( message.data ).info || {};
     if ( duration ) DURATION = duration;
     const timeLeft = ~~( DURATION - currentTime );
 
     const data = {
+        length: duration / 60,
         timeLeft: !timeLeft ? DURATION : timeLeft,
-        fracLeft: !timeLeft ? 1 : timeLeft / DURATION,
-        type: type()
+        fracLeft: !timeLeft ? 1 : timeLeft / DURATION
     }
 
     triggerCheck( data );

@@ -1,9 +1,10 @@
 {
 	"name": "rurouni",
 	"scripts": {
+		"clean": "rm -rf .svelte* && clear",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
-		"deploy": "npx gh-pages -d build -t true && rm -rf build .svelte-kit",
+		"deploy": "npx gh-pages -d build -t true && rm -rf build .svelte*",
 		"commit": "git add . && git commit -m 'MANY MANY CHANGES' && git push"
 	},
 	"devDependencies": {

@@ -1,10 +1,8 @@
 <script>
     import { crypt } from "predefined";
+    import { process } from "./functions";
     import { getMetadata, types } from "./functions/meta.js";
     import { stack } from "$lib/db";
-
-    const capitalCase = (string) =>
-        string.charAt(0).toUpperCase() + string.slice(1);
 
     export let size = {
         width: 0,
@@ -33,7 +31,8 @@
                         .includes(r.type.toLowerCase())
                 )
                     data.notes = r.type;
-                data.type = capitalCase(r.type) || "Article";
+
+                data.type = process.type(r.type);
             }
         });
     };
@@ -85,7 +84,6 @@
     />
     <form class="p-abs p20" on:submit|preventDefault={preprocess}>
         <select bind:value={data.type}>
-            <!-- on:change={() => console.log(data.type)} -->
             {#each types as type}
                 <option value={type}>{type}</option>
             {/each}

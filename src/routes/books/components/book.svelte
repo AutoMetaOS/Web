@@ -1,32 +1,41 @@
 <script>
     import { process } from "../functions";
+    import Functions from "./functions.svelte";
     export let //
+        objective = "sugg",
         title = "",
         image = "",
-        description = "",
         tags = [],
-        isbn,
         id,
         published = new Date().getFullYear(),
         author = "";
+
+    $: self = {
+        title,
+        image: image,
+        tags: process.tags(tags),
+        bk_id: id,
+        published: published[0],
+        author: process.author(author),
+    };
 </script>
 
-<div id={process.isbn(isbn)} class="book ƒ m10">
-    <img src={process.image(image)} alt={title} />
+<div {id} class="book ƒ m10">
+    <div class="p-rel">
+        <img class="w-100 h-100" src={process.image(image)} alt={title} />
+        <Functions {objective} data={self} />
+    </div>
     <div class="p10">
-        <div {id} class="fw4">{title}</div>
+        <div class="fw4">{title}</div>
         <div>{process.author(author)}</div>
 
         <div class="p5">
-            <i class="published">First Published {published[0]}</i> <br />
+            <i class="published"
+                >First Published {process.published(published)}</i
+            > <br />
             <div class="tags">
-                {tags
-                    .filter((e) => !/[^a-zA-Z]/i.test(e))
-                    .map((e) => e.toLowerCase())
-                    .slice(0, 4)
-                    .join(", ")}
+                {process.tags(tags)}
             </div>
-            {description}
         </div>
     </div>
 </div>
@@ -46,7 +55,6 @@
         img {
             width: 140px;
             height: 200px;
-            object-fit: cover;
         }
     }
 </style>

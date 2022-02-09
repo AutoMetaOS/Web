@@ -30,9 +30,8 @@
     onMount(() => {
         const params = url_params.get();
         params.q && searcher(params.q);
-        if (params.id) {
-            processors.videoProcessor(params.id);
-        }
+        if (params.id) processors.videoProcessor(params.id);
+
         return 0;
     });
 </script>

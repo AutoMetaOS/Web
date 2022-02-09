@@ -1,5 +1,5 @@
 import { search } from "./api";
-import { image, isbn, author } from "./processors";
+import { image, author, tags, published } from "./processors";
 
 export const api = {
     search,
@@ -7,6 +7,6 @@ export const api = {
 
 export const process = {
     image,
-    isbn,
-    author
+    author,
+    tags, published
 }
