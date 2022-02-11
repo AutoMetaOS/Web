@@ -12,49 +12,79 @@
 
     $: self = {
         title,
-        image: image,
+        image: image || null,
         tags: process.tags(tags),
         bk_id: id,
-        published: published[0],
+        published: process.published(published),
         author: process.author(author),
     };
 </script>
 
 <div {id} class="book ƒ m10">
     <div class="p-rel">
-        <img class="w-100 h-100" src={process.image(image)} alt={title} />
-        <Functions {objective} data={self} />
+        {#if !!image}
+            <img
+                class="w-100 h-100"
+                src={`https://covers.openlibrary.org/b/id/${image}-M.jpg`}
+                alt={title}
+            />
+        {:else}
+            <div class="dummy †c ƒ w-100 h-100">{title.trim()}</div>
+        {/if}
     </div>
-    <div class="p10">
-        <div class="fw4">{title}</div>
-        <div>{process.author(author)}</div>
-
-        <div class="p5">
-            <i class="published"
-                >First Published {process.published(published)}</i
-            > <br />
-            <div class="tags">
-                {process.tags(tags)}
-            </div>
+    <div class="body p-rel">
+        <div>
+            {process.author(author)}
+            {#if published}
+                ({process.published(published)})
+            {/if}
         </div>
+
+        <div class="tags">
+            {process.tags(tags)}
+        </div>
+
+        <h5 class="title o-0">{title.toUpperCase()}</h5>
+
+        <Functions {objective} data={self} />
     </div>
 </div>
 
 <style type="text/scss">
     .book {
+        --w: 140px;
+        --h: 200px;
         width: 300px;
         max-height: 220px;
         overflow: hidden;
         word-wrap: break-word;
-        .published {
-            color: #aaa;
+        &:hover {
+            .title {
+                opacity: 1;
+                transition: opacity 0.1s ease;
+            }
+        }
+        .body {
+            padding: 0 10px;
         }
         .tags {
+            padding: 5px 0;
+            color: #aaa;
             text-transform: capitalize;
         }
         img {
-            width: 140px;
-            height: 200px;
+            width: var(--w);
+            height: var(--h);
+        }
+        .dummy {
+            width: var(--w);
+            height: var(--h);
+
+            background: #fefef8;
+            color: #222;
+            align-items: center;
+            word-wrap: break-word;
+            overflow: hidden;
         }
     }
 </style>

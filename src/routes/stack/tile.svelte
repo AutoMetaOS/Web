@@ -92,7 +92,7 @@
     .tile {
         color: #fff;
         &:hover .clearfix {
-            top: 0;
+            bottom: 0;
             height: calc(100% - 40px);
         }
     }
@@ -106,8 +106,8 @@
         overflow: hidden;
         padding: 20px;
         width: calc(100% - 40px);
-        height: 3.77rem;
-        top: 63%;
+        height: 4rem;
+        bottom: calc(-100% + 4em + 40px);
         z-index: 1;
         --bg: #000c;
         --sz: 4px;

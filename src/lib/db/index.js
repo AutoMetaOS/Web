@@ -8,7 +8,11 @@ const froTransformer = ( json ) => {
     if ( json.type ) data += `"${ json.type }":"${ json.url }",`;
     delete json.type;
     delete json.url;
-    Object.keys( json ).forEach( key => data += `"${ key }":"${ json[ key ] }",` );
+    Object.keys( json ).forEach( key => {
+        if ( typeof json[ key ] === "string" )
+            json[ key ] = json[ key ].replace( /"/g, "'" ).replaceAll( "undefined", "" );
+        data += `"${ key }":"${ json[ key ] }",`
+    } );
 
     return btoa( data );
 };
