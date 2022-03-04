@@ -33,14 +33,14 @@
       <input
         type="range"
         min={0}
-        max={videos.flat().length / 5}
+        max={videos.flat().length / 4}
         bind:value={slicer}
       />
     </span>
   </div>
   {#each videos
     .sort((a, b) => new Date(b.contentDetails.videoPublishedAt) - new Date(a.contentDetails.videoPublishedAt))
-    .slice(0, slicer * 5) as vid, i}
+    .slice(0, slicer * 4) as vid, i}
     <Card
       type={"snippet"}
       count={i}

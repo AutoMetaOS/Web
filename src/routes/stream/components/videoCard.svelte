@@ -78,7 +78,7 @@
     .recom {
         cursor: pointer;
         min-width: 300px;
-        width: calc(20% - 10px);
+        width: calc(25% - 10px);
         overflow: hidden;
         .deets {
             --bg: #000a;

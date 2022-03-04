@@ -10,7 +10,8 @@
     import Chips from "./components/chips.svelte";
 
     import { onMount } from "svelte";
-    import { processors, youtube } from "./functions";
+    import { youtube } from "./functions";
+    import { videoSet } from "./functions/store";
     import cnls from "../../../../config/sorted_channels.json";
 
     let base = [];
@@ -30,7 +31,7 @@
     onMount(() => {
         const params = url_params.get();
         params.q && searcher(params.q);
-        if (params.id) processors.videoProcessor(params.id);
+        if (params.id) videoSet({ slug: params.id });
 
         return 0;
     });

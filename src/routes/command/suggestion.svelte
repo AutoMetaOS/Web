@@ -22,7 +22,7 @@
             <div class="fw4 ƒ-col ∆-ct">
                 {#if rec[3]}
                     <div>{@html rec[3]?.zh || rec[0]}</div>
-                    <span>{rec[3]?.zi || ""}</span>
+                    <span>{@html rec[3]?.zi || ""}</span>
                 {:else}
                     {@html rec[0]}
                 {/if}

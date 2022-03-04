@@ -30,12 +30,12 @@
                 <input
                     type="range"
                     min={0}
-                    max={videos.flat().length / 5}
+                    max={videos.flat().length / 4}
                     bind:value={slicer}
                 />
             </span>
         </div>
-        {#each videos.sort(sorter).slice(0, slicer * 5) as vid, i}
+        {#each videos.sort(sorter).slice(0, slicer * 4) as vid, i}
             <Card
                 type="stack"
                 count={i}

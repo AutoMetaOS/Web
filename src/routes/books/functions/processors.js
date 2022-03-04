@@ -61,7 +61,7 @@ export const attributes = ( objective ) => {
     const attrs = { ...config.objective[ objective ] };
 
     const styles = attrs.style
-        .map( ( e ) => e.join( ":" ) )
+        ?.map( ( e ) => e.join( ":" ) )
         .join( ";" );
 
     attrs.style = styles;
@@ -70,12 +70,12 @@ export const attributes = ( objective ) => {
 };
 
 export const icons = icon => {
-    const tags = config.icons[ icon ].map( e => {
+    const tags = config.icons[ icon ]?.map( e => {
         const tag = e.tag;
-        const attrs = e.attributes.map( e => `${ e[ 0 ] }="${ e[ 1 ] }"` ).join( " " );
+        const attrs = e.attributes?.map( e => `${ e[ 0 ] }="${ e[ 1 ] }"` ).join( " " );
 
         return `<${ tag } ${ attrs }/>`;
     } );
 
-    return tags.join( " " );
+    return tags?.join( " " );
 };

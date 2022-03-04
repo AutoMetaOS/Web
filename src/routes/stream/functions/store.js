@@ -33,7 +33,7 @@ export const getNext = ( id ) => {
 
     const split = id?.split( '-' );
     const [ set, index ] = [
-        split[ 0 ] || yt,
+        split[ 0 ] || 'yt',
         +split[ 1 ] || 0
     ];
     if ( index === 0 ) return null;
@@ -42,7 +42,7 @@ export const getNext = ( id ) => {
     const { title, slug } = next?.dataset || {};
 
     return {
-        id,
+        id: `#${ set }-${ index - 1 }`,
         next,
         type: set === "yt" ? "snippet" : "stack",
         count: index - 1,
