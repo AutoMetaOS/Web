@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-0b788a00.js",
+    "file": "start-8c8de5fb.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -13,6 +13,7 @@
       "src/routes/index.svelte",
       "src/routes/projects/index.svelte",
       "src/routes/projects/proj.svelte",
+      "src/routes/projects/nav.svelte",
       "_suggestion-54a78ab9.js",
       "src/routes/command/micro/twitter.svelte",
       "src/routes/command/micro/card.svelte",
@@ -126,20 +127,33 @@
     ]
   },
   "src/routes/projects/index.svelte": {
-    "file": "pages/projects/index.svelte-989fd8df.js",
+    "file": "pages/projects/index.svelte-5c260d68.js",
     "src": "src/routes/projects/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-a193541a.js",
+      "src/routes/projects/nav.svelte",
       "src/routes/projects/proj.svelte"
     ],
     "css": [
-      "assets/pages/projects/index.svelte-8b81fbdf.css"
+      "assets/pages/projects/index.svelte-392d5155.css"
+    ]
+  },
+  "src/routes/projects/nav.svelte": {
+    "file": "pages/projects/nav.svelte-a9273304.js",
+    "src": "src/routes/projects/nav.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-a193541a.js"
+    ],
+    "css": [
+      "assets/pages/projects/nav.svelte-0abe3152.css"
     ]
   },
   "src/routes/projects/proj.svelte": {
-    "file": "pages/projects/proj.svelte-766b96ee.js",
+    "file": "pages/projects/proj.svelte-a7b7b62f.js",
     "src": "src/routes/projects/proj.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -147,7 +161,7 @@
       "_vendor-a193541a.js"
     ],
     "css": [
-      "assets/pages/projects/proj.svelte-5b125911.css"
+      "assets/pages/projects/proj.svelte-876c0c97.css"
     ]
   },
   "src/routes/stream/index.svelte": {
@@ -219,7 +233,7 @@
       "_index-03a20dbf.js"
     ],
     "css": [
-      "assets/pages/stream/parts/stack.svelte-d0ce2f86.css"
+      "assets/pages/stream/components/videoCard.svelte-fa7e29ce.css"
     ]
   },
   "src/routes/stream/parts/search.svelte": {
@@ -258,7 +272,7 @@
       "_index-03a20dbf.js"
     ],
     "css": [
-      "assets/pages/stream/parts/stack.svelte-d0ce2f86.css"
+      "assets/pages/stream/components/videoCard.svelte-fa7e29ce.css"
     ]
   },
   "src/routes/books/index.svelte": {
