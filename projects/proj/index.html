@@ -10,15 +10,15 @@
 	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
 
 	<meta http-equiv="content-security-policy" content="">
-	<link rel="stylesheet" href="/internal/assets/pages/projects/proj.svelte-d1e1ecaa.css">
-	<link rel="modulepreload" href="/internal/start-4a75a36c.js">
+	<link rel="stylesheet" href="/internal/assets/pages/projects/proj.svelte-5b125911.css">
+	<link rel="modulepreload" href="/internal/start-0b788a00.js">
 	<link rel="modulepreload" href="/internal/chunks/vendor-a193541a.js">
 	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
 	<link rel="modulepreload" href="/internal/layout.svelte-0c4b572e.js">
-	<link rel="modulepreload" href="/internal/pages/projects/proj.svelte-48964c9f.js"><script type="module">
-		import { start } from "/internal/start-4a75a36c.js";
+	<link rel="modulepreload" href="/internal/pages/projects/proj.svelte-766b96ee.js"><script type="module">
+		import { start } from "/internal/start-0b788a00.js";
 		start({
-			target: document.querySelector("body"),
+			target: document.querySelector("main"),
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -29,7 +29,7 @@
 				error: null,
 				nodes: [
 					import("/internal/layout.svelte-0c4b572e.js"),
-						import("/internal/pages/projects/proj.svelte-48964c9f.js")
+						import("/internal/pages/projects/proj.svelte-766b96ee.js")
 				],
 				url: new URL("http://sveltekit-prerender/projects/proj"),
 				params: {}
@@ -47,16 +47,21 @@
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	
+	<main>
 
 
-<div class="rx5 fw3 m10 p10 cont svelte-1end0yd"><div class="title fw7">undefined</div>
+<div class="rx5 fw3 m10 p10 cont p-rel svelte-16qiqrc" style="--col:#22f4"><div class="title fw3 svelte-16qiqrc">undefined</div>
     <div class="desc">undefined</div>
     <div class="mile"><span class="desc">undefined</span></div>
-    <div class="eta"><span class="fw7">0 Days</span></div>
+    <div class="eta p-abs p5 rx5 svelte-16qiqrc"><span class="fw7">0 Days</span></div>
 </div>
 
-
+</main>
+	<div id="alerts" class="p-fix w-100"></div>
 </body>
+
+<script type="module">
+	window.onerror = (err)=>console.log('errCot',err);
+</script>
 
 </html>

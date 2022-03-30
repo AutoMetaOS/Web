@@ -10,17 +10,17 @@
 	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
 
 	<meta http-equiv="content-security-policy" content="">
-	<link rel="stylesheet" href="/internal/assets/pages/stream/components/videoCard.svelte-fa7e29ce.css">
-	<link rel="modulepreload" href="/internal/start-4a75a36c.js">
+	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/stack.svelte-d0ce2f86.css">
+	<link rel="modulepreload" href="/internal/start-0b788a00.js">
 	<link rel="modulepreload" href="/internal/chunks/vendor-a193541a.js">
 	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
 	<link rel="modulepreload" href="/internal/layout.svelte-0c4b572e.js">
-	<link rel="modulepreload" href="/internal/pages/stream/parts/set.svelte-70bdbd8b.js">
-	<link rel="modulepreload" href="/internal/chunks/index-742467bf.js">
-	<link rel="modulepreload" href="/internal/pages/stream/components/videoCard.svelte-c5cab07e.js"><script type="module">
-		import { start } from "/internal/start-4a75a36c.js";
+	<link rel="modulepreload" href="/internal/pages/stream/parts/set.svelte-161dfe63.js">
+	<link rel="modulepreload" href="/internal/chunks/index-03a20dbf.js">
+	<link rel="modulepreload" href="/internal/pages/stream/components/videoCard.svelte-8ea3d586.js"><script type="module">
+		import { start } from "/internal/start-0b788a00.js";
 		start({
-			target: document.querySelector("body"),
+			target: document.querySelector("main"),
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -31,7 +31,7 @@
 				error: null,
 				nodes: [
 					import("/internal/layout.svelte-0c4b572e.js"),
-						import("/internal/pages/stream/parts/set.svelte-70bdbd8b.js")
+						import("/internal/pages/stream/parts/set.svelte-161dfe63.js")
 				],
 				url: new URL("http://sveltekit-prerender/stream/parts/set"),
 				params: {}
@@ -49,14 +49,19 @@
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	
+	<main>
 
 
 <section class="ƒ p20 ƒ∑" id="updates"><div class="w-100 ƒ p5 ∆-bw"><span>Updates (0)</span>
     <span style="font-size:1.25rem"><input type="range" min="0" max="0" value="3"></span></div>
   </section>
 
-
+</main>
+	<div id="alerts" class="p-fix w-100"></div>
 </body>
+
+<script type="module">
+	window.onerror = (err)=>console.log('errCot',err);
+</script>
 
 </html>

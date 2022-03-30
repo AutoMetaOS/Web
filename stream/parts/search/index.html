@@ -11,17 +11,17 @@
 
 	<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/search.svelte-1bd91240.css">
-	<link rel="stylesheet" href="/internal/assets/pages/stream/components/videoCard.svelte-fa7e29ce.css">
-	<link rel="modulepreload" href="/internal/start-4a75a36c.js">
+	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/stack.svelte-d0ce2f86.css">
+	<link rel="modulepreload" href="/internal/start-0b788a00.js">
 	<link rel="modulepreload" href="/internal/chunks/vendor-a193541a.js">
 	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
 	<link rel="modulepreload" href="/internal/layout.svelte-0c4b572e.js">
-	<link rel="modulepreload" href="/internal/pages/stream/parts/search.svelte-1db5b218.js">
-	<link rel="modulepreload" href="/internal/chunks/index-742467bf.js">
-	<link rel="modulepreload" href="/internal/pages/stream/components/videoCard.svelte-c5cab07e.js"><script type="module">
-		import { start } from "/internal/start-4a75a36c.js";
+	<link rel="modulepreload" href="/internal/pages/stream/parts/search.svelte-dca6aa52.js">
+	<link rel="modulepreload" href="/internal/chunks/index-03a20dbf.js">
+	<link rel="modulepreload" href="/internal/pages/stream/components/videoCard.svelte-8ea3d586.js"><script type="module">
+		import { start } from "/internal/start-0b788a00.js";
 		start({
-			target: document.querySelector("body"),
+			target: document.querySelector("main"),
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -32,7 +32,7 @@
 				error: null,
 				nodes: [
 					import("/internal/layout.svelte-0c4b572e.js"),
-						import("/internal/pages/stream/parts/search.svelte-1db5b218.js")
+						import("/internal/pages/stream/parts/search.svelte-dca6aa52.js")
 				],
 				url: new URL("http://sveltekit-prerender/stream/parts/search"),
 				params: {}
@@ -50,13 +50,18 @@
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	
+	<main>
 
 
 <section class="p20 ƒ ƒ∑" id="search">
 </section>
 
-
+</main>
+	<div id="alerts" class="p-fix w-100"></div>
 </body>
+
+<script type="module">
+	window.onerror = (err)=>console.log('errCot',err);
+</script>
 
 </html>

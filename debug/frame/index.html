@@ -11,14 +11,14 @@
 
 	<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/internal/assets/frame.svelte_svelte_type_style_lang-fff8ae1b.css">
-	<link rel="modulepreload" href="/internal/start-4a75a36c.js">
+	<link rel="modulepreload" href="/internal/start-0b788a00.js">
 	<link rel="modulepreload" href="/internal/chunks/vendor-a193541a.js">
 	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
 	<link rel="modulepreload" href="/internal/layout.svelte-0c4b572e.js">
 	<link rel="modulepreload" href="/internal/pages/debug/frame.svelte-05d98f61.js"><script type="module">
-		import { start } from "/internal/start-4a75a36c.js";
+		import { start } from "/internal/start-0b788a00.js";
 		start({
-			target: document.querySelector("body"),
+			target: document.querySelector("main"),
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -47,12 +47,17 @@
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	
+	<main>
 
 
 <iframe title="sim" src="/assets/repl.html" class="w-100 h-100 svelte-1bxppfn" frameborder="0"></iframe>
 
-
+</main>
+	<div id="alerts" class="p-fix w-100"></div>
 </body>
+
+<script type="module">
+	window.onerror = (err)=>console.log('errCot',err);
+</script>
 
 </html>

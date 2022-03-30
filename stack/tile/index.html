@@ -11,15 +11,15 @@
 
 	<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/internal/assets/pages/stack/tile.svelte-c4a7d9fd.css">
-	<link rel="modulepreload" href="/internal/start-4a75a36c.js">
+	<link rel="modulepreload" href="/internal/start-0b788a00.js">
 	<link rel="modulepreload" href="/internal/chunks/vendor-a193541a.js">
 	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
 	<link rel="modulepreload" href="/internal/layout.svelte-0c4b572e.js">
 	<link rel="modulepreload" href="/internal/pages/stack/tile.svelte-b3a8854c.js">
 	<link rel="modulepreload" href="/internal/chunks/index-03ab0e3d.js"><script type="module">
-		import { start } from "/internal/start-4a75a36c.js";
+		import { start } from "/internal/start-0b788a00.js";
 		start({
-			target: document.querySelector("body"),
+			target: document.querySelector("main"),
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -48,7 +48,7 @@
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	
+	<main>
 
 
 <a class="tile p0 p-rel svelte-1b8ul0d" style="width:0;height:0;"><div class="p-abs w-100 h-100" style="top:0;left:0;z-index:0;"><img width="0" height="0" src="/OUI/icons/amos.png" alt="thumb"></div>
@@ -60,7 +60,12 @@
     <svg class="p-abs" viewBox="0 0 32 32" width="16" height="16" stroke="#fff" style="top:10px;right:10px;z-index:2;"><path d="M2 30 L30 2 M30 30 L2 2"></path></svg>
 </a>
 
-
+</main>
+	<div id="alerts" class="p-fix w-100"></div>
 </body>
+
+<script type="module">
+	window.onerror = (err)=>console.log('errCot',err);
+</script>
 
 </html>

@@ -11,16 +11,16 @@
 
 	<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/internal/assets/pages/stack/adder.svelte-da581fa2.css">
-	<link rel="modulepreload" href="/internal/start-4a75a36c.js">
+	<link rel="modulepreload" href="/internal/start-0b788a00.js">
 	<link rel="modulepreload" href="/internal/chunks/vendor-a193541a.js">
 	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
 	<link rel="modulepreload" href="/internal/layout.svelte-0c4b572e.js">
 	<link rel="modulepreload" href="/internal/pages/stack/adder.svelte-dfaec841.js">
 	<link rel="modulepreload" href="/internal/chunks/index-f154c8e1.js">
 	<link rel="modulepreload" href="/internal/chunks/index-03ab0e3d.js"><script type="module">
-		import { start } from "/internal/start-4a75a36c.js";
+		import { start } from "/internal/start-0b788a00.js";
 		start({
-			target: document.querySelector("body"),
+			target: document.querySelector("main"),
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -49,7 +49,7 @@
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	
+	<main>
 
 
 <div class="tile p-rel" style="width:0;height:0;"><img class="p-abs svelte-m7gyp5" src="" width="0" height="0" alt="Placeholder" style="z-index: 0;">
@@ -65,7 +65,12 @@
         <input class="o-0 svelte-m7gyp5" type="submit" value="Go"></form>
 </div>
 
-
+</main>
+	<div id="alerts" class="p-fix w-100"></div>
 </body>
+
+<script type="module">
+	window.onerror = (err)=>console.log('errCot',err);
+</script>
 
 </html>

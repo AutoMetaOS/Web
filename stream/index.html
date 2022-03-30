@@ -9,30 +9,30 @@
 	<link rel='stylesheet' href='/OUI/css/global.css'>
 	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
 
-	<meta http-equiv="content-security-policy" content=""><link rel="stylesheet" href="/OUI/css/g100.css" data-svelte="svelte-1qbv7r7">
+	<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/internal/assets/pages/stream/index.svelte-e36b6df7.css">
 	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/bar.svelte-93a44e6b.css">
 	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/player.svelte-960555a3.css">
-	<link rel="stylesheet" href="/internal/assets/pages/stream/components/videoCard.svelte-fa7e29ce.css">
+	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/stack.svelte-d0ce2f86.css">
 	<link rel="stylesheet" href="/internal/assets/pages/stream/parts/search.svelte-1bd91240.css">
 	<link rel="stylesheet" href="/internal/assets/pages/stream/components/chips.svelte-a769018b.css">
-	<link rel="modulepreload" href="/internal/start-4a75a36c.js">
+	<link rel="modulepreload" href="/internal/start-0b788a00.js">
 	<link rel="modulepreload" href="/internal/chunks/vendor-a193541a.js">
 	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
 	<link rel="modulepreload" href="/internal/layout.svelte-0c4b572e.js">
-	<link rel="modulepreload" href="/internal/pages/stream/index.svelte-bfcb583a.js">
+	<link rel="modulepreload" href="/internal/pages/stream/index.svelte-f16cf9fc.js">
 	<link rel="modulepreload" href="/internal/pages/stream/parts/bar.svelte-570cbc2a.js">
-	<link rel="modulepreload" href="/internal/pages/stream/parts/player.svelte-0ea8582b.js">
-	<link rel="modulepreload" href="/internal/chunks/index-742467bf.js">
-	<link rel="modulepreload" href="/internal/pages/stream/components/videoCard.svelte-c5cab07e.js">
-	<link rel="modulepreload" href="/internal/pages/stream/parts/set.svelte-70bdbd8b.js">
-	<link rel="modulepreload" href="/internal/pages/stream/parts/stack.svelte-5fd02660.js">
+	<link rel="modulepreload" href="/internal/pages/stream/parts/player.svelte-1362a56e.js">
+	<link rel="modulepreload" href="/internal/chunks/index-03a20dbf.js">
+	<link rel="modulepreload" href="/internal/pages/stream/components/videoCard.svelte-8ea3d586.js">
+	<link rel="modulepreload" href="/internal/pages/stream/parts/set.svelte-161dfe63.js">
+	<link rel="modulepreload" href="/internal/pages/stream/parts/stack.svelte-d6b8b052.js">
 	<link rel="modulepreload" href="/internal/chunks/index-03ab0e3d.js">
-	<link rel="modulepreload" href="/internal/pages/stream/parts/search.svelte-1db5b218.js">
+	<link rel="modulepreload" href="/internal/pages/stream/parts/search.svelte-dca6aa52.js">
 	<link rel="modulepreload" href="/internal/pages/stream/components/chips.svelte-64d1dcd1.js"><script type="module">
-		import { start } from "/internal/start-4a75a36c.js";
+		import { start } from "/internal/start-0b788a00.js";
 		start({
-			target: document.querySelector("body"),
+			target: document.querySelector("main"),
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -43,7 +43,7 @@
 				error: null,
 				nodes: [
 					import("/internal/layout.svelte-0c4b572e.js"),
-						import("/internal/pages/stream/index.svelte-bfcb583a.js")
+						import("/internal/pages/stream/index.svelte-f16cf9fc.js")
 				],
 				url: new URL("http://sveltekit-prerender/stream"),
 				params: {}
@@ -61,9 +61,7 @@
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	
-
-
+	<main>
 
 
 <main class="svelte-s2fiyw"><form class="o-0 w-100 p5 ƒ blur p-fix ∆-bw svelte-1wkl3hy"><input class="p5 b0 svelte-1wkl3hy" placeholder="Search" value="">
@@ -155,7 +153,12 @@
 </section>
 </main>
 
-
+</main>
+	<div id="alerts" class="p-fix w-100"></div>
 </body>
+
+<script type="module">
+	window.onerror = (err)=>console.log('errCot',err);
+</script>
 
 </html>

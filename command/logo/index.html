@@ -11,14 +11,14 @@
 
 	<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/internal/assets/pages/command/logo.svelte-e428a1ee.css">
-	<link rel="modulepreload" href="/internal/start-4a75a36c.js">
+	<link rel="modulepreload" href="/internal/start-0b788a00.js">
 	<link rel="modulepreload" href="/internal/chunks/vendor-a193541a.js">
 	<link rel="modulepreload" href="/internal/chunks/paths-4b3c6e7e.js">
 	<link rel="modulepreload" href="/internal/layout.svelte-0c4b572e.js">
 	<link rel="modulepreload" href="/internal/pages/command/logo.svelte-620f4bc8.js"><script type="module">
-		import { start } from "/internal/start-4a75a36c.js";
+		import { start } from "/internal/start-0b788a00.js";
 		start({
-			target: document.querySelector("body"),
+			target: document.querySelector("main"),
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -47,14 +47,19 @@
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	
+	<main>
 
 
 <div class="†c w-100" style="height:300px"><canvas class="fade-down w-100 h-100 svelte-1yv4vpz" id="canvas"></canvas>
     <div class="fade-down w-100 h-100 ƒ ∆-ct †c copy svelte-1yv4vpz"><h1 class="m0 svelte-1yv4vpz">AMOS</h1></div>
 </div>
 
-
+</main>
+	<div id="alerts" class="p-fix w-100"></div>
 </body>
+
+<script type="module">
+	window.onerror = (err)=>console.log('errCot',err);
+</script>
 
 </html>
