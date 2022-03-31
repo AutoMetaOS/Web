@@ -41,11 +41,11 @@
                 "change",
                 debounce(function () {
                     update(editor.getValue());
-                }, 5e2)
+                }, 500)
             );
 
             editor.setValue(w3);
-        }, 5e2);
+        }, 500);
     });
 </script>
 

@@ -42,7 +42,7 @@ export const getNext = ( id ) => {
     const { title, slug } = next?.dataset || {};
 
     return {
-        id: `#${ set }-${ index - 1 }`,
+        id: `${ set }-${ index - 1 }`,
         next,
         type: set === "yt" ? "snippet" : "stack",
         count: index - 1,

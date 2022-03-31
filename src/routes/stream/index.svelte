@@ -7,8 +7,6 @@
     import Stack from "./parts/stack.svelte";
     import Search from "./parts/search.svelte";
 
-    import Chips from "./components/chips.svelte";
-
     import { onMount } from "svelte";
     import { youtube } from "./functions";
     import { videoSet } from "./functions/store";
@@ -16,10 +14,6 @@
 
     let base = [];
 
-    const recenter = (e) => {
-        youtube.channel(e.target.id).then((r) => (base = r.items));
-        window.location.href = "#search";
-    };
     const searcher = (sc) => {
         const q = typeof sc === "string" ? sc : sc.target[0].value;
         if (!q) return url_params.set("q", "");
@@ -37,23 +31,10 @@
     });
 </script>
 
-<svelte:head>
-    <link rel="stylesheet" href="/OUI/css/g100.css" />
-</svelte:head>
-
 <main>
     <Bar {searcher} />
     <Player />
     <Search videos={base} />
     <SubSet set={cnls} />
     <Stack />
-    <Chips {recenter} {cnls} />
 </main>
-
-<style>
-    main {
-        overflow-x: hidden;
-        background: #111;
-        color: #fff;
-    }
-</style>

@@ -16,20 +16,6 @@ export const YT = 'https://youtube.googleapis.com/youtube/v3/';
 export const search = ( q ) => ytfetch( `/search?part=snippet&key=${ YT_KEY }&q=${ q }&type=video&maxResults=10` );
 export const channel = id => ytfetch( `/search?channelId=${ id }&part=snippet&order=date&maxResults=5&key=${ YT_KEY }` );
 
-
-// REMOVE FROM HERE
-const channelProcessor = ( json ) => {
-    const filteredChannels = json.items.map( e => {
-        return {
-            id: e.id,
-            title: e.snippet.title,
-            image: e.snippet.thumbnails.medium.url || e.snippet.thumbnails.default.url,
-        }
-    } )
-    console.log( filteredChannels );
-};
-// REMOVE FROM HERE
-
 export const getRecents = async ( ids ) => {
     const link = `/channels?part=snippet%2CcontentDetails&id=${ ids.map( ( el ) => el.id ).join( "%2C" ) }&key=${ YT_KEY }`;
     const json = await ytfetch( link );
@@ -42,7 +28,6 @@ export const getRecents = async ( ids ) => {
                 return plist.items
             } )
     );
-    channelProcessor( json );
 
     const flattened = videoList
         .flat()

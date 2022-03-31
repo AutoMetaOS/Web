@@ -2,6 +2,8 @@
   import { onMount } from "svelte";
   import { wordCount, Iframe, Editor } from "./functions";
   import MarkdownIt from "markdown-it";
+  import pkg from "predefined";
+  const { F } = pkg;
 
   const mkd = new MarkdownIt();
 
@@ -45,10 +47,6 @@
 </section>
 
 <style type="text/scss">
-  :global(body) {
-    background: #fff;
-    color: #000;
-  }
   nav {
     padding: 10px;
     border-bottom: 1px solid #ddd;
@@ -57,8 +55,11 @@
     border: 1px solid #eee;
   }
   section {
+    background: #f5f5f7;
+    color: #000;
     height: 100vh;
     article {
+      background: #fff;
       height: calc(100% - 40px);
     }
   }

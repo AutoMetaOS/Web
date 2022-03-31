@@ -52,8 +52,6 @@
         overflow-x: hidden;
         height: 100vh;
         width: 100vw;
-        background: #111;
-        color: #fff;
         margin-top: calc(2.5rem + 10px);
     }
     form {

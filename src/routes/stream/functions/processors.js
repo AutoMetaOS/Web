@@ -4,24 +4,14 @@ import { get } from "svelte/store";
 let DURATION = 0;
 
 const triggerCheck = ( data ) => {
-    if ( data.length >= 8 ) {
-        if ( data.timeLeft <= 90 ) app_behavior.set( { show_next: true } );
-        else app_behavior.set( { show_next: false } );
+    app_behavior.set( {
+        show_next: data.timeLeft <= 30
+    } );
 
-        if ( data.timeLeft <= 30 ) {
-            playNext( get( now_playing ).local_id )
-            app_behavior.set( { show_next: false } );
-        };
-
-    } else {
-        if ( data.timeLeft <= 30 ) app_behavior.set( { show_next: true } );
-        else app_behavior.set( { show_next: false } );
-
-        if ( data.timeLeft <= 5 ) {
-            playNext( get( now_playing ).local_id )
-            app_behavior.set( { show_next: false } );
-        };
-    }
+    if ( data.timeLeft <= 5 ) {
+        playNext( get( now_playing ).local_id )
+        app_behavior.set( { show_next: false } );
+    };
 };
 
 export const onMessage = ( message ) => {

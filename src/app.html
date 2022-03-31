@@ -6,8 +6,8 @@
 	<link rel="icon" href="/assets/Amos.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel='stylesheet' href='/OUI/css/global.css'>
-	<link rel='stylesheet' href='/OUI/css/keyframes.css'>
+	<link rel='stylesheet' href='https://api.nukes.in/cms/css?name=global.css'>
+	<link rel='stylesheet' href='https://api.nukes.in/cms/css?name=keyframes.css'>
 
 	%svelte.head%
 
@@ -21,7 +21,12 @@
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	%svelte.body%
+	<main>%svelte.body%</main>
+	<div id="alerts" class="p-fix w-100"></div>
 </body>
+
+<script type="module">
+	window.onerror = ( err ) => console.log( 'errCot', err );
+</script>
 
 </html>

@@ -10,7 +10,7 @@ export default {
 	kit: {
 		adapter: statix(),
 
-		target: 'body',
+		target: 'main',
 		vite: {
 			resolve: {
 				alias: {

@@ -62,7 +62,7 @@
         alt="thubmnail"
     />
     {#if details.length}
-        <div class="†c w-100 deets blur p-abs p5">
+        <div class="†c fw3 w-100 deets blur p-abs p5">
             <div style="padding-bottom:5px;">
                 {@html title?.slice(0, 60)}
                 {title.length > 60 ? "..." : ""}
@@ -87,8 +87,8 @@
             pointer-events: none;
 
             z-index: 2;
-            height: 4rem;
-            top: calc(99% - 3.5rem);
+            height: 5rem;
+            top: calc(99% - 4.25rem);
             opacity: 0;
 
             transition: opacity 0.2s ease;
