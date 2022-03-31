@@ -1,0 +1,1 @@
+import{D as t}from"./vendor-c4bd8a8d.js";import{s as a}from"./index-03ab0e3d.js";const n=t(""),c=t([]);a.list("stack").then(async s=>c.set(s.reverse()));const o=s=>s.charAt(0).toUpperCase()+s.slice(1),p=s=>{let e=o(r.type)||"Article";e.includes("Bread")&&(e="Video")},d={type:p};export{c as a,n as f,d as p};
