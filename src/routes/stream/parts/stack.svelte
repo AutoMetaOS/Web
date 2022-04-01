@@ -11,7 +11,6 @@
     };
 
     const dater = (v) => parseInt(v.id.split("-")[0], 36);
-
     const sorter = (a, b) => {
         const [a_dt, b_dt] = [a, b].map(dater);
         return new Date(b_dt) - new Date(a_dt);

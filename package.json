@@ -5,7 +5,7 @@
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"deploy": "npx gh-pages -d build -t true && rm -rf build .svelte*",
-		"commit": "git add . && git commit -m 'MANY MANY CHANGES' && git push"
+		"git": "git add . && git commit -m 'Universal Nav' && git push"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "next",
