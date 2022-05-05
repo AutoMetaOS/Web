@@ -1,0 +1,31 @@
+<svg viewbox="0 0 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <style>
+    .blend { mix-blend-mode: multiply; }
+ </style>
+<defs>
+  <linearGradient id="silver" x1="0" y1="0" x2="60%" y2="60%">
+    <stop offset="0" stop-color="#bbb"/>
+    <stop offset="0.5" stop-color="#fff"/>
+    <stop offset="1" stop-color="#ddd"/>
+  </linearGradient>
+  <mask id="prism">
+    <polygon points="250 75, 500 500, 0 500" fill="#fff"/>
+  </mask>
+  <linearGradient id="r">
+        <stop offset="0" stop-color="red"/>
+        <stop offset="0.333" stop-color="#ff0"/>
+        <stop offset="0.5" stop-color="#0f0"/>
+        <stop offset="0.666" stop-color="cyan"/>
+        <stop offset="0.833" stop-color="blue"/>
+    <stop offset="1" stop-color="#f0f"/>
+    </linearGradient>
+</defs>
+<polygon points="250 75, 500 500, 0 500"/>
+<g mask="url(#prism)">
+  <image height="500" width="500" y="75" xlink:href="https://i.imgur.com/3kAkOli.png"/>
+</g>
+<rect class="blend" x="0" y="0" width="100%" height="100%" fill="url(#r)" mask="url(#prism)"/>
+<rect class="blend" x="0" y="0" width="100%" height="100%" fill="url(#r)" mask="url(#prism)"/>
+
+<polygon points="146 250, 330 210, 410 345, 117 300" fill="url(#silver)"/>
+</svg>
