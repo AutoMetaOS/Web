@@ -14,21 +14,22 @@
 	<!-- <link rel="manifest" crossorigin="use-credentials" href="manifest.json"> -->
 
 	<meta http-equiv="content-security-policy" content=""><link rel="preconnect" href="https://web.whatsapp.com/" data-svelte="svelte-uae9sy"><link rel="preconnect" href="https://en.wikipedia.org/" data-svelte="svelte-uae9sy"><link rel="preconnect" href="https://github.com" data-svelte="svelte-uae9sy"><link rel="prefetch" href="/stream" data-svelte="svelte-uae9sy">
-	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-6afc490e.css">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-9a41591d.css">
 	<link rel="stylesheet" href="/_app/assets/pages/index.svelte-f45f48ab.css">
 	<link rel="stylesheet" href="/_app/assets/news-c9fd18dc.css">
 	<link rel="stylesheet" href="/_app/assets/pages/command/logo.svelte-e428a1ee.css">
-	<link rel="stylesheet" href="/_app/assets/suggestion-25e0bd32.css">
-	<link rel="modulepreload" href="/_app/start-93d317b8.js">
-	<link rel="modulepreload" href="/_app/chunks/index-ef3d5a38.js">
-	<link rel="modulepreload" href="/_app/chunks/index-5ae5593d.js">
+	<link rel="stylesheet" href="/_app/assets/suggestion-4166306c.css">
+	<link rel="modulepreload" href="/_app/start-8c52a78b.js">
+	<link rel="modulepreload" href="/_app/chunks/index-132e5a0e.js">
+	<link rel="modulepreload" href="/_app/chunks/index-cfd1276c.js">
 	<link rel="modulepreload" href="/_app/chunks/paths-396f020f.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-82a38676.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-aff3bee5.js">
+	<link rel="modulepreload" href="/_app/chunks/notifs-708c8c3d.js">
 	<link rel="modulepreload" href="/_app/chunks/index-99e896be.js">
-	<link rel="modulepreload" href="/_app/pages/index.svelte-6aa049e0.js">
-	<link rel="modulepreload" href="/_app/chunks/news-233f9658.js">
-	<link rel="modulepreload" href="/_app/pages/command/logo.svelte-efe22265.js">
-	<link rel="modulepreload" href="/_app/chunks/suggestion-2c3647d6.js">
+	<link rel="modulepreload" href="/_app/pages/index.svelte-ad5435db.js">
+	<link rel="modulepreload" href="/_app/chunks/news-46cffda8.js">
+	<link rel="modulepreload" href="/_app/pages/command/logo.svelte-7f774fac.js">
+	<link rel="modulepreload" href="/_app/chunks/suggestion-589a9f03.js">
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -47,12 +48,15 @@
   <form class="ƒ bg p5 rx10 fade-down svelte-18b6xmh"><img class="m5 rx5 svelte-18b6xmh" id="engineImage" src="/icons/Basic.svg" alt="">
     
     <input type="text" class="b0 w-100 svelte-18b6xmh" autofocus id="rsc" placeholder="AMOS Search"></form>
-  <div class="ƒ" style="margin-top:20px;overflow-x:scroll;max-width:calc(80% + 10px);"></div>
+  <div class="ƒ m20" style="overflow-x:scroll;max-width:calc(80% + 30px);"></div>
   <br>
   
 </section></div>
 
-<div id="AMOS-Nav" class="p-fix ƒ-col active svelte-184nq5d"><a class="m10 p5 tile †r p-rel blur svelte-184nq5d" href="/"><div class="p-abs name fw2 svelte-184nq5d"> Home</div>
+<div class="notifs p-fix m5 svelte-96aryn">
+</div>
+
+<div id="AMOS-Nav" class="p-fix fade-right active ƒ-col svelte-184nq5d"><a class="m10 p5 tile †r p-rel blur svelte-184nq5d" href="/"><div class="p-abs name fw2 svelte-184nq5d"> Home</div>
             <img height="150px" width="150px" src="/OUI/icons/web/amos.svg" alt="Home" class="svelte-184nq5d">
         </a><a class="m10 p5 tile †r p-rel blur svelte-184nq5d" href="/stream"><div class="p-abs name fw2 svelte-184nq5d"> Stream</div>
             <img height="150px" width="150px" src="/OUI/icons/web/stream.svg" alt="Stream" class="svelte-184nq5d">
@@ -70,10 +74,10 @@
 </div>
 
 
-		<script type="module" data-hydrate="neinyk">
-		import { start } from "/_app/start-93d317b8.js";
+		<script type="module" data-hydrate="109p7z">
+		import { start } from "/_app/start-8c52a78b.js";
 		start({
-			target: document.querySelector('[data-hydrate="neinyk"]').parentNode,
+			target: document.querySelector('[data-hydrate="109p7z"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -83,8 +87,8 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/_app/pages/__layout.svelte-82a38676.js"),
-						import("/_app/pages/index.svelte-6aa049e0.js")
+					import("/_app/pages/__layout.svelte-aff3bee5.js"),
+						import("/_app/pages/index.svelte-ad5435db.js")
 				],
 				params: {},
 				routeId: ""
@@ -93,9 +97,5 @@
 	</script></main>
 	<div id="alerts" class="p-fix w-100"></div>
 </body>
-
-<script type="module">
-	window.onerror = ( err ) => console.log( 'errCot', err );
-</script>
 
 </html>

@@ -14,26 +14,27 @@
 	<!-- <link rel="manifest" crossorigin="use-credentials" href="manifest.json"> -->
 
 	<meta http-equiv="content-security-policy" content="">
-	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-6afc490e.css">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-9a41591d.css">
 	<link rel="stylesheet" href="/_app/assets/pages/stream/parts/bar.svelte-93a44e6b.css">
 	<link rel="stylesheet" href="/_app/assets/pages/stream/parts/player.svelte-1bb4b712.css">
-	<link rel="stylesheet" href="/_app/assets/pages/stream/components/videoCard.svelte-b0a3af02.css">
+	<link rel="stylesheet" href="/_app/assets/pages/stream/parts/stack.svelte-9d4bfe62.css">
 	<link rel="stylesheet" href="/_app/assets/pages/stream/parts/search.svelte-1bd91240.css">
-	<link rel="modulepreload" href="/_app/start-93d317b8.js">
-	<link rel="modulepreload" href="/_app/chunks/index-ef3d5a38.js">
-	<link rel="modulepreload" href="/_app/chunks/index-5ae5593d.js">
+	<link rel="modulepreload" href="/_app/start-8c52a78b.js">
+	<link rel="modulepreload" href="/_app/chunks/index-132e5a0e.js">
+	<link rel="modulepreload" href="/_app/chunks/index-cfd1276c.js">
 	<link rel="modulepreload" href="/_app/chunks/paths-396f020f.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-82a38676.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-aff3bee5.js">
+	<link rel="modulepreload" href="/_app/chunks/notifs-708c8c3d.js">
 	<link rel="modulepreload" href="/_app/chunks/index-99e896be.js">
-	<link rel="modulepreload" href="/_app/pages/stream/index.svelte-9d721b17.js">
-	<link rel="modulepreload" href="/_app/pages/stream/parts/bar.svelte-fa2cc4f3.js">
-	<link rel="modulepreload" href="/_app/pages/stream/parts/player.svelte-9dc79879.js">
-	<link rel="modulepreload" href="/_app/chunks/index-408cb143.js">
-	<link rel="modulepreload" href="/_app/pages/stream/components/videoCard.svelte-e20a33d3.js">
-	<link rel="modulepreload" href="/_app/pages/stream/parts/set.svelte-24a2921a.js">
-	<link rel="modulepreload" href="/_app/pages/stream/parts/stack.svelte-6d116e54.js">
+	<link rel="modulepreload" href="/_app/pages/stream/index.svelte-9fcc907b.js">
+	<link rel="modulepreload" href="/_app/pages/stream/parts/bar.svelte-fc7c4a0e.js">
+	<link rel="modulepreload" href="/_app/pages/stream/parts/player.svelte-64b97463.js">
+	<link rel="modulepreload" href="/_app/chunks/index-71102d8f.js">
+	<link rel="modulepreload" href="/_app/pages/stream/components/videoCard.svelte-22c35345.js">
+	<link rel="modulepreload" href="/_app/pages/stream/parts/set.svelte-1d869cf1.js">
+	<link rel="modulepreload" href="/_app/pages/stream/parts/stack.svelte-d3653514.js">
 	<link rel="modulepreload" href="/_app/chunks/index-50aceac0.js">
-	<link rel="modulepreload" href="/_app/pages/stream/parts/search.svelte-a5f20ca0.js">
+	<link rel="modulepreload" href="/_app/pages/stream/parts/search.svelte-5b070280.js">
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -56,7 +57,10 @@
         Waiting for Updates...
     </section></main></div>
 
-<div id="AMOS-Nav" class="p-fix ƒ-col active svelte-184nq5d"><a class="m10 p5 tile †r p-rel blur svelte-184nq5d" href="/"><div class="p-abs name fw2 svelte-184nq5d"> Home</div>
+<div class="notifs p-fix m5 svelte-96aryn">
+</div>
+
+<div id="AMOS-Nav" class="p-fix fade-right active ƒ-col svelte-184nq5d"><a class="m10 p5 tile †r p-rel blur svelte-184nq5d" href="/"><div class="p-abs name fw2 svelte-184nq5d"> Home</div>
             <img height="150px" width="150px" src="/OUI/icons/web/amos.svg" alt="Home" class="svelte-184nq5d">
         </a><a class="m10 p5 tile †r p-rel blur svelte-184nq5d" href="/stream"><div class="p-abs name fw2 svelte-184nq5d"> Stream</div>
             <img height="150px" width="150px" src="/OUI/icons/web/stream.svg" alt="Stream" class="svelte-184nq5d">
@@ -74,10 +78,10 @@
 </div>
 
 
-		<script type="module" data-hydrate="iden9a">
-		import { start } from "/_app/start-93d317b8.js";
+		<script type="module" data-hydrate="yw63tv">
+		import { start } from "/_app/start-8c52a78b.js";
 		start({
-			target: document.querySelector('[data-hydrate="iden9a"]').parentNode,
+			target: document.querySelector('[data-hydrate="yw63tv"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -87,8 +91,8 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/_app/pages/__layout.svelte-82a38676.js"),
-						import("/_app/pages/stream/index.svelte-9d721b17.js")
+					import("/_app/pages/__layout.svelte-aff3bee5.js"),
+						import("/_app/pages/stream/index.svelte-9fcc907b.js")
 				],
 				params: {},
 				routeId: "stream"
@@ -97,9 +101,5 @@
 	</script></main>
 	<div id="alerts" class="p-fix w-100"></div>
 </body>
-
-<script type="module">
-	window.onerror = ( err ) => console.log( 'errCot', err );
-</script>
 
 </html>
