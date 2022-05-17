@@ -22,12 +22,12 @@
         const w = 300 * dpr;
         const center = { x: (w / 2) * dpr, y: (h / 2) * dpr };
 
-        const el = F("#canvas");
+        const el = F("#canvas").sel()[0];
         const ctx = el.getContext("2d");
 
         const gradienter = (i) => {
             const colors = [
-                ["#2af", "rgba(250,220,240)"],
+                ["#2af", "#6adc99"],
                 ["#48c6ef", "#6f86d6"],
                 ["#9795f0", "#70F"],
                 ["#F59", "#E37"],

@@ -1,4 +1,5 @@
 <script>
+    import { notifs } from "@internal";
     import { crypt } from "predefined";
     import { process } from "./functions";
     import { getMetadata, types } from "./functions/meta.js";
@@ -24,16 +25,7 @@
             if (r.title) data.title = r.title || "No Title Recieved";
             if (r.image)
                 data.image = r.image || bkp.image || "No Image Available";
-            if (r.type) {
-                if (
-                    !types
-                        .map((e) => e.toLowerCase())
-                        .includes(r.type.toLowerCase())
-                )
-                    data.notes = r.type;
-
-                data.type = process.type(r.type);
-            }
+            if (r.type) data.type = process.type(r.type);
         });
     };
 
@@ -42,12 +34,11 @@
         type: "Video",
         url: "",
         image: "",
-        notes: "",
     };
 
     const preprocess = (e) => {
         const send = data;
-        const uuid = crypt.uuid().split("-")[0];
+        const uuid = math.uuid().split("-")[0];
         const date = new Date();
 
         const id = `${(+date).toString(36)}-${uuid}`;
@@ -62,12 +53,17 @@
                     type: "Article",
                     url: "",
                     image: "",
-                    notes: "",
                 };
             } else {
-                data.title = "ERROR Sending!";
-                data.image = "Check console";
-                console.log(r);
+                const text = typeof r === "object" ? JSON.stringify(r) : r;
+
+                notifs.send({ text }, 1000, {
+                    from: "ursus",
+                    scale: "danger",
+                });
+
+                data.title = "Problem Sending!";
+                data.image = "";
             }
         });
     };
@@ -99,12 +95,6 @@
         <!-- ADD LENGTH REDUCTION HERE -->
         <input type="text" placeholder="Title" bind:value={data.title} />
         <input type="text" placeholder="Image" bind:value={data.image} />
-        <textarea
-            name="notes"
-            rows="5"
-            placeholder="Notes"
-            bind:value={data.notes}
-        />
 
         <input class="o-0" type="submit" value="Go" />
     </form>
@@ -119,8 +109,7 @@
         background: #000a;
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        input,
-        textarea {
+        input {
             margin: 5px;
             border: 1px solid #fff8;
             border-radius: 5px;

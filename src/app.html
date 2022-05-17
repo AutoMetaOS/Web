@@ -9,24 +9,16 @@
 	<link rel='stylesheet' href='https://api.nukes.in/cms/css?name=global.css'>
 	<link rel='stylesheet' href='https://api.nukes.in/cms/css?name=keyframes.css'>
 
+	<script type='text/javascript' src="/assets/setup.js"></script>
+
+	<!-- <link rel="manifest" crossorigin="use-credentials" href="manifest.json"> -->
+
 	%svelte.head%
-
-	<!-- <script src="/helpers/RoninScript.js"></script> -->
-
-	<script>
-		const meta = {
-			authHash: 'c3f438ce714c766ab764fe2f96a8e6ce7216dc4ed26572e160b2156f54a7ef20'
-		}
-	</script>
 </head>
 
 <body class="p-rel" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<main>%svelte.body%</main>
 	<div id="alerts" class="p-fix w-100"></div>
 </body>
-
-<script type="module">
-	window.onerror = ( err ) => console.log( 'errCot', err );
-</script>
 
 </html>

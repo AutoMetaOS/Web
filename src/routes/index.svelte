@@ -1,16 +1,18 @@
 <script>
-  import { F } from "predefined";
-  import { base } from "$app/paths";
-  import { engine, preprocessor, recommendations } from "./command/samurai";
-
-  import Logo from "./command/logo.svelte";
-  import TIL from "./command/til.svelte";
-  import Recoms from "./command/suggestion.svelte";
   import { onMount } from "svelte";
+  import { base } from "$app/paths";
+
+  import { getReddit } from "$lib/pages";
+
+  import Newz from "./command/news.svelte";
+  import Logo from "./command/logo.svelte";
+  import Recoms from "./command/suggestion.svelte";
+
+  import { engine, preprocessor, recommendations } from "./command/samurai";
 
   let //
     value,
-    show_extras = false;
+    placeholder = "AMOS Search";
 
   const go = (e) => {
     const send = engine(value);
@@ -35,8 +37,10 @@
   };
 
   onMount(() => {
-    setInterval(F("#rsc").focus(), 1e2);
-    setTimeout(() => (show_extras = true), 6e3);
+    getReddit("todayilearned", "new", 20).then((d) => {
+      let potential = d.map((e) => e.desc).filter((e) => e.length < 100);
+      placeholder = potential[0] || "AMOS Search";
+    });
   });
 </script>
 
@@ -47,41 +51,41 @@
   <link rel="prefetch" href="{base}/stream" />
 </svelte:head>
 
-<section class="ƒ-col p-rel">
+<section class="ƒ-col p-rel" style="overflow-y:hidden">
+  <div class="p-fix w-100 h-100 hero" style="top:0;">
+    <div class="blur w-100 h-100" style="--sz:4px;bg:#0002;">&nbsp;</div>
+  </div>
   <Logo />
   <form class="ƒ bg p5 rx10 fade-down" on:submit|preventDefault>
     <img class="m5 rx5" id="engineImage" src="{base}/icons/Basic.svg" alt="" />
+    <!-- svelte-ignore a11y-autofocus -->
     <input
       type="text"
       class="b0 w-100"
       on:keyup={go}
       bind:value
+      autofocus
       id="rsc"
-      placeholder="AMOS Search"
+      {placeholder}
     />
   </form>
+  <div class="ƒ m20" style="overflow-x:scroll;max-width:calc(80% + 30px);">
+    <Newz />
+  </div>
   <br />
   {#if value && $recommendations.length}
     <Recoms />
   {/if}
-  <div class="p-rel ƒ" style="padding-top:5%;">
-    {#if show_extras}
-      <TIL />
-    {:else}
-      <svg
-        class="p2"
-        viewBox="0 0 32 32"
-        stroke="#FFF"
-        stroke-width="2"
-        on:click={() => (show_extras = true)}
-      >
-        <path d="M16 2 L16 30 M2 16 L30 16" />
-      </svg>
-    {/if}
-  </div>
 </section>
 
 <style type="text/scss">
+  .hero {
+    z-index: -1;
+    background-image: url("https://source.unsplash.com/random/1280x720");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   section {
     padding-top: 12.5%;
     align-items: center;
@@ -89,28 +93,15 @@
     height: 100vh;
     z-index: 1;
   }
-  svg {
-    margin: 10px;
-    stroke-width: 2;
-    background: #ddd;
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    cursor: pointer;
-    will-change: transform;
-    transition: transform 0.2s ease;
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
   form {
-    --bg: #ccc;
+    --bg: #fff;
     width: 80%;
     font-size: 1.25rem;
     input {
-      background: #ccc;
+      background: var(--bg);
       color: #000;
       &::placeholder {
+        text-transform: capitalize;
         color: #8888;
       }
     }

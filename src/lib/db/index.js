@@ -32,17 +32,7 @@ const toTransformer = ( obj ) => {
         };
 
     return obj;
-}
-
-// const json = {
-//     parse: ( d ) => {
-//         console.log( d );
-//         console.log( typeof ( `{${ d }}` ) );
-//         console.log( typeof JSON.parse( `{${ d }}` ) );
-//         console.log( JSON.parse( `{${ d }}` ) );
-//         return JSON.parse( `{${ d }}` );
-//     }
-// };
+};
 
 const objectify = arr_string => JSON
     .parse( arr_string )

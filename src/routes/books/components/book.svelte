@@ -44,7 +44,7 @@
             {process.tags(tags)}
         </div>
 
-        <h5 class="title o-0">{title.toUpperCase()}</h5>
+        <h5 class="title">{title.toUpperCase()}</h5>
 
         <Functions {objective} data={self} />
     </div>
@@ -58,12 +58,6 @@
         max-height: 220px;
         overflow: hidden;
         word-wrap: break-word;
-        &:hover {
-            .title {
-                opacity: 1;
-                transition: opacity 0.1s ease;
-            }
-        }
         .body {
             padding: 0 10px;
         }

@@ -1,21 +1,14 @@
 <script>
+    import Toast from "$lib/components/Toast.svelte";
     import { onMount } from "svelte";
-
-    const parts = [
-        { name: "Home", href: "/", icon: "amos" },
-        { name: "Stream", href: "/stream", icon: "stream" },
-        { name: "Debug", href: "/debug", icon: "debug" },
-        { name: "Books", href: "/books", icon: "books" },
-        { name: "Math", href: "/", icon: "math" },
-        { name: "Projects", href: "/", icon: "worker" },
-        { name: "Plutonium", href: "/", icon: "pluto" },
-        { name: "Stack", href: "/", icon: "stack" },
-    ];
+    import { auth, parts, listeners } from "./global/init";
+    import { errorCatch } from "@internal";
 
     let nav;
     const state = {
         q: false,
     };
+
     const handleqq = (e) => {
         if (e.keyCode === 81) {
             if (state.q) {
@@ -25,7 +18,15 @@
         } else state.q = 0;
     };
 
-    onMount(() => nav.classList.toggle("active"));
+    onMount(() => {
+        nav.classList.toggle("active");
+        // auth.check();
+        listeners();
+        window.onerror = (msg, url, lineNo, columnNo, error) => {
+            console.log("Global Catch");
+            errorCatch(error);
+        };
+    });
 </script>
 
 <!-- ADD Auth -->
@@ -35,7 +36,9 @@
     <slot />
 </div>
 
-<div id="AMOS-Nav" class="p-fix ƒ-col active" bind:this={nav}>
+<Toast />
+
+<div id="AMOS-Nav" class="p-fix fade-right active ƒ-col" bind:this={nav}>
     {#each parts as part}
         <a class="m10 p5 tile †r p-rel blur" href={part.href}>
             <div class="p-abs name fw2">

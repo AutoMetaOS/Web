@@ -1,13 +1,13 @@
 <script>
   import { onMount } from "svelte";
-  import { url_params } from "predefined";
+  import { storage } from "predefined";
 
   export let searcher;
 
   let searchText = "";
 
   onMount(() => {
-    searchText = url_params.get()?.q || "";
+    searchText = storage.URLParams.get()?.q || "";
   });
 </script>
 

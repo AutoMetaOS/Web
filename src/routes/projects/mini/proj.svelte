@@ -6,7 +6,10 @@
     const colorProcess = () => {
         if (data?.title?.startsWith("Academic"))
             return "linear-gradient(to top, #2d2, #0b0)";
-        if (data?.title?.startsWith("Infinite"))
+        if (
+            data?.title?.startsWith("Infinite") ||
+            data?.title?.startsWith("Long")
+        )
             return "linear-gradient(to top, #fa2, #d80)";
         return color;
     };

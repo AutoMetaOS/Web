@@ -4,10 +4,8 @@
 </script>
 
 <nav class="p-fix w-100 ƒ ∆-bw">
-    <div class="p10" style="font-size:1.5rem;">
-        New Adventure Scheduling Array
-    </div>
-    <div class="p20">Free Slots: {25 - len}</div>
+    <div class="p10" style="font-size:1.5rem;">K-Array Async Monitor</div>
+    <div class="p20">Free Slots: {8 - len}</div>
     <div>
         <a
             href="http://exam-schedule-bits.firebaseapp.com/?id=2018B4A10795G"

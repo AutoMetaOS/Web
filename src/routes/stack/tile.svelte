@@ -1,4 +1,5 @@
 <script>
+    import { notifs } from "@internal";
     import {
         url_process,
         image_process,
@@ -34,9 +35,12 @@
         try {
             stack.delete("stack", id).then((r) => console.log(id, r));
             F(`#${id}`).remove();
-        } catch (error) {
-            let err = typeof error === "string" ? error : error.message;
-            data.notes = err;
+        } catch (e) {
+            let err = typeof e === "string" ? e : e.message;
+            notifs.send({ text: err }, 1000, {
+                from: "ursus",
+                scale: "danger",
+            });
         }
         return 0;
     };
@@ -73,7 +77,6 @@
             <span class="fw7">{data.type}:&nbsp;</span>
             {data?.title}
         </div>
-        <p><i>{data?.notes || "Click to See More!"}</i></p>
     </div>
     <svg
         on:click|preventDefault={deleteHandler}
@@ -91,10 +94,6 @@
 <style type="text/scss">
     .tile {
         color: #fff;
-        &:hover .clearfix {
-            bottom: 0;
-            height: calc(100% - 40px);
-        }
     }
     .fw4 {
         font-size: 1.33em;
@@ -111,7 +110,5 @@
         z-index: 1;
         --bg: #000c;
         --sz: 4px;
-
-        transition: all 0.2s ease;
     }
 </style>

@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Academic: Goodhart's Academia",
+        "description": "Proving Academia is Unsustainable",
+        "milestone": {
+            "text": "Read Rajan Paper"
+        },
+        "eta": "2 April 2022"
+    },
+    {
+        "title": "Academic: MMod Project",
+        "description": "Malaria Infection Modelling w/ Covid-19 & Zombies",
+        "milestone": {
+            "text": "Abstract Sent"
+        },
+        "eta": "15 April 2022"
+    },
+    {
+        "title": "Quantumania T33",
+        "description": "Quantum Tic Tac Toe 3D",
+        "milestone": {
+            "text": "Backend Algo Done"
+        },
+        "eta": "6 June 2022"
+    },
+    {
+        "title": "Quantumania+ Games",
+        "description": "Tetris, Pacman, Prob: Minesweeper",
+        "milestone": {
+            "text": "Tetris Layout Done"
+        },
+        "eta": "24 July 2022"
+    },
+    {
+        "title": "Celestia NBody",
+        "description": "NBody Simulation for GLens Box",
+        "milestone": {
+            "text": "Started"
+        },
+        "eta": "25 May 2022"
+    },
+    {
+        "title": "Long: Quantum Mechanics",
+        "description": "Well Read Up",
+        "milestone": {
+            "text": "Started"
+        },
+        "eta": "31 May 2023"
+    }
+]

@@ -1,9 +1,9 @@
 <script>
     import { stack } from "$lib/db";
     import { onMount } from "svelte";
-    import Book from "../components/book.svelte";
-    import { process } from "../functions";
-    import { added_list } from "../functions/store";
+    import Book from "./components/book.svelte";
+    import { process } from "./functions";
+    import { added_list } from "./functions/store";
 
     export let omni = "";
 
@@ -36,12 +36,12 @@
 
 <style type="text/scss">
     .ƒ {
-        height: 200px;
+        max-height: 250px;
         transition: height 0.2s ease;
         overflow: hidden;
         &::after {
             position: absolute;
-            top: 100px;
+            top: 150px;
             content: " ";
             height: 100px;
             width: 100%;
@@ -50,7 +50,7 @@
         }
         &:hover {
             overflow-y: scroll;
-            height: 66%;
+            max-height: 66%;
             &::after {
                 top: calc(66% - 100px);
             }

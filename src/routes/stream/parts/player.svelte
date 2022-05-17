@@ -54,11 +54,5 @@
         z-index: 1;
         bottom: 3em;
         right: 2em;
-
-        transition: background 0.2s ease-in;
-        background: #0002;
-        &:hover {
-            background: #000;
-        }
     }
 </style>

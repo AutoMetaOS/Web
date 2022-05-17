@@ -1,6 +1,6 @@
 <script>
-    import pkg from "predefined";
-    const { url_params } = pkg;
+    import { storage } from "predefined";
+    const { URLParams } = storage;
     import Bar from "./parts/bar.svelte";
     import Player from "./parts/player.svelte";
     import SubSet from "./parts/set.svelte";
@@ -16,14 +16,14 @@
 
     const searcher = (sc) => {
         const q = typeof sc === "string" ? sc : sc.target[0].value;
-        if (!q) return url_params.set("q", "");
+        if (!q) return URLParams.set("q", "");
         else youtube.search(q).then((r) => (base = r.items));
         window.location.href = "#search";
-        return url_params.set("q", q);
+        return URLParams.set("q", q);
     };
 
     onMount(() => {
-        const params = url_params.get();
+        const params = URLParams.get();
         params.q && searcher(params.q);
         if (params.id) videoSet({ slug: params.id });
 

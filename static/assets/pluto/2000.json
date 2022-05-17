@@ -1,0 +1,47 @@
+[
+    {
+        "Year": 2008,
+        "Grade": "3",
+        "Song": {
+            "name": "This Train Don't Stop There Anymore",
+            "id": "65cf86eb-6d76-4e03-b672-2f37b7ad6456",
+            "artist": "Rosanne Cash & Emmylou Harris",
+            "album": "Restoration",
+            "release": 2018,
+            "orig_release": 2001
+        }
+    },
+    {
+        "Year": 2009,
+        "Grade": "4",
+        "Song": {
+            "name": "Barking At The Moon",
+            "id": "8a06cd17-e127-49cd-8ad7-f033d24f8f54",
+            "artist": "Jenny Lewis",
+            "album": "Bolt",
+            "release": 2008
+        }
+    },
+    {
+        "Year": 2010,
+        "Grade": "4",
+        "Song": {
+            "name": "High Hopes",
+            "id": "4e0d8649-1f89-44f3-91af-4c0dbee81f28",
+            "artist": "Pink Floyd",
+            "album": "The Division Bell",
+            "release": 1994
+        }
+    },
+    {
+        "Year": 2010,
+        "Grade": "5",
+        "Song": {
+            "name": "Stand By Me",
+            "id": "74e2aff8-bcf9-4119-b51c-10f64f440a73",
+            "artist": "Ben E. King",
+            "album": "Stand By Me",
+            "release": 1986
+        }
+    }
+]

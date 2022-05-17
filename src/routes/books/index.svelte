@@ -1,6 +1,6 @@
 <script>
     import Book from "./components/book.svelte";
-    import Stack from "./parts/stack.svelte";
+    import Stack from "./stack.svelte";
     import { api, process } from "./functions";
     import buffer from "./data/defaults";
 

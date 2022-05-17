@@ -16,7 +16,7 @@
         return new Date(b_dt) - new Date(a_dt);
     };
 
-    let slicer = 3;
+    let slicer = 1;
 </script>
 
 <section class="ƒ p20 ƒ∑" id="search">
@@ -44,7 +44,5 @@
                 details={["Stack", processors.timeSince(dater(vid))]}
             />
         {/each}
-    {:catch error}
-        {typeof error === "string" ? error : JSON.stringify(error)}
     {/await}
 </section>

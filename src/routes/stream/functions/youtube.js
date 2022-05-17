@@ -1,3 +1,4 @@
+import { notifs } from "@internal";
 import keys from '../../../../../config/keys/client_keys';
 
 const YT_KEY = keys.YT_KEY;
@@ -20,7 +21,11 @@ export const getRecents = async ( ids ) => {
     const link = `/channels?part=snippet%2CcontentDetails&id=${ ids.map( ( el ) => el.id ).join( "%2C" ) }&key=${ YT_KEY }`;
     const json = await ytfetch( link );
 
-    if ( json.error ) alert( "QUOTA EXCEEDED" );
+
+    if ( json.error ) notifs.send( { title: "Try Later", text: "Daily YT Quota Exceeded" }, 1000, {
+        from: "ursus",
+        scale: "danger"
+    } );
     let videoList = await Promise.all(
         json.items.map( ( el ) => el.contentDetails.relatedPlaylists.uploads )
             .map( async plId => {

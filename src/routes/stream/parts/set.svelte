@@ -1,7 +1,6 @@
 <script>
   export let set;
 
-  import { F } from "predefined";
   import { youtube, processors } from "../functions";
   import Card from "../components/videoCard.svelte";
   import { onMount } from "svelte";
@@ -10,19 +9,13 @@
 
   $: videos = [];
 
-  let slicer = 3;
+  let slicer = 4;
 
   onMount(() => {
     const promise = Promise.all(
       set?.map((e) => youtube.getRecents(e.channels))
     );
-    promise.then((e) => {
-      videos = e.flat();
-      const channels = videos.map((e) => F(`#${e.snippet.channelId}`));
-      channels.forEach((e) => {
-        if (e) e.remove();
-      });
-    });
+    promise.then((e) => (videos = e.flat()));
   });
 </script>
 
@@ -33,7 +26,7 @@
       <input
         type="range"
         min={0}
-        max={videos.flat().length / 4}
+        max={Math.ceil(videos.flat().length / 4)}
         bind:value={slicer}
       />
     </span>

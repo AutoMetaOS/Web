@@ -1,40 +1,49 @@
 # AutoMetaOS Web Client
 
 <div align="center">
-<img src="https://cdn.jsdelivr.net/gh/AutoMetaOS/UI@latest/icons/amos.png" alt="amos" width="300px" height="300px"/>
+<img src="./static/OUI/icons/amos.svg" alt="amos" width="300px" height="300px"/>
 </div>
 
-## Globally Provided JS
-### New Functions
-Run function externally in a worker (run long function while keeping interactive )
+## Using Internals Functions
+### Notification API
 ```js
-thread(reallyReallyLongFunction).then(console.log) // logs return value of reallyReallyLongFunction
+import { notifs } from "@internal";
+notifs.send({title:"Error Title",text:"Error Text"}, 1000, {
+    from: "Error Generated From",
+    scale: "danger", // danger, success, warning, info, default
+});
 ```
 
-## Globally Provided CSS
-Along with standard UI
+### Intercom API
+Internal Communications between ALL OPEN tabs
+```js
+import { intercom } from "@internal";
+intercom.listen( 'Announcements', console.log ); // Listens to Channel Announcements and logs data
+intercom.mute( 'Announcements' ) // Take a guess on what could happen
 
-### Box Model
-RPM For 0px, 5px, 10px
-```css
-rpm-X{
-    margin: Xpx;
-    padding: Xpx;
-    border-radius: Xpx;
-}
+intercom.announce
+```
+### Trial & Error API
+```js
+import { run } from "@internal";
+run(()=>doSomething()) // Pass Function, Run will take care of error handling
+
+
+import { errorCatch } from "@internal";
+errorCatch(error) // Pass Caught error as it is
 ```
 
-M,P,RX For 0px, 5px, 10px, 20px
-```css
-.pX{ padding:Xpx; }
-.mX{ margin:Xpx; }
-.rxX{ border-radius:Xpx; }
-<!-- and -->
-.mx-a{ margin: 0 auto; }
+
+
+## Using Processors Functions
+### Heisenberg
+Heisenberg will automatically convert JSON to string as needed while compressing and will also return as JSON if data is valid JSON when uncompressed.
+```js
+import { Heisenberg } from "@process";
+Heisenberg.compress(data); // Returns Compressed UTF-16 String
+
+Heisenberg.decompress(data); // Returns unCompressed Data
 ```
 
-### Font
-For X={1..7}
-```css
-.fwX{font-weight:X00;}
-```
+## TODO
+- https://danfo.jsdata.org

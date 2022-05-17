@@ -3,6 +3,7 @@
 	"scripts": {
 		"clean": "rm -rf .svelte* && clear",
 		"dev": "svelte-kit dev",
+		"build:scss": "cd ./static/OUI/ && sass --style=compressed --no-source-map scss:css",
 		"build": "svelte-kit build",
 		"deploy": "npx gh-pages -d build -t true && rm -rf build .svelte*",
 		"git": "git add . && git commit -m 'Universal Nav' && git push"
@@ -18,7 +19,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@builder.io/partytown": "^0.5.4",
+		"lsbridge": "^0.2.0",
+		"lz-string": "^1.4.4",
 		"markdown-it": "^12.2.0",
-		"predefined": "1.1.0"
+		"predefined": "1.2.5",
+		"vite-plugin-replace": "^0.1.1"
 	}
 }
