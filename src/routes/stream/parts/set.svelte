@@ -1,7 +1,7 @@
 <script>
   export let set;
 
-  import { youtube, processors } from "../functions";
+  import { processors } from "../functions";
   import Card from "../components/videoCard.svelte";
 
   const clear = () => (videos = []);
@@ -12,7 +12,9 @@
 
   onMount(() => {
     const promise = Promise.all(
-      set?.map((e) => youtube.getRecents(e.channels))
+      set?.map((e) =>
+        API.getYoutubeRecents(e.channels.map((el) => el.id).join("%2C"))
+      )
     );
     promise.then((e) => (videos = e.flat()));
   });

@@ -8,6 +8,12 @@
         "$lib/db": [
             "SAMOSDB"
         ],
+        "$lib/api": [
+            [
+                "default",
+                "API"
+            ]
+        ],
         "svelte": [
             "onMount",
             "createEventDispatcher"

@@ -7,7 +7,6 @@
     import Stack from "./parts/stack.svelte";
     import Search from "./parts/search.svelte";
 
-    import { youtube } from "./functions";
     import { videoSet } from "./functions/store";
     import cnls from "../../../../config/sorted_channels.json";
 
@@ -16,7 +15,7 @@
     const searcher = (sc) => {
         const q = typeof sc === "string" ? sc : sc.target[0].value;
         if (!q) return URLParams.set("q", "");
-        else youtube.search(q).then((r) => (base = r.items));
+        else API.getYoutubeSearch(q).then((r) => (base = r));
         window.location.href = "#search";
         return URLParams.set("q", q);
     };

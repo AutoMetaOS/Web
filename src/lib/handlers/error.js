@@ -3,7 +3,10 @@ const GeneralError = ( error ) => {
     const { type, e } = error;
     const { message, lineNumber, columnNumber, fileName, stack } = e;
 
-    console.log( `Error@${ lineNumber }:${ columnNumber } in ${ fileName } \n ${ message } \n${ stack }` );
+    let location = `${ fileName }`;
+    if ( lineNumber ) location = `${ lineNumber }:${ columnNumber } in ${ fileName }`;
+
+    console.log( `Error@${ location } \n ${ message } \n${ stack }` );
 
     notifs.send( { title: type, text: message }, 2000, {
         from: window.location.pathname,
