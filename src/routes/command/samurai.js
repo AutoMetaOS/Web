@@ -1,5 +1,3 @@
-import { base } from "$app/paths";
-import { writable } from "svelte/store";
 import { F } from "predefined";
 
 export const recommendations = writable( [] );
@@ -16,11 +14,11 @@ export const sites = JSON.parse( `{
 }`);
 
 export const quickPages = JSON.parse( `{
-    "yt": { "url": "${ base }/stream" },
-    "math": { "url": "${ base }/math" },
-    "books": { "url": "${ base }/books" },
-    "debug": { "url": "${ base }/debug" },
-    "stack": { "url": "${ base }/stack" }
+    "yt": { "url": "/stream" },
+    "math": { "url": "/math" },
+    "books": { "url": "/books" },
+    "debug": { "url": "/debug" },
+    "stack": { "url": "/stack" }
 }`);
 
 const suggestions = ( SIn ) =>
@@ -31,7 +29,7 @@ const suggestions = ( SIn ) =>
 
 const setEngineImage = ( key ) => {
     const engineImage = F( '#engineImage' );
-    if ( engineImage ) engineImage.src = `${ base }/icons/${ sites[ key ]?.name || key }.svg`;
+    if ( engineImage ) engineImage.src = `/icons/${ sites[ key ]?.name || key }.svg`;
     return 0;
 }
 

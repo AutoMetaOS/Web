@@ -1,7 +1,11 @@
 import sveltePreprocess from 'svelte-preprocess';
 import statix from '@sveltejs/adapter-static';
 import { replaceCodePlugin } from "vite-plugin-replace";
-import path from 'path';
+import AutoImport from 'unplugin-auto-import/vite';
+
+import AUTO_IMPORTS from './config/auto-import.json';
+import REPLACE from './config/replace.json';
+import ALIASES from "./config/alias.js";
 
 export default {
 	preprocess: sveltePreprocess( {
@@ -17,27 +21,19 @@ export default {
 
 		vite: {
 			plugins: [
-				replaceCodePlugin( {
-					replacements: [
-						{
-							from: "@UI:icons",
-							to: "/OUI/icons",
-						}
-					]
-				} ),
+				replaceCodePlugin( { replacements: REPLACE } ),
+				AutoImport( {
+					include: [
+						/\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+						/\.svelte$/, /\.svelte\?svelte/, // .svelte
+					],
+					imports: AUTO_IMPORTS,
+					vueTemplate: false
+				} )
 			],
-			resolve: {
-				alias: {
-					'@interface': path.resolve( 'src/lib/components' ),
-					'@process': path.resolve( 'src/lib/pages' ),
-					'@internal': path.resolve( 'src/lib/handlers' ),
-					$routes: path.resolve( 'src/routes' ),
-				}
-			}
+			resolve: { alias: ALIASES }
 		},
 
-		prerender: {
-			default: true
-		}
+		prerender: { default: true }
 	}
 }

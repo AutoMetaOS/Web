@@ -1,5 +1,4 @@
 <script>
-    import { onMount } from "svelte";
     import { processors } from "../functions";
     import { now_playing, app_behavior } from "../functions/store";
     import Card from "../components/videoCard.svelte";

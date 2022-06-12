@@ -1,7 +1,4 @@
 <script>
-  import { onMount } from "svelte";
-  import { base } from "$app/paths";
-
   import { getReddit } from "$lib/pages";
 
   import Newz from "./command/news.svelte";
@@ -47,8 +44,8 @@
 <svelte:head>
   <link rel="preconnect" href="https://web.whatsapp.com/" />
   <link rel="preconnect" href="https://en.wikipedia.org/" />
-  <link rel="preconnect" href="https://github.com" />
-  <link rel="prefetch" href="{base}/stream" />
+  <link rel="preconnect" href="https://google.com" />
+  <link rel="prefetch" href="/stream" />
 </svelte:head>
 
 <section class="ƒ-col p-rel" style="overflow-y:hidden">
@@ -57,7 +54,7 @@
   </div>
   <Logo />
   <form class="ƒ bg p5 rx10 fade-down" on:submit|preventDefault>
-    <img class="m5 rx5" id="engineImage" src="{base}/icons/Basic.svg" alt="" />
+    <img class="m5 rx5" id="engineImage" src="/icons/Basic.svg" alt="" />
     <!-- svelte-ignore a11y-autofocus -->
     <input
       type="text"

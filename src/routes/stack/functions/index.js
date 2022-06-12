@@ -1,10 +1,7 @@
-import { writable } from "svelte/store";
-import { stack } from "$lib/db";
-
 export const filter = writable( "" );
 export const full_stack = writable( [] );
 
-stack.list( "stack" ).then( async r => full_stack.set( r.reverse() ) );
+stackDB.list( "stack" ).then( async r => full_stack.set( r.reverse() ) );
 
 const capitalCase = ( string ) =>
     string.charAt( 0 ).toUpperCase() + string.slice( 1 );

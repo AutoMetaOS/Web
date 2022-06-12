@@ -3,7 +3,6 @@
     import Filter from "./filter.svelte";
     import Adder from "./adder.svelte";
     import { full_stack, filter } from "./functions";
-    import { onMount } from "svelte";
 
     const size = {
         width: "400px",

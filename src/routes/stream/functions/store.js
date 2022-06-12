@@ -1,6 +1,5 @@
 import pkg from "predefined";
 const { F } = pkg;
-import { writable } from 'svelte/store';
 
 export const now_playing = writable( {
     local_id: 'yt-' + 10e10,

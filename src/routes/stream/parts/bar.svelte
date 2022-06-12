@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import { storage } from "predefined";
 
   export let searcher;

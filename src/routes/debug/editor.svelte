@@ -1,6 +1,5 @@
 <script>
     import { w3 } from "./functions";
-    import { onMount, createEventDispatcher } from "svelte";
 
     const debounce = function (func, wait, immediate) {
         let timeout;

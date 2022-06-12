@@ -1,6 +1,6 @@
 import { math } from "predefined";
 
-import { intercom, session } from "@internal";
+import { session } from "@internal";
 
 const state = {
     ctr: 3

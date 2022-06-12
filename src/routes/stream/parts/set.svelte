@@ -3,7 +3,6 @@
 
   import { youtube, processors } from "../functions";
   import Card from "../components/videoCard.svelte";
-  import { onMount } from "svelte";
 
   const clear = () => (videos = []);
 

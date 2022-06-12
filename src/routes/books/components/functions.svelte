@@ -1,6 +1,5 @@
 <script>
     import { process } from "../functions";
-    import { stack } from "$lib/db";
     export let //
         objective = "sugg",
         data = {
@@ -13,7 +12,7 @@
         };
 
     const adder = (data) =>
-        stack.put("books", Date.now().toString(36), data).then((e) => {
+        stackDB.put("books", Date.now().toString(36), data).then((e) => {
             console.log(e);
             if (e.charAt(0) == '"') objective = "added";
             else objective = "error";

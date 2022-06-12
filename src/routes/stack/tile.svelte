@@ -5,7 +5,6 @@
         image_process,
         type_process,
     } from "./functions/meta.js";
-    import { stack } from "$lib/db";
     import { F } from "predefined";
 
     export let //
@@ -33,7 +32,7 @@
     const deleteHandler = (e) => {
         const id = e.target.parentElement.id;
         try {
-            stack.delete("stack", id).then((r) => console.log(id, r));
+            stackDB.delete("stack", id).then((r) => console.log(id, r));
             F(`#${id}`).remove();
         } catch (e) {
             let err = typeof e === "string" ? e : e.message;

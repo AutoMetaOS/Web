@@ -1,0 +1,18 @@
+[
+    {
+        "@internal": [
+            "errorCatch",
+            "intercom"
+        ],
+        "$lib/db": [
+            "stackDB"
+        ],
+        "svelte": [
+            "onMount",
+            "createEventDispatcher"
+        ],
+        "svelte/store": [
+            "writable"
+        ]
+    }
+]

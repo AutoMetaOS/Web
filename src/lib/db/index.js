@@ -40,7 +40,7 @@ const objectify = arr_string => JSON
     .map( toTransformer );
 
 // MAIN
-export const stack = {
+export const stackDB = {
     type: async ( db, type ) => {
         const res = await ssfetch( `amos/type?db=${ db }&q=${ type }` );
         return objectify( res );

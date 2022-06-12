@@ -1,5 +1,4 @@
 <script>
-    import { onMount } from "svelte";
     import { F } from "predefined";
     const pi = Math.PI;
     const points = 10;

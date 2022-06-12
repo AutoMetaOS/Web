@@ -1,5 +1,4 @@
 {
-	"name": "rurouni",
 	"scripts": {
 		"clean": "rm -rf .svelte* && clear",
 		"dev": "svelte-kit dev",
@@ -15,11 +14,11 @@
 		"sass": "1.35.1",
 		"svelte": "3.44.0",
 		"svelte-preprocess": "4.7.3",
+		"unplugin-auto-import": "^0.8.7",
 		"vite": "2.4.1"
 	},
 	"type": "module",
 	"dependencies": {
-		"@builder.io/partytown": "^0.5.4",
 		"lsbridge": "^0.2.0",
 		"lz-string": "^1.4.4",
 		"markdown-it": "^12.2.0",

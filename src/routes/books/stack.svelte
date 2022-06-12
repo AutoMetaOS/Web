@@ -1,6 +1,4 @@
 <script>
-    import { stack } from "$lib/db";
-    import { onMount } from "svelte";
     import Book from "./components/book.svelte";
     import { process } from "./functions";
     import { added_list } from "./functions/store";
@@ -18,7 +16,7 @@
 
     $: books = [];
 
-    onMount(() => stack.list("books").then((r) => (books = r)));
+    onMount(() => stackDB.list("books").then((r) => (books = r)));
 </script>
 
 <div class="ƒ ƒ∑ ∆-bw w-100">

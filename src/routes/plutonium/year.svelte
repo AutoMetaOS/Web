@@ -1,14 +1,10 @@
 <script>
-    import { onMount } from "svelte";
-
     import { gets } from ".";
     export let //
         data = {
             Year: "2000",
             Grade: "0",
         };
-
-    onMount(() => {});
 </script>
 
 <div class="p10 indi p-rel">

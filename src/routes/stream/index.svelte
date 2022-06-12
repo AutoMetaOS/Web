@@ -7,7 +7,6 @@
     import Stack from "./parts/stack.svelte";
     import Search from "./parts/search.svelte";
 
-    import { onMount } from "svelte";
     import { youtube } from "./functions";
     import { videoSet } from "./functions/store";
     import cnls from "../../../../config/sorted_channels.json";

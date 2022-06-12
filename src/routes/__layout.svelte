@@ -1,8 +1,6 @@
 <script>
     import Toast from "$lib/components/Toast.svelte";
-    import { onMount } from "svelte";
     import { auth, parts, listeners } from "./global/init";
-    import { errorCatch } from "@internal";
 
     let nav;
     const state = {

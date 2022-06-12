@@ -1,9 +1,8 @@
 <script>
-    import { stack } from "$lib/db";
     import { processors } from "../functions";
     import Card from "../components/VideoCard.svelte";
 
-    const promise = stack.type("stack", "Video");
+    const promise = stackDB.type("stack", "Video");
 
     const url_process = (ur) => {
         if (ur.includes("tu.be")) return ur.split("be/")[1].split("?")[0];

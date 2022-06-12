@@ -1,5 +1,4 @@
 <script>
-    import { onMount } from "svelte";
     import { processors } from "../functions";
     import { now_playing, getNext } from "../functions/store";
 

@@ -1,6 +1,5 @@
 <script>
     import { getReddit } from "$lib/pages";
-    import { onMount } from "svelte";
 
     let news = [];
     onMount(() => {

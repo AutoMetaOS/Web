@@ -1,9 +1,8 @@
 <script>
     import { notifs } from "@internal";
-    import { crypt } from "predefined";
+    import { math } from "predefined";
     import { process } from "./functions";
     import { getMetadata, types } from "./functions/meta.js";
-    import { stack } from "$lib/db";
 
     export let size = {
         width: 0,
@@ -45,7 +44,7 @@
 
         send.type ||= "Article";
 
-        stack.put("stack", id, send).then((r) => {
+        stackDB.put("stack", id, send).then((r) => {
             if (r.charAt(0) === `"`) {
                 console.log(200);
                 data = {

@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import { wordCount, Iframe, Editor } from "./functions";
   import MarkdownIt from "markdown-it";
   import pkg from "predefined";

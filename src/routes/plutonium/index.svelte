@@ -1,5 +1,4 @@
 <script>
-    import { onMount } from "svelte";
     import Stamp from "./year.svelte";
     import { getData } from ".";
 
