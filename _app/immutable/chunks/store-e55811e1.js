@@ -1,0 +1,1 @@
+import{w as n}from"./index-ff9ff7c9.js";const a=n({local_id:"yt-"+1e11,youtube_id:null}),s=({slug:o,title:e,arrayId:t,index:i})=>{const l=`https://www.youtube-nocookie.com/embed/${o}?autoplay=1&enablejsapi=1&local=${t}`;return window.history.pushState("","",`?id=${o}`),a.set({local_id:`${t}-${o}-${i}`,youtube_id:l}),window.scrollTo(0,0),document.title=e,0};export{a as n,s as v};
