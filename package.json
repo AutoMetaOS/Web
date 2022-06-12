@@ -1,11 +1,10 @@
 {
+	"type": "module",
 	"scripts": {
-		"clean": "rm -rf .svelte* && clear",
 		"dev": "svelte-kit dev",
-		"build:scss": "cd ./static/OUI/ && sass --style=compressed --no-source-map scss:css",
 		"build": "svelte-kit build",
 		"deploy": "npx gh-pages -d build -t true && rm -rf build .svelte*",
-		"git": "git add . && git commit -m 'Universal Nav' && git push"
+		"git": "sh ./scripts/git.sh"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "next",
@@ -17,7 +16,6 @@
 		"unplugin-auto-import": "^0.8.7",
 		"vite": "2.4.1"
 	},
-	"type": "module",
 	"dependencies": {
 		"lsbridge": "^0.2.0",
 		"lz-string": "^1.4.4",
