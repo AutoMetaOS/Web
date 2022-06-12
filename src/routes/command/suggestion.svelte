@@ -37,6 +37,8 @@
 
 <style type="text/scss">
     #autoComplete {
+        margin-top: 10px;
+        overflow: hidden;
         color: #222;
         width: calc(80% + 10px);
         list-style-type: none;
@@ -46,7 +48,6 @@
     }
     .blur {
         padding: 5px 10px;
-        margin: 10px 0;
         --sz: 0;
         --bg: #fff;
     }

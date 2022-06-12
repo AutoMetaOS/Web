@@ -1,65 +1,30 @@
 <script>
-    import { processors } from "../functions";
-    import { now_playing, getNext } from "../functions/store";
+    import { videoSet } from "../functions/store";
 
     export let //
-        get_next = 0,
         title = "",
         details = [],
-        type = "",
-        count = +$now_playing.local_id?.split("-")[1] || 0,
+        count = 0,
         slug = "",
         image = "https://wallpaperaccess.com/full/2404603.png";
 
-    const id_processor = () => {
-        let id;
-
-        if (type === "snippet") id = "yt-" + count;
-        if (type === "stack") id = "kv-" + count;
-        else id = "yt-" + count;
-
-        return id;
+    const clickHandler = () => {
+        const [arrayId, index] = count.split("_");
+        videoSet({
+            slug,
+            title,
+            arrayId,
+            index,
+        });
     };
-
-    $: self = {
-        title,
-        details,
-        type,
-        count,
-        slug,
-        image,
-        id: id_processor(),
-    };
-
-    const clickHandler = () => processors.videoSet(self);
-
-    onMount(() => {
-        if (get_next) {
-            const next = getNext();
-            [title, slug, image, count, type] = [
-                next.title,
-                next.slug,
-                next.image,
-                next.count,
-                next.type,
-            ];
-        }
-    });
 </script>
 
 <div
     class="recom p-rel fade-right m5 rx10 ƒ-col"
-    id={id_processor()}
-    data-title={title}
-    data-slug={slug}
+    id={slug}
     on:click={clickHandler}
 >
-    <img
-        id={"img_" + id_processor()}
-        src={image}
-        class="w-100"
-        alt="thubmnail"
-    />
+    <img id="img_{count}" src={image} class="w-100" alt="thubmnail" />
     {#if details.length}
         <div class="†c fw3 w-100 deets blur p-abs p5">
             <div style="padding-bottom:5px;">

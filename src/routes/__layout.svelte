@@ -22,7 +22,7 @@
         listeners();
         window.onerror = (msg, url, lineNo, columnNo, error) => {
             console.log("Global Catch");
-            errorCatch(error);
+            errorCatch(error, url, lineNo, columnNo);
         };
     });
 </script>
@@ -53,6 +53,9 @@
 </div>
 
 <style type="text/scss">
+    :global(body) {
+        background: #222;
+    }
     .tile {
         contain: content;
         color: #fff;

@@ -66,13 +66,12 @@
       {placeholder}
     />
   </form>
-  <div class="ƒ m20" style="overflow-x:scroll;max-width:calc(80% + 30px);">
-    <Newz />
-  </div>
-  <br />
   {#if value && $recommendations.length}
     <Recoms />
   {/if}
+  <div class="ƒ m10" style="overflow-x:scroll;max-width:80%;">
+    <Newz />
+  </div>
 </section>
 
 <style type="text/scss">

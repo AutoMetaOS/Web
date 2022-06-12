@@ -15,21 +15,26 @@
     };
 
     $: books = [];
+    $: filteredBooks = books.filter((e) =>
+        anyIncludes([e.title, e.author], process.form.basic(omni).text)
+    );
 
     onMount(() => SAMOSDB.list("books").then((r) => (books = r)));
 </script>
 
 <div class="ƒ ƒ∑ ∆-bw w-100">
-    {#each books.filter( (e) => anyIncludes([e.title, e.author], process.form.basic(omni).text) ) as book}
-        <Book
-            objective={"todo"}
-            id={stacker(book.bk_id)}
-            title={book.title}
-            author={book.author}
-            image={book.image}
-            published={book.published}
-        />
-    {/each}
+    {#if filteredBooks.length > 1}
+        {#each filteredBooks as book}
+            <Book
+                objective={"todo"}
+                id={stacker(book.bk_id)}
+                title={book.title}
+                author={book.author}
+                image={book.image}
+                published={book.published}
+            />
+        {/each}
+    {/if}
 </div>
 
 <style type="text/scss">

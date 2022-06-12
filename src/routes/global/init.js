@@ -18,13 +18,13 @@ export const parts = [
 export const listeners = () => {
     intercom.listen( 'internal', console.log );
 
-    intercom.announce( 'internal', {
-        type: 'action',
-        message: {
-            token: session.getId(),
-            from: window.location.pathname
-        }
-    } );
+    // intercom.announce( 'internal', {
+    //     type: 'action',
+    //     message: {
+    //         token: session.getId(),
+    //         from: window.location.pathname
+    //     }
+    // } );
 };
 
 export const auth = {
