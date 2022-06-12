@@ -1,7 +1,6 @@
 <script>
     export let //
-        url = "https://www.youtube.com/watch?v=",
-        src = "Youtube";
+        url = "https://www.youtube.com/watch?v=";
 
     import { Youtube } from "@process";
 

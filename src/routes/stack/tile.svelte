@@ -1,10 +1,5 @@
 <script>
-    import { notifs } from "@internal";
-    import {
-        url_process,
-        image_process,
-        type_process,
-    } from "./functions/meta.js";
+    import { url_process, image_process, type_process } from "./functions";
     import { F } from "predefined";
 
     export let //
@@ -32,7 +27,7 @@
     const deleteHandler = (e) => {
         const id = e.target.parentElement.id;
         try {
-            stackDB.delete("stack", id).then((r) => console.log(id, r));
+            SAMOSDB.delete("stack", id).then((r) => console.log(id, r));
             F(`#${id}`).remove();
         } catch (e) {
             let err = typeof e === "string" ? e : e.message;

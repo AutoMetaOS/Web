@@ -12,7 +12,7 @@
         };
 
     const adder = (data) =>
-        stackDB.put("books", Date.now().toString(36), data).then((e) => {
+        SAMOSDB.put("books", Date.now().toString(36), data).then((e) => {
             console.log(e);
             if (e.charAt(0) == '"') objective = "added";
             else objective = "error";

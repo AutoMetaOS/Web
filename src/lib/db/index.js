@@ -20,10 +20,16 @@ const ssfetch = async ( endpoint ) => {
     const response = await fetch( baseURL + endpoint );
     const json = await response.text();
     return json;
-}
+};
 
-import { types } from "$routes/stack/functions/meta";
 const toTransformer = ( obj ) => {
+    const types = [
+        "Article",
+        "Collection",
+        "Reference",
+        "Repository",
+        "Video"
+    ];
     for ( const type of types )
         if ( obj.hasOwnProperty( type ) ) {
             obj[ 'type' ] = type;
@@ -40,7 +46,7 @@ const objectify = arr_string => JSON
     .map( toTransformer );
 
 // MAIN
-export const stackDB = {
+export const SAMOSDB = {
     type: async ( db, type ) => {
         const res = await ssfetch( `amos/type?db=${ db }&q=${ type }` );
         return objectify( res );
@@ -60,5 +66,7 @@ export const stackDB = {
     put: async ( db, id, data ) => {
         const res = await ssfetch( `amos/put?db=${ db }&id=${ id }&value=${ froTransformer( data ) }` );
         return res;
-    },
-}
+    }
+};
+
+export default SAMOSDB;

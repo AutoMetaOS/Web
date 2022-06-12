@@ -1,5 +1,4 @@
 import { math } from "predefined";
-
 import { session } from "@internal";
 
 const state = {

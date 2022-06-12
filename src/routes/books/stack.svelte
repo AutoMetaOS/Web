@@ -1,7 +1,7 @@
 <script>
     import Book from "./components/book.svelte";
     import { process } from "./functions";
-    import { added_list } from "./functions/store";
+    import { added_list } from "./functions";
 
     export let omni = "";
 
@@ -16,7 +16,7 @@
 
     $: books = [];
 
-    onMount(() => stackDB.list("books").then((r) => (books = r)));
+    onMount(() => SAMOSDB.list("books").then((r) => (books = r)));
 </script>
 
 <div class="ƒ ƒ∑ ∆-bw w-100">

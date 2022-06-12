@@ -2,7 +2,7 @@
     import { processors } from "../functions";
     import Card from "../components/VideoCard.svelte";
 
-    const promise = stackDB.type("stack", "Video");
+    const promise = SAMOSDB.type("stack", "Video");
 
     const url_process = (ur) => {
         if (ur.includes("tu.be")) return ur.split("be/")[1].split("?")[0];

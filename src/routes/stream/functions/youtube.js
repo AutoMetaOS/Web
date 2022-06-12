@@ -1,4 +1,3 @@
-import { notifs } from "@internal";
 import keys from '../../../../../config/keys/client_keys';
 
 const YT_KEY = keys.YT_KEY;

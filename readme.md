@@ -5,9 +5,10 @@
 </div>
 
 ## Using Internals Functions
+`errorCatch, notifs, intercom` do not need to be imported they will be available globally.
+
 ### Notification API
 ```js
-import { notifs } from "@internal";
 notifs.send({title:"Error Title",text:"Error Text"}, 1000, {
     from: "Error Generated From",
     scale: "danger", // danger, success, warning, info, default
@@ -17,7 +18,6 @@ notifs.send({title:"Error Title",text:"Error Text"}, 1000, {
 ### Intercom API
 Internal Communications between ALL OPEN tabs
 ```js
-import { intercom } from "@internal";
 intercom.listen( 'Announcements', console.log ); // Listens to Channel Announcements and logs data
 intercom.mute( 'Announcements' ) // Take a guess on what could happen
 
@@ -28,8 +28,6 @@ intercom.announce
 import { run } from "@internal";
 run(()=>doSomething()) // Pass Function, Run will take care of error handling
 
-
-import { errorCatch } from "@internal";
 errorCatch(error) // Pass Caught error as it is
 ```
 

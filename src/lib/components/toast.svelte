@@ -1,19 +1,20 @@
 <script>
     import { flip } from "svelte/animate";
     import { fly } from "svelte/transition";
-    import { notifs } from "@internal";
 
-    export let themes = {
-        danger: "#E26D69",
-        success: "#84C991",
-        warning: "#f0ad4e",
-        info: "#5bc0de",
-        default: "#aaaaaa",
-    };
+    // export let themes = {
+    //     danger: "#E26D69",
+    //     success: "#84C991",
+    //     warning: "#f0ad4e",
+    //     info: "#5bc0de",
+    //     default: "#aaaaaa",
+    // };
+
+    $: alerts = notifs;
 </script>
 
-<div class="notifs p-fix m5">
-    {#each $notifs as notif (notif.id)}
+<div class="notifi p-fix m5">
+    {#each $alerts as notif (notif.id)}
         <div
             animate:flip
             class="toast mx-a rx10 p10 blur ƒ"
@@ -40,7 +41,7 @@
 </div>
 
 <style type="text/scss">
-    .notifs {
+    .notifi {
         top: 10px;
         right: 10px;
         z-index: 9999;

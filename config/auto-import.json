@@ -2,10 +2,11 @@
     {
         "@internal": [
             "errorCatch",
-            "intercom"
+            "intercom",
+            "notifs"
         ],
         "$lib/db": [
-            "stackDB"
+            "SAMOSDB"
         ],
         "svelte": [
             "onMount",

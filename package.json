@@ -1,6 +1,7 @@
 {
 	"type": "module",
 	"scripts": {
+		"clean": "rm -rf .svelte*",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"deploy": "npx gh-pages -d build -t true && rm -rf build .svelte*",

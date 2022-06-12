@@ -1,3 +1,5 @@
+export const added_list = writable( [] );
+
 import { search } from "./api";
 import {
     author, tags, published,

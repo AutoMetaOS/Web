@@ -1,5 +1,5 @@
 import config from "../data/config.json";
-import { added_list } from "./store";
+import { added_list } from ".";
 import { get } from "svelte/store";
 
 // BOOK

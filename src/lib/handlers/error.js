@@ -1,5 +1,3 @@
-import { notifs } from "@internal";
-
 const GeneralError = ( error ) => {
     console.log( error );
     const { type, e } = error;
