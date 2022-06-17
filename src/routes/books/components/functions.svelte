@@ -1,11 +1,10 @@
 <script>
     import { process } from "../functions";
     export let //
-        objective = "sugg",
+        objective = "suggest",
         data = {
             title: "",
             image: "",
-            tags: "",
             id: "",
             published: "",
             author: "",
@@ -13,7 +12,6 @@
 
     const adder = (data) =>
         SAMOSDB.put("books", Date.now().toString(36), data).then((e) => {
-            console.log(e);
             if (e.charAt(0) == '"') objective = "added";
             else objective = "error";
         });
@@ -24,11 +22,8 @@
     };
 </script>
 
-{#if objective}
-    <div
-        class="funcs ƒ hover ∆-bw p10 p-abs"
-        on:click|preventDefault={clickHandler}
-    >
+{#if objective && objective !== "null"}
+    <div class="funcs ƒ ∆-bw p10" on:click|preventDefault={clickHandler}>
         <svg
             {...process.attributes(objective)}
             viewBox="0 0 32 32"
@@ -50,7 +45,6 @@
     }
     .funcs {
         cursor: pointer;
-        top: calc(var(--h) - 3rem);
         width: calc(100% - 20px);
     }
 </style>

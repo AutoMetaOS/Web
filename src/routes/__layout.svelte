@@ -21,7 +21,7 @@
         // auth.check();
         listeners();
         window.onerror = (msg, url, lineNo, columnNo, error) => {
-            console.log("Global Catch");
+            console.warn("Global Catch");
             errorCatch(error, url, lineNo, columnNo);
         };
     });

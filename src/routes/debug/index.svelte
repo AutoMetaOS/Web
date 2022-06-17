@@ -25,7 +25,7 @@
   };
 
   onMount(() => {
-    ifr = F("iframe");
+    ifr = F("iframe").sel()[0];
     ifr = ifr.contentWindow || ifr.contentDocument?.document;
   });
 </script>

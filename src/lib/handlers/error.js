@@ -1,5 +1,4 @@
 const GeneralError = ( error ) => {
-    console.log( error );
     const { type, e } = error;
     const { message, lineNumber, columnNumber, fileName, stack } = e;
 

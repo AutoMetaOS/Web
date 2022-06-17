@@ -9,6 +9,7 @@
     <Player />
     {#each allStreams as stream}
         <VideoArrayHolder
+        exposed={stream.exposed}
             type={stream.type}
             initializedArray={stream.initializedArray}
             prefetch={stream.prefetch}

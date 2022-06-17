@@ -10,9 +10,8 @@
         return id;
     };
 
-    const anyIncludes = (strings, text) => {
-        return strings.some((string) => string.toLowerCase().includes(text));
-    };
+    const anyIncludes = (strings, text) =>
+        strings.some((string) => string.toLowerCase().includes(text));
 
     $: books = [];
     $: filteredBooks = books.filter((e) =>
@@ -22,8 +21,15 @@
     onMount(() => SAMOSDB.list("books").then((r) => (books = r)));
 </script>
 
-<div class="ƒ ƒ∑ ∆-bw w-100">
+<div class="ƒ ƒ∑ ∆-bw w-100 fade">
     {#if filteredBooks.length > 1}
+        <Book
+            objective={"todo"}
+            id={stacker("123456")}
+            title={`${filteredBooks.length}`}
+            author={"Manav"}
+            published={"2020"}
+        />
         {#each filteredBooks as book}
             <Book
                 objective={"todo"}
@@ -36,27 +42,3 @@
         {/each}
     {/if}
 </div>
-
-<style type="text/scss">
-    .ƒ {
-        max-height: 250px;
-        transition: height 0.2s ease;
-        overflow: hidden;
-        &::after {
-            position: absolute;
-            top: 150px;
-            content: " ";
-            height: 100px;
-            width: 100%;
-            transition: top 0.2s ease;
-            background: linear-gradient(transparent, #000);
-        }
-        &:hover {
-            overflow-y: scroll;
-            max-height: 66%;
-            &::after {
-                top: calc(66% - 100px);
-            }
-        }
-    }
-</style>

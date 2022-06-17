@@ -49,20 +49,12 @@
         align-items: center;
         pointer-events: none;
 
-        color: white;
-    }
-    .blur {
-        --sz: 4px;
-        --bg: #fff4;
-    }
-
-    .title {
-        font-color: #888;
+        color: #fff;
     }
 
     .toast {
         --sz: 16px;
-        --bg: #fff4;
+        --bg: #2224;
         overflow: hidden;
         width: 300px;
         flex: 0 0 auto;

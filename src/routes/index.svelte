@@ -1,11 +1,9 @@
 <script>
   import { getReddit } from "$lib/pages";
-
-  import Newz from "./command/news.svelte";
   import Logo from "./command/logo.svelte";
-  import Recoms from "./command/suggestion.svelte";
-
+  import Newz from "./command/news.svelte";
   import { engine, preprocessor, recommendations } from "./command/samurai";
+  import Recoms from "./command/suggestion.svelte";
 
   let //
     value,

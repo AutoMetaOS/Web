@@ -2,7 +2,7 @@ export const added_list = writable( [] );
 
 import { search } from "./api";
 import {
-    author, tags, published,
+    author, published,
     form, results,
     attributes, icons
 } from "./processors";
@@ -12,7 +12,7 @@ export const api = {
 };
 
 export const process = {
-    author, tags, published,
+    author, published,
     results, form,
     attributes, icons
 };

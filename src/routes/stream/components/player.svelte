@@ -19,29 +19,11 @@
 
     const clickHandler = ({ target }) => {
         const { id } = target;
-        console.log(id);
-        let next = {};
+
         if (id === "up") playNext();
         if (id === "down") playPrev();
-
-        console.log(next);
-    };
-
-    const keydownHandler = (e) => {
-        e.preventDefault();
-        const { shiftKey, key } = e;
-
-        if (shiftKey) console.log("ShowCarousel");
-        const [next, prev] = ["ArrowLeft", "ArrowRight"];
-        if (shiftKey && key === next) {
-            playNext();
-        } else if (shiftKey && key === prev) {
-            playPrev();
-        }
     };
 </script>
-
-<svelte:window on:keydown|preventDefault={keydownHandler} />
 
 {#if $now_playing.youtube_id}
     <div class="ƒ cont p-rel ∆-ct">

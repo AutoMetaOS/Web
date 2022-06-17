@@ -1,5 +1,4 @@
 <script>
-    import { F } from "predefined";
     const pi = Math.PI;
     const points = 10;
     const circles = [];
@@ -14,6 +13,7 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+    let canvas;
     onMount(() => {
         const dpr = window.devicePixelRatio || 1;
         const radius = 100 * dpr;
@@ -21,7 +21,7 @@
         const w = 300 * dpr;
         const center = { x: (w / 2) * dpr, y: (h / 2) * dpr };
 
-        const el = F("#canvas").sel()[0];
+        const el = canvas;
         const ctx = el.getContext("2d");
 
         const gradienter = (i) => {
@@ -131,14 +131,14 @@
 </script>
 
 <div class="†c w-100" style="height:300px">
-    <canvas class="fade-down w-100 h-100" id="canvas" />
+    <canvas class="fade-down w-100 h-100" bind:this={canvas} />
     <div class="fade-down w-100 h-100 ƒ ∆-ct †c copy">
         <h1 class="m0">AMOS</h1>
     </div>
 </div>
 
 <style type="text/scss">
-    #canvas {
+    canvas {
         height: 300px;
         width: 300px;
     }

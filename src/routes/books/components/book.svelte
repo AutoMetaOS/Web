@@ -2,26 +2,30 @@
     import { process } from "../functions";
     import Functions from "./functions.svelte";
     export let //
-        objective = "sugg",
+        objective = "suggest",
         title = "",
         image = "",
-        tags = [],
         id,
-        published = new Date().getFullYear(),
+        published = new Date().getFullYear() || Infinity,
         author = "";
 
     $: self = {
         title,
         image: image || null,
-        tags: process.tags(tags),
         bk_id: id,
         published: process.published(published),
         author: process.author(author),
     };
 </script>
 
-<div {id} class="book ƒ m10">
-    <div class="p-rel">
+<div
+    {id}
+    class="book fade-right ƒ m10"
+    data-objective={objective}
+    style="--w: 140px;--h: 200px;"
+    class:large={objective === "todo"}
+>
+    <div class="p-rel size">
         {#if !!image}
             <img
                 class="w-100 h-100"
@@ -29,56 +33,51 @@
                 alt={title}
             />
         {:else}
-            <div class="dummy †c ƒ w-100 h-100">{title.trim()}</div>
+            <div class="dummy size †c ƒ w-100 h-100">{title.trim()}</div>
         {/if}
     </div>
-    <div class="body p-rel">
-        <div>
+    <div
+        class="body size ƒ-col ∆-bw p-{objective !== 'todo'
+            ? 'rel'
+            : 'abs blur hover'} abs-top abs-left"
+    >
+        <div class="p10">
             {process.author(author)}
-            {#if published}
-                ({process.published(published)})
+            {#if !Number.isFinite(published)}
+                {process.published(published)}
             {/if}
         </div>
 
-        <div class="tags">
-            {process.tags(tags)}
-        </div>
-
-        <h5 class="title">{title.toUpperCase()}</h5>
+        {#if objective === "todo"}
+            <h5 class="p10" style="font-size:2rem;max-height:4em;">
+                {title.toUpperCase()}
+            </h5>
+        {/if}
 
         <Functions {objective} data={self} />
     </div>
 </div>
 
 <style type="text/scss">
+    .size {
+        width: var(--w);
+        height: var(--h);
+    }
     .book {
-        --w: 140px;
-        --h: 200px;
         width: 300px;
-        max-height: 220px;
+        max-height: var(--h);
         overflow: hidden;
         word-wrap: break-word;
-        .body {
-            padding: 0 10px;
-        }
-        .tags {
-            padding: 5px 0;
-            color: #aaa;
-            text-transform: capitalize;
-        }
-        img {
-            width: var(--w);
-            height: var(--h);
-        }
         .dummy {
-            width: var(--w);
-            height: var(--h);
-
             background: #fefef8;
             color: #222;
             align-items: center;
             word-wrap: break-word;
             overflow: hidden;
         }
+    }
+    .large {
+        --w: 280px !important;
+        --h: 400px !important;
     }
 </style>

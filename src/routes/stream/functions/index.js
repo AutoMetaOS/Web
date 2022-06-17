@@ -21,26 +21,17 @@ export const globalStreamsHandler = {
 
         return series;
     },
-    getNext ( localId ) {
-        const { arrayId, videoId, index } = id2id( localId );
-        if ( index == 0 ) return null;
-
+    traverseStream ( localId, direction = 1 ) {
+        const { arrayId, index } = id2id( localId );
         const series = this.getStream( arrayId );
         if ( !series ) return null;
-        const { title, slug } = series.data[ index - 1 ];
 
-        videoSet( { title, slug, arrayId, index: index - 1 } );
+        const adjustedIndex = +index + +direction;
+        const { title, slug } = series.data[ adjustedIndex ];
+
+        videoSet( { title, slug, arrayId, index: adjustedIndex } );
         return true;
     },
-    getPrev ( localId ) {
-        const { arrayId, videoId, index } = id2id( localId );
-
-        const series = this.getStream( arrayId );
-        if ( !series ) return null;
-        console.log( series.data, index, series.data[ index ], series.data[ index + 1 ] );
-        const { title, slug } = series.data[ index + 1 ];
-
-        videoSet( { title, slug, arrayId, index: index + 1 } );
-        return true;
-    }
+    getNext ( localId ) { return this.traverseStream( localId, 1 ); },
+    getPrev ( localId ) { return this.traverseStream( localId, -1 ); }
 };

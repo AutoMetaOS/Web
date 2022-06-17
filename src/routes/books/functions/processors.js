@@ -1,16 +1,7 @@
-import config from "../data/config.json";
 import { added_list } from ".";
 import { get } from "svelte/store";
 
 // BOOK
-export const tags = tags => {
-    if ( !tags ) return [];
-    return tags.filter( ( e ) => !/[^a-zA-Z]/i.test( e ) )
-        .map( ( e ) => e.toLowerCase().trim() )
-        .slice( 0, 4 )
-        .join( ", " );
-};
-
 export const author = list => {
     if ( !list ) return 'Unknown';
     if ( typeof list === "string" ) return list;
@@ -22,9 +13,9 @@ export const author = list => {
 };
 
 export const published = list => {
-    if ( list.length === 0 ) return null;
-    if ( typeof list === "string" ) return +list;
-    if ( typeof list === "object" ) return +list[ 0 ];
+    if ( list.length === 0 ) return '';
+    if ( typeof list === "string" ) return `(${ +list })`;
+    if ( typeof list === "object" ) return `(${ +list[ 0 ] })`;
 };
 
 // SEARCH
@@ -57,22 +48,48 @@ export const results = ( e ) => {
 };
 
 // FUNCTIONS
+const config = {
+    error: [ {
+        tag: "path",
+        attributes: [ [ "d", "M2 30 L30 2 M30 30 L2 2" ] ],
+        style: [ [ "background", "#f00a" ] ]
+    } ],
+    added: [ {
+        tag: "path",
+        attributes: [ [ "d", "M2 20 L12 28 30 4" ] ],
+        style: [ [ "background", "#0f0a" ] ]
+    } ],
+    suggest: [ {
+        tag: "path",
+        attributes: [ [ "d", "M16 2 L16 30 M2 16 L30 16" ] ],
+        "data-func": "add",
+        style: [ [ "background", "#0aff" ] ]
+    } ],
+    todo: [ {
+        tag: "path",
+        attributes: [ [ "d", "M2 20 L12 28 30 4" ] ],
+        "data-func": "add",
+        style: [ [ "background", "#0cc" ] ]
+    } ]
+}
 export const attributes = ( objective ) => {
-    const attrs = { ...config.objective[ objective ] };
+    console.log(
+        objective,
+        config[ objective ]
+    );
+    const { style } = config[ objective ][ 0 ];
 
-    const styles = attrs.style
+    const styles = style
         ?.map( ( e ) => e.join( ":" ) )
         .join( ";" );
 
-    attrs.style = styles;
-
-    return attrs;
+    return { style: styles, 'data-func': config[ objective ][ 0 ][ 'data-func' ] };
 };
 
 export const icons = icon => {
-    const tags = config.icons[ icon ]?.map( e => {
-        const tag = e.tag;
-        const attrs = e.attributes?.map( e => `${ e[ 0 ] }="${ e[ 1 ] }"` ).join( " " );
+    const tags = config[ icon ]?.map( e => {
+        const { attributes, tag } = e;
+        const attrs = attributes?.map( e => `${ e[ 0 ] }="${ e[ 1 ] }"` ).join( " " );
 
         return `<${ tag } ${ attrs }/>`;
     } );
